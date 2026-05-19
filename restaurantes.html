@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Directorio de Restaurantes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-encabezado">
+            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
+            <h1>Gastronomía del Estado Táchira</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" onclick="sessionStorage.clear();">Inicio</a>
+        <a href="platos.html">Platos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="dulces.html">Dulces</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="registro_restaurante.html">Registrar Local</a>
+        <a href="mapa.html">Mapa de Ruta</a>
+    </nav>
+    <main class="contenedor-interno">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="color: #2c3e50; font-size: 2.5em; text-transform: uppercase; font-weight: bold;">Ruta Gastronómica Tachirense</h2>
+        <p style="color: #555; font-size: 1.1em;">Descubre los mejores locales y emprendimientos donde puedes degustar nuestra tradición.</p>
+    </div>
+
+        <div class="galeria-cuadricula">
+            
+            <article class="tarjeta">
+                <a href="detalles/detalle_restaurante1.html">
+                    <img src="img/restaurante1.jpg" alt="Fachada del Fogón Andino">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>El Fogón Andino</h3>
+                    <p style="color: #777; font-size: 0.9em; margin-bottom: 10px;">📍 Barrio Obrero, San Cristóbal</p>
+                    <p>Un rincón clásico para desayunar. Especialistas en caldos y desayunos tradicionales.</p>
+                    
+                    <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px;">Pizca Andina</span>
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Pastelitos</span>
+                    </div>
+                    <a href="detalles/detalle_restaurante1.html" class="boton-enlace">Ver Información y Mapa</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_restaurante2.html">
+                    <img src="img/restaurante2.jpg" alt="Vitrina de la Dulcería La Andina">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Dulcería La Andina</h3>
+                    <p style="color: #777; font-size: 0.9em; margin-bottom: 10px;">📍 Centro de San Cristóbal</p>
+                    <p>Patrimonio de la ciudad. Más de 30 años elaborando los postres más representativos de la región de forma artesanal.</p>
+                    
+                    <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px;">Abrillantados</span>
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Higos</span>
+                    </div>
+                    <a href="detalles/detalle_restaurante2.html" class="boton-enlace">Ver Información y Mapa</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_restaurante3.html">
+                    <img src="img/restaurante3.jpg" alt="Parador turístico El Páramo del Zumbador">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>El Páramo del Zumbador</h3>
+                    <p style="color: #777; font-size: 0.9em; margin-bottom: 10px;">📍 Vía Cordero - Páramo</p>
+                    <p>La parada obligatoria de los viajeros. Ofrecen las mejores bebidas calientes y fermentadas para combatir el frío.</p>
+                    
+                    <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px;">Calentadito</span>
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Chicha Andina</span>
+                    </div>
+                    <a href="detalles/detalle_restaurante3.html" class="boton-enlace">Ver Información y Mapa</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_restaurante4.html">
+                    <img src="img/restaurante4.jpg" alt="Fachada de La Tradición Andina" onerror="this.src='img/restaurante1.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>La Tradición Andina</h3>
+                    <p style="color: #777; font-size: 0.9em; margin-bottom: 10px;">📍 Barrio Obrero, San Cristóbal</p>
+                    <p>Un rincón clásico en San Cristóbal donde el sabor de las auténticas arepas de trigo hechas a leña se mantiene vivo. Rellenos generosos y un ambiente muy familiar.</p>
+                    
+                    <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px;">Arepas de Trigo</span>
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Comida Típica</span>
+                    </div>
+                    <a href="detalles/detalle_restaurante4.html" class="boton-enlace">Ver Información y Mapa</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_restaurante5.html">
+                    <img src="img/restaurante5.jpg" alt="Mercado Los Pequeños Comerciantes" onerror="this.src='img/restaurante1.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Comedores del Mercado</h3>
+                    <p style="color: #777; font-size: 0.9em; margin-bottom: 10px;">📍 La Concordia, San Cristóbal</p>
+                    <p>El epicentro popular donde los tachirenses van a comer el mejor Mute y Pizca andina los domingos.</p>
+                    <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px;">Mute Tachirense</span>
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Pizca Andina</span>
+                    </div>
+                    <a href="detalles/detalle_restaurante5.html" class="boton-enlace">Ver Información y Mapa</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_restaurante6.html">
+                    <img src="img/restaurante6.jpg" alt="Kioscos de Capacho" onerror="this.src='img/restaurante3.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Los Kioscos de Capacho</h3>
+                    <p style="color: #777; font-size: 0.9em; margin-bottom: 10px;">📍 Mercado Municipal de Capacho</p>
+                    <p>Parada tradicional famosa por ofrecer las mejores empanadas, pastelitos y masato en la vía a la frontera.</p>
+                    <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px;">Pastelitos</span>
+                        <span style="background: #e67e22; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Masato</span>
+                    </div>
+                    <a href="detalles/detalle_restaurante6.html" class="boton-enlace">Ver Información y Mapa</a>
+                </div>
+            </article>
+
+        </div>
+        
+        <section class="ruta-timeline">
+            <h2 style="text-align: center; color: #d35400; margin-bottom: 30px;">Ruta Turística Sugerida por un Día</h2>
+            
+            <div class="parada-ruta">
+                <h3>8:00 AM - Desayuno en El Fogón Andino</h3>
+                <p>Comienza el día con energía degustando unos pastelitos andinos y una reparadora Pizca Andina en Barrio Obrero.</p>
+            </div>
+            
+            <div class="parada-ruta">
+                <h3>1:00 PM - Almuerzo en La Parada del Trigo</h3>
+                <p>Al mediodía, disfruta de una auténtica Arepa de Trigo rellena de pisillo, un clásico indiscutible.</p>
+            </div>
+            
+            <div class="parada-ruta">
+                <h3>4:00 PM - Postre en Dulcería La Andina</h3>
+                <p>Una parada obligatoria en el centro de la ciudad para endulzar la tarde con abrillantados e higos rellenos.</p>
+            </div>
+
+            <div class="parada-ruta">
+                <h3>7:00 PM - Cierre en El Páramo del Zumbador</h3>
+                <p>Sube hacia la montaña y termina la jornada combatiendo el frío con un reconfortante Calentadito o Chicha Andina.</p>
+            </div>
+        </section>
+        
+    </main>
+    
+    <script src="JS/logica.js"></script>
+</body>
+</html>

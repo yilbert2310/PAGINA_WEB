@@ -1,0 +1,439 @@
+/* --- REGLAS GENERALES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f7f6; /* Un tono un poco más suave y fresco */
+    color: #333;
+}
+
+h1, h2, h3, h4, .titulo-seccion {
+    font-family: 'Playfair Display', serif; /* Títulos elegantes */
+}
+
+/* --- ENCABEZADO Y MENÚ --- */
+header {
+    background-color: #d35400;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    width: 100%;
+    /* Pequeña sombra para separar el header del contenido */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+/* --- MENÚ INTERACTIVO Y ANCLADO --- */
+nav {
+    background-color: rgba(44, 62, 80, 0.95);
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    /* Hace que el menú persista al hacer scroll */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px); /* Efecto cristal moderno */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de subrayado animado al pasar el ratón */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #d35400;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after, nav a:active::after {
+    width: 70%;
+}
+
+nav a:hover, nav a:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fbdcb6;
+    transform: translateY(-2px);
+}
+
+/* --- DISEÑO DE TARJETAS (CARDS) MÁS FLUIDO --- */
+.contenedor-interno {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.galeria-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 35px;
+    margin-top: 20px;
+}
+/* --- DISEÑO EDITORIAL DE TARJETAS --- */
+.tarjeta {
+    background-color: white;
+    border-radius: 12px; /* Bordes más sutiles y elegantes */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    transition: transform 0.6s ease;
+}
+
+/* Efecto de zoom en la imagen sin salir del borde */
+.tarjeta:hover img {
+    transform: scale(1.05);
+}
+
+.tarjeta-cuerpo {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-cuerpo h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* --- BOTÓN DE ENLACE --- */
+.boton-enlace {
+    display: block;
+    background-color: #fffaf6;
+    color: #d35400;
+    border: 2px solid #d35400;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+.boton-enlace:hover {
+    background-color: #d35400;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* --- ESTILOS PARA LAS PÁGINAS DE DETALLES --- */
+.seccion-info { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 20px; /* Bordes suaves acordes al nuevo diseño */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06); 
+    margin-bottom: 20px;
+}
+.encabezado-plato { 
+    text-align: center; 
+    margin-bottom: 30px; 
+}
+.imagen-detalle { 
+    max-width: 600px; 
+    width: 100%; 
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.descripcion-plato {
+    font-size: 1.15em; 
+    text-align: center; 
+    color: #555; 
+    margin: 20px auto 15px auto; 
+    max-width: 800px;
+    font-style: italic;
+    line-height: 1.6;
+}
+.info-rapida {
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-bottom: 35px; 
+    flex-wrap: wrap;
+}
+.info-rapida span {
+    background-color: #fffaf6; 
+    color: #d35400; 
+    padding: 10px 20px; 
+    border-radius: 25px; 
+    font-size: 0.95em; 
+    font-weight: bold; 
+    border: 1px solid #fbdcb6; 
+}
+.receta-contenedor {
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    gap: 40px; 
+    align-items: start;
+}
+.caja-ingredientes {
+    background-color: #fffaf6; 
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: inset 0 0 10px rgba(211, 84, 0, 0.05);
+}
+.lista-interactiva { 
+    list-style: none; 
+    padding: 0; 
+}
+.lista-interactiva li { 
+    margin-bottom: 15px; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    font-size: 1em; 
+}
+.lista-interactiva input[type="checkbox"] { 
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer; 
+    accent-color: #d35400; 
+}
+.caja-pasos { 
+    padding-right: 20px; 
+}
+.lista-pasos li { 
+    margin-bottom: 20px; 
+    line-height: 1.8; 
+    background: #fff; 
+    padding: 20px; 
+    border: 1px solid #f0f0f0; 
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+.lista-pasos li::marker { 
+    color: #d35400; 
+    font-weight: bold; 
+    font-size: 1.3em; 
+}
+
+/* --- ESTILOS PARA EL MENÚ DE LOS RESTAURANTES --- */
+.lista-menu-local {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.lista-menu-local a {
+    display: block;
+    background-color: white;
+    color: #d35400;
+    padding: 18px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 1px solid #fbdcb6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+.lista-menu-local a:hover {
+    background-color: #d35400;
+    color: white;
+    transform: scale(1.02) translateX(10px); /* Pequeño movimiento hacia la derecha */
+    box-shadow: 0 8px 16px rgba(211, 84, 0, 0.2);
+}
+
+/* --- ESTILOS PARA EL LOGO Y EL ENCABEZADO --- */
+.contenedor-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.logo-principal {
+    width: 75px;
+    height: auto;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* --- LÍNEA DE TIEMPO (RUTA TURÍSTICA) --- */
+.ruta-timeline {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.parada-ruta {
+    border-left: 4px solid #d35400;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.parada-ruta::before {
+    content: "📍";
+    position: absolute;
+    left: -14px;
+    top: 0;
+    font-size: 1.2em;
+    background: white;
+}
+.parada-ruta h3 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+/* --- ESTILOS DEL MAPA SVG ESQUEMÁTICO --- */
+.mapa-svg-contenedor {
+    max-width: 750px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+.mapa-interactivo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Zonas de los municipios (Los 3 interactivos) */
+.municipio-zona path {
+    fill: #bdc3c7; /* Color gris de reposo */
+    stroke: #ffffff;
+    stroke-width: 4;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.municipio-zona text {
+    fill: #2c3e50; /* Color del texto */
+    font-size: 20px;
+    font-weight: bold;
+    pointer-events: none; /* Para que no estorbe el clic del mouse */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.municipio-zona:hover path {
+    fill: #d35400; /* Naranja gastronómico */
+    transform: scale(1.02); /* Efecto de crecimiento */
+    transform-origin: center;
+}
+
+.municipio-zona:hover text {
+    fill: white;
+}
+
+/* --- CAJA DE RESULTADOS DEL MAPA --- */
+.caja-resultados {
+    margin-top: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 5px solid #d35400;
+}
+
+.caja-resultados h3 {
+    color: #d35400;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.caja-resultados ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.caja-resultados li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1em;
+}
+
+.caja-resultados li::before {
+    content: "🍽️ ";
+}
+
+/* --- EFECTO PARALLAX DEL HERO --- */
+.hero-editorial {
+    background-image: url('../img/banner-inicio.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax */
+    min-height: 75vh;
+}
+
+/* --- ANIMACIONES DE LAS TARJETAS BOOTSTRAP --- */
+.tarjeta-tendencia img {
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tarjeta-tendencia:hover img {
+    transform: scale(1.1);
+}
+
+.tarjeta-tendencia .card-img-overlay {
+    transition: padding-bottom 0.3s ease;
+}
+
+.tarjeta-tendencia:hover .card-img-overlay {
+    padding-bottom: 30px !important; /* Levanta sutilmente el texto */
+}
+
+/* Efecto en los enlaces del navbar */
+.navbar-nav .nav-link {
+    position: relative;
+}
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    width: 0; height: 2px;
+    background-color: #ffc107; /* Color warning de Bootstrap */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}

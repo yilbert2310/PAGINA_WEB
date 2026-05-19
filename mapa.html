@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa de Ruta Gastronómica</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-encabezado">
+            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
+            <h1>Gastronomía del Estado Táchira</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" onclick="sessionStorage.clear();">Inicio</a>
+        <a href="platos.html">Platos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="dulces.html">Dulces</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="registro_restaurante.html">Registrar Local</a>
+        <a href="mapa.html">Mapa de Ruta</a>
+    </nav>
+
+    <main class="contenedor-interno">
+        <div class="contenedor-mapa">
+            <section class="encabezado-plato">
+                <h2 style="color: #2c3e50; font-size: 2.5em;">Mapa de Ruta Gastronómica</h2>
+                <p class="descripcion-plato">Genera tu itinerario interactivo en tiempo real y ábrelo en tu GPS.</p>
+            </section>
+
+            <div class="buscador-mapa" style="text-align: center; margin-bottom: 40px; padding: 25px; background: white; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h3 style="color: #d35400; margin-bottom: 15px;">🗺️ Configura tu Ruta de Sabores</h3>
+                <p style="margin-bottom: 15px; color: #777;">Introduce tu calle, avenida o sector actual en San Cristóbal o el resto del estado:</p>
+                
+                <input type="text" id="ubicacion-mapa" placeholder="Ej: Avenida Carabobo, Barrio Obrero, Centro..." style="padding: 15px; width: 60%; max-width: 400px; border-radius: 25px; border: 1px solid #ccc; font-size: 1em; outline: none;">
+                
+                <button onclick="generarRutaGoogleMaps()" style="padding: 15px 25px; margin-left: 10px; background: #d35400; color: white; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 1em; transition: 0.3s;">Trazar Ruta</button>
+                
+                <div id="itinerario-resultado" style="margin-top: 25px; display: none; text-align: left; width: 100%;">
+                    </div>
+            </div>
+            <div class="mapa-google-contenedor" style="max-width: 900px; margin: 40px auto 0 auto; background: white; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 15px; border: 1px solid #eee;">
+               <iframe 
+                  id="gmaps-iframe"
+                  src="https://maps.google.com/maps?q=Estado+Tachira,+Venezuela&output=embed" 
+                  width="100%" 
+                  height="520" 
+                  style="border:0; border-radius: 15px; display: block;" 
+                  allowfullscreen="" 
+                  loading="lazy">
+               </iframe>
+            </div>
+        </div>
+
+            <div id="info-municipio" class="caja-resultados" style="display: none;">
+                </div>
+        </div>
+    </main>
+
+    <script src="JS/logica.js"></script>
+</body>
+</html>

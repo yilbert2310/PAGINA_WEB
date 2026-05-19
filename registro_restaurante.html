@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Restaurantes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-encabezado">
+            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
+            <h1>Gastronomía del Estado Táchira</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" onclick="sessionStorage.clear();">Inicio</a>
+        <a href="platos.html">Platos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="dulces.html">Dulces</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="registro_restaurante.html">Registrar Local</a>
+        <a href="mapa.html">Mapa de Ruta</a>
+    </nav>
+    <main class="contenedor-interno">
+        <h2 style="color: #2c3e50; text-align: center; margin-bottom: 10px;">Inscripción en la Ruta Gastronómica</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Si tienes un local o emprendimiento que ofrece auténtica comida andina, regístralo aquí para aparecer en nuestro directorio.</p>
+        
+        <form id="formulario-registro" action="#" method="post" style="max-width: 700px; margin: 0 auto; background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+            <fieldset style="border: none;">
+                <legend style="font-weight: bold; color: #d35400; font-size: 1.2em; margin-bottom: 20px; border-bottom: 2px solid #fbdcb6; padding-bottom: 5px; width: 100%;">Datos del Establecimiento</legend>
+                
+                <div class="campo" style="margin-bottom: 20px;">
+                    <label for="nombre-local" style="display: block; font-weight: bold; margin-bottom: 8px;">Nombre Comercial del Local:</label>
+                    <input type="text" id="nombre-local" name="nombre_local" placeholder="Ej. El Fogón de la Abuela" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
+                    <span id="error-nombre" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 5px;">* Ingrese un nombre válido (mínimo 3 caracteres).</span>
+                </div>
+
+                <div class="campo" style="margin-bottom: 20px;">
+                    <label for="direccion" style="display: block; font-weight: bold; margin-bottom: 8px;">Dirección Exacta (Municipio / Sector):</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Ej. Calle 14, Barrio Obrero, San Cristóbal" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
+                    <span id="error-direccion" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 5px;">* Ingrese una dirección detallada (mínimo 10 caracteres).</span>
+                </div>
+
+                <div class="campo" style="margin-bottom: 20px;">
+                    <label for="correo" style="display: block; font-weight: bold; margin-bottom: 8px;">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@restaurante.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
+                    <span id="error-correo" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 5px;">* Ingrese un correo electrónico válido.</span>
+                </div>
+
+                <div class="campo" style="margin-bottom: 20px; display: flex; gap: 15px;">
+                    <div style="flex: 1;">
+                        <label for="telefono" style="display: block; font-weight: bold; margin-bottom: 8px;">Teléfono de Contacto:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej. 0414-1234567" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
+                        <span id="error-telefono" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 5px;">* Formato inválido (Ej: 0414-1234567).</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="redes" style="display: block; font-weight: bold; margin-bottom: 8px;">Redes Sociales (Opcional):</label>
+                        <input type="text" id="redes" name="redes" placeholder="@RestauranteEjemplo" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
+                    </div>
+                </div>
+
+                <div class="campo" style="margin-bottom: 30px; background: #fdf3e7; padding: 20px; border-radius: 8px; border-left: 4px solid #d35400;">
+                    <label style="display: block; font-weight: bold; margin-bottom: 12px; color: #d35400;">¿Qué productos tradicionales ofrece? (Marque al menos uno)</label>
+                    
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;" id="grupo-checkboxes">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="ofrece" value="platos" style="width: 18px; height: 18px; accent-color: #d35400;">
+                            🍽️ Platos Principales (Pizca, Mute)
+                        </label>
+                        
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="ofrece" value="bebidas" style="width: 18px; height: 18px; accent-color: #d35400;">
+                            🍹 Bebidas Típicas (Masato, Chicha)
+                        </label>
+                        
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="ofrece" value="dulces" style="width: 18px; height: 18px; accent-color: #d35400;">
+                            🍬 Dulcería Andina (Abrillantados)
+                        </label>
+                    </div>
+                    <span id="error-productos" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 10px;">* Debe seleccionar al menos una categoría de productos.</span>
+                </div>
+
+                <input type="submit" value="Solicitar Inclusión al Directorio" class="boton-enlace" style="width: 100%; cursor: pointer; padding: 15px; font-size: 1.1em; border: none;">
+            </fieldset>
+        </form>
+    </main>
+
+    <div id="mensaje-exito" style="display: none; max-width: 700px; margin: 20px auto; background: #d4edda; color: #155724; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #c3e6cb;">
+        <h3 style="margin-top: 0;">¡Registro Exitoso!</h3>
+        <p>Su solicitud ha sido enviada y será evaluada para incluir su establecimiento en la Ruta Gastronómica.</p>
+    </div>
+
+    <script>
+        document.getElementById('formulario-registro').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevenir el envío automático
+
+            let formularioValido = true;
+
+            // Función de ayuda para mostrar/ocultar errores
+            const mostrarError = (idElemento, mostrar, inputId) => {
+                document.getElementById(idElemento).style.display = mostrar ? 'block' : 'none';
+                if (inputId) {
+                    document.getElementById(inputId).style.border = mostrar ? '1px solid #e74c3c' : '1px solid #ccc';
+                }
+                if (mostrar) formularioValido = false;
+            };
+
+            // 1. Validar Nombre (Mínimo 3 caracteres)
+            const nombre = document.getElementById('nombre-local').value.trim();
+            mostrarError('error-nombre', nombre.length < 3, 'nombre-local');
+
+            // 2. Validar Dirección (Mínimo 10 caracteres)
+            const direccion = document.getElementById('direccion').value.trim();
+            mostrarError('error-direccion', direccion.length < 10, 'direccion');
+
+            // 3. Validar Correo
+            const correo = document.getElementById('correo').value.trim();
+            const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            mostrarError('error-correo', !regexCorreo.test(correo), 'correo');
+
+            // 4. Validar Teléfono (Formato 0000-0000000)
+            const telefono = document.getElementById('telefono').value.trim();
+            const regexTel = /^[0-9]{4}-[0-9]{7}$/;
+            mostrarError('error-telefono', !regexTel.test(telefono), 'telefono');
+
+            // 5. Validar Checkboxes (Al menos 1)
+            const checkboxes = document.querySelectorAll('input[name="ofrece"]:checked');
+            mostrarError('error-productos', checkboxes.length === 0, null);
+
+            // Si todo es válido, enviamos los datos a WhatsApp
+            if (formularioValido) {
+                // 1. Recopilamos las categorías seleccionadas
+                let productosOfrecidos = [];
+                checkboxes.forEach(cb => {
+                    if (cb.value === 'platos') productosOfrecidos.push('Platos Principales');
+                    if (cb.value === 'bebidas') productosOfrecidos.push('Bebidas Típicas');
+                    if (cb.value === 'dulces') productosOfrecidos.push('Dulcería Andina');
+                });
+
+                // 2. Opcional: capturar redes sociales
+                const redes = document.getElementById('redes').value.trim() || "No indicó";
+
+                // 3. Armar el mensaje para WhatsApp
+                let mensaje = `*NUEVA SOLICITUD - RUTA GASTRONÓMICA TÁCHIRA* 🍲\n\n`;
+                mensaje += `*Nombre del Local:* ${nombre}\n`;
+                mensaje += `*Dirección:* ${direccion}\n`;
+                mensaje += `*Correo:* ${correo}\n`;
+                mensaje += `*Teléfono:* ${telefono}\n`;
+                mensaje += `*Redes Sociales:* ${redes}\n`;
+                mensaje += `*Ofrece:* ${productosOfrecidos.join(", ")}\n`;
+
+                // 4. Tu número de teléfono con código de área (Sin el + o ceros iniciales)
+                // Ejemplo para Venezuela: 58 seguido de tu número (584141234567)
+                let numeroAdmin = "584247642600"; // <-- ¡Cambia esto por tu número real!
+
+                // 5. Crear el enlace seguro de WhatsApp
+                let enlaceWhatsApp = `https://wa.me/${numeroAdmin}?text=${encodeURIComponent(mensaje)}`;
+
+                // 6. Ocultar formulario y mostrar éxito
+                document.getElementById('formulario-registro').style.display = 'none';
+                document.getElementById('mensaje-exito').style.display = 'block';
+
+                // 7. Abrir WhatsApp en una nueva pestaña
+                window.open(enlaceWhatsApp, '_blank');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Platos Típicos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-encabezado">
+            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
+            <h1>Gastronomía del Estado Táchira</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" onclick="sessionStorage.clear();">Inicio</a>
+        <a href="platos.html">Platos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="dulces.html">Dulces</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="registro_restaurante.html">Registrar Local</a>
+        <a href="mapa.html">Mapa de Ruta</a>
+    </nav>
+    <main class="contenedor-interno">
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="color: #2c3e50; font-size: 2em;">PLATOS CON CAPACIDAD GASTRONÓMICA</h2>
+            <p>Seleccione un platillo para ver su información detallada y receta.</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <button onclick="armarMenuDegustacion()" style="padding: 15px 30px; background-color: #d35400; color: white; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); transition: 0.3s;">
+                🛒 Armar mi Menú de Degustación
+            </button>
+        </div>
+
+        <div id="resultado-menu" style="display: none; max-width: 800px; margin: 0 auto 40px auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-left: 5px solid #2c3e50;">
+        </div>
+
+        <div class="galeria-cuadricula">
+            <!-- TARJETA 1: Pizca Andina -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_pizca.html">
+                    <img src="img/pizca.jpg" alt="Sopa de Pizca Andina">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Pizca Andina</h3>
+                    <p><strong>Región:</strong> Andes</p>
+                    <p>Sopa tradicional a base de papas, leche, queso y cilantro. Ideal para las mañanas frías.</p>
+                    <a href="detalles/detalle_pizca.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <!-- TARJETA 2: Pastelitos -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_pastelitos.html">
+                    <img src="img/pastelitos.jpg" alt="Pastelitos Andinos"> 
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Pastelitos de Trigo</h3>
+                    <p><strong>Región:</strong> Andes / Táchira</p>
+                    <p>Masa crujiente rellena de carne molida con arroz y garbanzos, fritos a la perfección.</p>
+                    <a href="detalles/detalle_pastelitos.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <!-- TARJETA 3: Mute Tachirense -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_mute.html">
+                    <img src="img/mute.jpg" alt="Sopa de Mute Tachirense">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Mute Tachirense</h3>
+                    <p><strong>Región:</strong> Táchira</p>
+                    <p>Una sopa espesa y festiva, tradicional de los domingos familiares, preparada con carne, callos, maíz y verduras finamente picadas.</p>
+                    <a href="detalles/detalle_mute.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+            <!-- TARJETA 4: Arepa de Trigo -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_arepa.html">
+                    <img src="img/arepa_trigo.jpg" alt="Arepa de Trigo" onerror="this.src='img/pizca.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Arepa de Trigo</h3>
+                    <p><strong>Región:</strong> Andes</p>
+                    <p>Deliciosa arepa hecha con harina de trigo, típica de la región andina, ideal para acompañar con queso y natilla.</p>
+                    <a href="detalles/detalle_arepa.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_hallaca.html">
+                    <img src="img/hallaca.jpg" alt="Hallaca Tachirense" onerror="this.src='img/pastelitos.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Hallaca Tachirense</h3>
+                    <p><strong>Región:</strong> Táchira</p>
+                    <p>Nuestra hallaca única con guiso crudo y garbanzos, una joya de la identidad regional.</p>
+                    <a href="detalles/detalle_hallaca.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_turmada.html">
+                    <img src="img/turmada.jpg" alt="Turmada Tachirense" onerror="this.src='img/pastelitos.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Turmada Tachirense</h3>
+                    <p><strong>Región:</strong> Táchira</p>
+                    <p>Un pastel tradicional de capas de papa, queso, huevo y pan, bañado en leche. Auténtico sabor a hogar andino.</p>
+                    <a href="detalles/detalle_turmada.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+        </div> 
+
+    </main>
+    <script src="JS/logica.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dulces Tradicionales</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-encabezado">
+            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
+            <h1>Gastronomía del Estado Táchira</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" onclick="sessionStorage.clear();">Inicio</a>
+        <a href="platos.html">Platos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="dulces.html">Dulces</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="registro_restaurante.html">Registrar Local</a>
+        <a href="mapa.html">Mapa de Ruta</a>
+    </nav>
+    <main class="contenedor-interno">
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="color: #2c3e50; font-size: 2em;">DULCERÍA TRADICIONAL ANDINA</h2>
+            <p>Seleccione un dulce para descubrir su origen y elaboración artesanal.</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <button onclick="armarMenuDegustacion()" style="padding: 15px 30px; background-color: #d35400; color: white; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); transition: 0.3s;">
+                🛒 Armar mi Menú de Degustación
+            </button>
+        </div>
+
+        <div id="resultado-menu" style="display: none; max-width: 800px; margin: 0 auto 40px auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-left: 5px solid #2c3e50;">
+        </div>
+
+        <div class="galeria-cuadricula">
+            <!-- TARJETA 1: Abrillantados -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_abrillantados.html">
+                    <img src="img/abrillantados.jpg" alt="Dulces Abrillantados en forma de frutas">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Dulces Abrillantados</h3>
+                    <p><strong>Región:</strong> Mérida / Táchira</p>
+                    <p>Verdaderas joyas de la dulcería andina, famosas por sus colores vivos y sus delicadas formas frutales.</p>
+                    <a href="detalles/detalle_abrillantados.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <!-- TARJETA 2: Aliados -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_aliados.html">
+                    <img src="img/aliados.jpg" alt="Dulce de Aliado o Templón">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Aliados (Templones)</h3>
+                    <p><strong>Región:</strong> Andes Venezolanos</p>
+                    <p>Golosina tradicional de textura chiclosa, sumamente popular en carreteras y kioscos de la región.</p>
+                    <a href="detalles/detalle_aliados.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <!-- TARJETA 3: Higos Rellenos -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_higos.html">
+                    <img src="img/higos.jpg" alt="Higos Rellenos con Arequipe">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Higos Rellenos</h3>
+                    <p><strong>Región:</strong> Montañas Andinas</p>
+                    <p>Un postre elegante y tradicional donde la fruta se cocina lentamente en un suave almíbar especiado y se rellena con un cremoso arequipe.</p>
+                    <a href="detalles/detalle_higos.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+            <!-- TARJETA 4: Besitos de Coco -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_besitos.html">
+                    <img src="img/besitos.jpg" alt="Besitos de Coco" onerror="this.src='img/abrillantados.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Besitos de Coco</h3>
+                    <p><strong>Región:</strong> Táchira</p>
+                    <p>Dulce horneado a base de coco rallado y papelón, un bocado tradicional infaltable en las meriendas.</p>
+                    <a href="detalles/detalle_besitos.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_quesadillas.html">
+                    <img src="img/quesadillas.jpg" alt="Quesadillas Andinas" onerror="this.src='img/besitos.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Quesadillas Andinas</h3>
+                    <p><strong>Región:</strong> Táchira</p>
+                    <p>Pan dulce horneado en forma de canasta, relleno con mezcla de queso, azúcar y vainilla.</p>
+                    <a href="detalles/detalle_quesadillas.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_melcocha.html">
+                    <img src="img/melcocha.jpg" alt="Melcocha Artesanal" onerror="this.src='img/aliados.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Melcocha</h3>
+                    <p><strong>Región:</strong> Andes</p>
+                    <p>Dulce artesanal estirado a mano elaborado con papelón hervido de textura chiclosa.</p>
+                    <a href="detalles/detalle_melcocha.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+        </div>
+        
+    </main>
+    <script src="JS/logica.js"></script>
+</body>
+</html>

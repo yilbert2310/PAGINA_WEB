@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bebidas Típicas - Táchira</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-encabezado">
+            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
+            <h1>Gastronomía del Estado Táchira</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" onclick="sessionStorage.clear();">Inicio</a>
+        <a href="platos.html">Platos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="dulces.html">Dulces</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="registro_restaurante.html">Registrar Local</a>
+        <a href="mapa.html">Mapa de Ruta</a>
+    </nav>
+    <main class="contenedor-interno">
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="color: #2c3e50; font-size: 2em;">BEBIDAS TRADICIONALES ANDINAS</h2>
+            <p>Seleccione una bebida para conocer sus ingredientes y preparación.</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <button onclick="armarMenuDegustacion()" style="padding: 15px 30px; background-color: #d35400; color: white; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); transition: 0.3s;">
+                🛒 Armar mi Menú de Degustación
+            </button>
+        </div>
+
+        <div id="resultado-menu" style="display: none; max-width: 800px; margin: 0 auto 40px auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-left: 5px solid #2c3e50;">
+        </div>
+
+        <div class="galeria-cuadricula">
+            <!-- TARJETA 1: Masato -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_masato.html">
+                    <img src="img/masato.jpg" alt="Vaso de Masato de Arroz">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Masato de Arroz</h3>
+                    <p><strong>Región:</strong> Táchira / Andes</p>
+                    <p>Bebida espesa y refrescante, considerada el acompañante infaltable en las ferias y fiestas patronales.</p>
+                    <a href="detalles/detalle_masato.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <!-- TARJETA 2: Calentadito -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_calentadito.html">
+                    <img src="img/calentadito.jpg" alt="Taza de Calentadito Andino">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Calentadito</h3>
+                    <p><strong>Región:</strong> Páramos Andinos</p>
+                    <p>Bebida reconfortante e histórica, ideal para combatir el clima frío de las altas montañas andinas.</p>
+                    <a href="detalles/detalle_calentadito.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <!-- TARJETA 3: Chicha Andina -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_chicha.html">
+                    <img src="img/chicha_andina.jpg" alt="Jarra de Chicha Andina de Maíz">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Chicha Andina</h3>
+                    <p><strong>Región:</strong> Andes Venezolanos</p>
+                    <p>Bebida ancestral a base de masa de maíz fermentada con guarapo de piña y especias. El auténtico sabor de nuestras celebraciones.</p>
+                    <a href="detalles/detalle_chicha.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+            <!-- TARJETA 4: Miche Andino -->
+            <article class="tarjeta">
+                <a href="detalles/detalle_miche.html">
+                    <img src="img/miche.jpg" alt="Miche Andino" onerror="this.src='img/calentadito.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Miche Andino</h3>
+                    <p><strong>Región:</strong> Páramos Andinos</p>
+                    <p>Aguardiente tradicional destilado de hinojo y otras hierbas, ideal para las bajas temperaturas.</p>
+                    <a href="detalles/detalle_miche.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_vino_mora.html">
+                    <img src="img/vino_mora.jpg" alt="Vino de Mora" onerror="this.src='img/calentadito.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Vino de Mora</h3>
+                    <p><strong>Región:</strong> Páramos / La Grita</p>
+                    <p>Vino artesanal dulce elaborado a partir de la fermentación de las moras cultivadas en las zonas altas.</p>
+                    <a href="detalles/detalle_vino_mora.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <a href="detalles/detalle_mistela.html">
+                    <img src="img/mistela.jpg" alt="Mistela Andina" onerror="this.src='img/miche.jpg'">
+                </a>
+                <div class="tarjeta-cuerpo">
+                    <h3>Mistela</h3>
+                    <p><strong>Región:</strong> Andes</p>
+                    <p>Bebida caliente a base de miche hervido con papelón, frutas y especias tradicionales.</p>
+                    <a href="detalles/detalle_mistela.html" class="boton-enlace">Ver Detalles y Preparación</a>
+                </div>
+            </article>
+        </div>
+        
+    </main>
+    <script src="JS/logica.js"></script>
+</body>
+</html>

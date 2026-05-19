@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <!-- Estilos específicos para darle vida a la página de inicio -->
+    <style>
+        /* El Banner Principal */
+        .hero-banner {
+            /* Fíjate que ahora solo dice 'img/banner-inicio.jpg' */
+            background-image: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('./img/banner-inicio.jpg?v=3');            background-size: cover;
+            background-position: center;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .hero-banner h2 {
+            font-size: 3.5em;
+            color: white;
+            border-bottom: none;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra en el texto para resaltar */
+        }
+
+        .hero-banner p {
+            font-size: 1.3em;
+            max-width: 750px;
+            line-height: 1.5;
+        }
+
+        /* Tarjetas de Acceso Rápido */
+        .tarjetas-acceso {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tarjeta-btn {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            width: 260px;
+            text-decoration: none; /* Como son enlaces, quitamos la raya de abajo */
+            color: #2c3e50;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-top: 5px solid #d35400; /* Línea naranja decorativa arriba */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tarjeta-btn:hover {
+            transform: translateY(-8px); /* La tarjeta "salta" hacia arriba al pasar el ratón */
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            border-color: #2c3e50;
+        }
+
+        .tarjeta-btn h3 {
+            color: #d35400;
+            margin-top: 15px;
+            font-size: 1.4em;
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="contenido-iframe">
+    <header>
+        <div class="contenedor-encabezado">
+            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
+            <h1>Gastronomía del Estado Táchira</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" onclick="sessionStorage.clear();">Inicio</a>
+        <a href="platos.html">Platos</a>
+        <a href="bebidas.html">Bebidas</a>
+        <a href="dulces.html">Dulces</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="registro_restaurante.html">Registrar Local</a>
+        <a href="mapa.html">Mapa de Ruta</a>
+    </nav>
+    <main class="contenedor-interno">
+        
+        <div class="hero-editorial">
+            <div class="hero-contenido">
+                <span class="etiqueta-destacado">Hoy en Portada</span>
+                <h2>La evolución de la cocina de montaña</h2>
+                <p>Un recorrido por locales emblemáticos como Dulcería La Andina, La Tradición Andina y El Páramo del Zumbador para entender nuestra herencia.</p>
+                <a href="restaurantes.html" class="boton-leer">Explorar la Ruta</a>
+            </div>
+        </div>
+
+        <section class="seccion-tendencias">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-elegante">Descubre</span>
+            <h3 class="titulo-seccion">Nuestra Herencia Culinaria</h3>
+            <div class="linea-decorativa"></div>
+        </div>
+
+        <div class="grid-bento">
+            <article class="tarjeta-tendencia principal" onclick="location.href='platos.html'">
+                <div class="imagen-wrapper">
+                    <img src="img/mute.jpg" alt="Mute Tachirense">
+                </div>
+                <div class="tendencia-info">
+                    <span class="categoria">Plato Insignia</span>
+                    <h4>El secreto ancestral del Mute Tachirense dominical</h4>
+                    <p class="extracto">Una tradición familiar que reúne ingredientes de nuestra tierra en un caldo inigualable.</p>
+                </div>
+            </article>
+
+            <article class="tarjeta-tendencia secundaria" onclick="location.href='bebidas.html'">
+                <div class="imagen-wrapper">
+                    <img src="img/masato.jpg" alt="Masato">
+                </div>
+                <div class="tendencia-info">
+                    <span class="categoria">Bebidas Fermentadas</span>
+                    <h4>Masato: El sabor de las ferias andinas</h4>
+                </div>
+            </article>
+
+            <article class="tarjeta-tendencia secundaria" onclick="location.href='dulces.html'">
+                <div class="imagen-wrapper">
+                    <img src="img/abrillantados.jpg" alt="Abrillantados">
+                </div>
+                <div class="tendencia-info">
+                    <span class="categoria">Dulcería Fina</span>
+                    <h4>Los abrillantados como joyas de azúcar</h4>
+                </div>
+            </article>
+        </div>
+    </section>
+    </main>
+</body>
+</html>

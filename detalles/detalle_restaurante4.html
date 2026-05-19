@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle - La Tradición Andina</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    
+    <header>
+        <div class="contenedor-encabezado">
+            <img src="../img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
+            <h1>Gastronomía del Estado Táchira</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="../index.html" onclick="sessionStorage.clear();">Inicio</a>
+        <a href="../platos.html">Platos</a>
+        <a href="../bebidas.html">Bebidas</a>
+        <a href="../dulces.html">Dulces</a>
+        <a href="../restaurantes.html">Restaurantes</a>
+        <a href="../registro_restaurante.html">Registrar Local</a>
+        <a href="../mapa.html">Mapa de Ruta</a>
+    </nav>
+
+    <main class="contenedor-interno">
+        <a href="javascript:history.back()" class="boton-enlace" style="display: inline-block; margin-bottom: 20px;">⬅️ Regresar</a>
+        
+        <article class="seccion-info">
+            <div class="encabezado-plato">
+                <h2 style="font-size: 2.5em; color: #2c3e50;">La Tradición Andina</h2>
+                <img src="../img/restaurante4.jpg" onerror="this.src='../img/restaurante1.jpg'" alt="Fachada de La Tradición Andina" class="imagen-detalle">
+            </div>
+            
+            <div class="detalle-info">
+                <p><strong>Especialidad:</strong> Arepas de Trigo hechas a leña y comida típica andina.</p>
+                <p><strong>Dirección:</strong> Barrio Obrero, San Cristóbal, Estado Táchira.</p>
+                
+                <p class="descripcion-larga">Un rincón clásico en San Cristóbal donde el sabor de las auténticas arepas de trigo hechas a leña se mantiene vivo, ofreciendo una experiencia culinaria única para recordar nuestras raíces.</p>
+            </div>
+            
+            <hr style="border: 0; border-top: 2px dashed #ddd; margin-bottom: 40px;">
+            
+            <div class="receta-contenedor">
+                <section class="caja-ingredientes">
+                    <h3 style="margin-top: 0; color: #d35400;">🍽️ Especialidades del Menú</h3>
+                    <p style="font-size: 0.8em; color: #777; margin-bottom: 15px;">Platos destacados:</p>
+                    
+                    <ul class="lista-menu-local">
+                        <li><a href="detalle_arepa.html">🫓 Arepa de Trigo Andina</a></li>
+                        <li><a href="#">🧀 Arepa Rellena con Queso Ahumado y Perico</a></li>
+                        <li><a href="detalle_calentadito.html">☕ Calentadito o Guarapo para acompañar</a></li>
+                    </ul>
+                </section>
+                
+                <section class="caja-pasos">
+                    <h3 style="margin-top: 0; color: #2c3e50;">🗺️ Ubicación Exacta</h3>
+                    <p style="margin-bottom: 15px;">Calle 12 con Carrera 20, Sector Barrio Obrero, San Cristóbal.</p>
+                    
+                    <div style="border-radius: 8px; overflow: hidden; border: 2px solid #eee; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4076.522088928303!2d-72.21043982485642!3d7.790764292229204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e666d69f9956a0f%3A0xe365a16c048c7fd2!2sLa%20tradici%C3%B3n%20andina!5e1!3m2!1ses!2sve!4v1778991323602!5m2!1ses!2sve" 
+                            width="100%" 
+                            height="250" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </section>
+                
+            </div>
+        </article>
+    </main>
+</body>
+</html>
