@@ -1,0 +1,63 @@
+/* =========================================
+   1. VARIABLES Y ESTILOS GLOBALES
+   ========================================= */
+:root {
+    --color-primario: #6E473B;    /* Marrón Tierra/Café */
+    --color-secundario: #4A3026;  /* Marrón oscuro para menú */
+    --color-acento: #C27E5A;      /* Terracota arcilla */
+    --fondo-claro: #F7F4F0;       /* Blanco hueso/crema */
+    --texto-oscuro: #2C1F1A;      /* Negro con matiz cálido */
+    --color-blanco: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--fondo-claro);
+    color: var(--texto-oscuro);
+}
+
+/* --- REFINAMIENTO TIPOGRÁFICO --- */
+h1, h2, h3, h4, .titulo-seccion {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.5px;
+    color: var(--color-secundario);
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.8 !important;
+    color: var(--texto-oscuro);
+    font-weight: 400;
+}
+
+/* --- SCROLLBAR PERSONALIZADO --- */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--fondo-claro);
+    border-left: 1px solid rgba(110, 71, 59, 0.1);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-acento);
+    border-radius: 10px;
+    border: 3px solid var(--fondo-claro);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primario);
+}
+
+/* --- SOBRESCRITURA DE BOOTSTRAP --- */
+.text-bg-warning { 
+    background-color: var(--color-acento) !important; 
+    color: var(--fondo-claro) !important; 
+}
+.text-warning { color: var(--color-acento) !important; }
+.border-warning { border-color: var(--color-acento) !important; }
