@@ -583,3 +583,61 @@ p {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primario);
 }
+/* =========================================================
+   MÓDULO EDITORIAL (PORTADA DINÁMICA)
+   ========================================================= */
+#plato-del-dia-container {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#plato-del-dia-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(44, 31, 26, 0.12) !important;
+}
+
+.animacion-imagen-editorial {
+    transition: transform 0.8s ease, filter 0.8s ease;
+    filter: brightness(0.95);
+}
+
+#plato-del-dia-container:hover .animacion-imagen-editorial {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.boton-editorial {
+    background-color: var(--color-primario);
+    transition: all 0.3s ease;
+}
+
+.boton-editorial:hover {
+    background-color: var(--color-secundario);
+    transform: translateX(5px);
+}
+/* --- FASE DE AJUSTE: IMÁGENES AL MARGEN --- */
+
+/* Margen para el Módulo Editorial de la portada */
+#plato-del-dia-container .col-md-6:first-child {
+    padding: 15px !important; /* Crea el espacio alrededor de la imagen */
+}
+#plato-del-dia-container img {
+    border-radius: 12px !important; /* Bordes suaves para la imagen enmarcada */
+}
+
+/* Margen para las tarjetas de restaurantes/platos */
+.tarjeta img {
+    margin: 10px !important; /* Separa la imagen de los bordes de la tarjeta */
+    width: calc(100% - 20px) !important; /* Ajusta el ancho para compensar el margen */
+    border-radius: 12px !important;
+}
+/* --- AJUSTE PARA PÁGINAS DE DETALLE --- */
+/* Suponiendo que tus páginas de detalle tienen un contenedor principal llamado .caja-detalle */
+.caja-detalle img {
+    max-width: 450px !important; /* Limita el tamaño máximo */
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto 20px auto !important; /* Centrado y con aire abajo */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}

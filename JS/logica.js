@@ -310,6 +310,7 @@ window.onload = function() {
     if (menuEnMemoria) {
         let menuArray = JSON.parse(menuEnMemoria);
         mostrarMenuEnPantalla(menuArray);
+        cargarDestacadoDelDia();
     }
 
     let rutaEnMemoria = sessionStorage.getItem('rutaGuardada');
@@ -325,3 +326,98 @@ window.onload = function() {
         renderizarRutaModalEnMapa(nombresLocales);
     }
 }
+/* --- MÓDULO EDITORIAL: PLATO/LOCAL DEL DÍA --- */
+/* =======================================================
+   MÓDULO EDITORIAL: PLATO/LOCAL DEL DÍA (PORTADA)
+   ======================================================= */
+const destacadosEditorial = [
+    {
+        tipo: "Plato Estrella",
+        titulo: "Auténtica Pizca Andina",
+        descripcion: "El caldo tradicional por excelencia para despertar en la montaña. Preparado con papas, leche, queso ahumado, cilantro y el toque secreto de las abuelas andinas.",
+        imagen: "img/pizca.jpg",
+        enlace: "detalles/detalle_pizca.html",
+        etiqueta: "Desayuno Tradicional"
+    },
+    {
+        tipo: "Local Destacado",
+        titulo: "Dulcería La Andina",
+        descripcion: "Un rincón patrimonial en el centro de la ciudad. Más de 30 años endulzando paladares con los mejores abrillantados, higos y dulces de leche de la región.",
+        imagen: "img/restaurante2.jpg", 
+        enlace: "detalles/detalle_restaurante2.html",
+        etiqueta: "Patrimonio Cultural"
+    },
+    {
+        tipo: "Parada Obligatoria",
+        titulo: "El Páramo del Zumbador",
+        descripcion: "A más de 2500 metros de altura, el frío se combate con un buen calentadito andino y la mejor compañía. La esencia pura de nuestra cordillera.",
+        imagen: "img/restaurante3.jpg",
+        enlace: "detalles/detalle_restaurante3.html",
+        etiqueta: "Alta Montaña"
+    }
+];
+
+function cargarDestacadoDelDia() {
+    const contenedor = document.getElementById('plato-del-dia-container');
+    if (!contenedor) return;
+
+    const indiceAleatorio = Math.floor(Math.random() * destacadosEditorial.length);
+    const destacado = destacadosEditorial[indiceAleatorio];
+
+    contenedor.innerHTML = `
+        <div class="col-md-6 p-0" style="height: 400px; overflow: hidden;">
+            <img src="${destacado.imagen}" alt="${destacado.titulo}" class="img-fluid w-100 h-100 object-fit-cover animacion-imagen-editorial">
+        </div>
+        <div class="col-md-6 p-4 p-md-5 d-flex flex-column justify-content-center h-100">
+            <div class="mb-3">
+                <span class="badge text-white fw-bold px-3 py-2 rounded-pill" style="background-color: var(--color-acento); letter-spacing: 1px;">
+                    🔥 ${destacado.tipo}
+                </span>
+            </div>
+            <h3 class="display-6 fw-bold mb-3" style="color: var(--color-secundario); font-family: 'Playfair Display', serif; line-height: 1.1;">
+                ${destacado.titulo}
+            </h3>
+            <p class="lead text-muted mb-4" style="font-size: 1.1em; line-height: 1.6;">
+                ${destacado.descripcion}
+            </p>
+            <div class="d-flex align-items-center justify-content-between mt-auto pt-3 border-top" style="border-color: rgba(110,71,59,0.1) !important;">
+                <a href="${destacado.enlace}" class="btn text-white rounded-pill px-4 py-2 shadow-sm d-flex align-items-center gap-2 boton-editorial">
+                    Leer el artículo <span>→</span>
+                </a>
+                <span class="text-muted small fw-semibold">
+                    🏷️ ${destacado.etiqueta}
+                </span>
+            </div>
+        </div>
+    `;
+}
+
+/* =======================================================
+   ARRANQUE GLOBAL DE LA PÁGINA (WINDOW.ONLOAD)
+   ======================================================= */
+window.onload = function() {
+    // 1. Cargar el artículo dinámico de la portada
+    cargarDestacadoDelDia();
+
+    // 2. Recuperar menú de degustación si existe
+    let menuEnMemoria = sessionStorage.getItem('menuGuardado');
+    if (menuEnMemoria) {
+        let menuArray = JSON.parse(menuEnMemoria);
+        mostrarMenuEnPantalla(menuArray);
+    }
+
+    // 3. Recuperar la ubicación del buscador por texto si existe
+    let rutaEnMemoria = sessionStorage.getItem('rutaGuardada');
+    let inputMapa = document.getElementById('ubicacion-mapa');
+    if (rutaEnMemoria && inputMapa) {
+        inputMapa.value = rutaEnMemoria; 
+        generarRutaGoogleMaps();         
+    }
+
+    // 4. Recuperar y renderizar la ruta del Modal en el mapa
+    let rutaPersonalizadaMemoria = sessionStorage.getItem('rutaPersonalizada');
+    if (rutaPersonalizadaMemoria) {
+        const nombresLocales = JSON.parse(rutaPersonalizadaMemoria);
+        renderizarRutaModalEnMapa(nombresLocales);
+    }
+};
