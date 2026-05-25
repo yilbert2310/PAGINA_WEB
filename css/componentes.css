@@ -2,73 +2,89 @@
    3. COMPONENTES (TARJETAS, BOTONES, MAPAS)
    ========================================= */
 
-/* --- BOTONES --- */
+/* --- BOTONES PREMIUM --- */
 .boton-enlace {
-    display: block;
-    background-color: var(--fondo-claro);
-    color: var(--color-primario);
-    border: 2px solid var(--color-primario);
-    padding: 12px 20px;
-    border-radius: 30px;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primario), var(--color-acento));
+    color: var(--color-blanco) !important;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
     text-align: center;
     text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-.boton-enlace:hover {
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    transform: scale(1.05);
+    font-weight: 700;
+    margin-top: 15px;
+    box-shadow: 0 6px 20px rgba(194, 126, 90, 0.3); /* Sombra difuminada terracota */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-/* --- TARJETAS PREMIUM --- */
+.boton-enlace:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(194, 126, 90, 0.6); /* El brillo se intensifica */
+    background: linear-gradient(135deg, var(--color-acento), var(--color-primario));
+    color: var(--color-blanco);
+}
+
+.boton-enlace:active {
+    transform: translateY(0) scale(0.98); /* Efecto de "clic" real */
+}
+
+/* --- TARJETAS ESTILO BENTO & MICRO-INTERACCIONES --- */
 .tarjeta {
     background-color: var(--color-blanco);
-    border-radius: 18px !important;
-    border: none !important;
+    border-radius: 24px !important; /* Más redondeado, estilo Bento/Apple */
+    border: 1px solid rgba(110, 71, 59, 0.05) !important;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(44, 31, 26, 0.06) !important;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 0 10px 30px rgba(44, 31, 26, 0.04) !important;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .tarjeta:hover {
-    transform: translateY(-10px) scale(1.01);
-    box-shadow: 0 20px 40px rgba(110, 71, 59, 0.18) !important;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 45px rgba(194, 126, 90, 0.15) !important; /* Sombra terracota sutil */
+    border-color: rgba(194, 126, 90, 0.2) !important;
 }
 
 .tarjeta img {
-    width: calc(100% - 20px) !important;
-    height: 240px;
+    width: 100% !important;
+    height: 220px;
     object-fit: cover;
-    border-radius: 12px !important;
-    margin: 10px !important;
-    filter: brightness(0.9);
-    transition: transform 0.5s ease, filter 0.5s ease;
+    margin: 0 !important; /* Quitamos el margen interno para que llene el ancho */
+    border-radius: 24px 24px 0 0 !important; /* Redondeado solo arriba */
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
 }
 
 .tarjeta:hover img {
-    filter: brightness(1.05);
-    transform: scale(1.06);
+    transform: scale(1.08); /* Zoom mucho más suave y premium */
+}
+
+/* El contenedor de la imagen para que el zoom no se salga de la tarjeta */
+.contenedor-img-tarjeta {
+    overflow: hidden;
+    width: 100%;
 }
 
 .tarjeta-cuerpo {
-    padding: 25px !important;
+    padding: 30px !important;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 2;
+    background: var(--color-blanco);
 }
 
 .tarjeta-cuerpo h3 {
     color: var(--color-secundario);
-    margin-bottom: 10px;
-    font-size: 1.4em;
-    font-weight: 700;
-    line-height: 1.3;
+    margin-bottom: 12px;
+    font-size: 1.5em;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 /* --- PÁGINAS DE DETALLES --- */
@@ -148,16 +164,40 @@
 .caja-resultados { margin-top: 30px; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); border-left: 5px solid var(--color-primario); }
 .caja-resultados h3 { color: var(--color-primario); margin-bottom: 10px; font-size: 1.5em; }
 
-/* --- HERO EDITORIAL (INDEX) --- */
+/* --- HERO EDITORIAL PREMIUM (PORTADA) --- */
 .hero-editorial {
-    background-image: linear-gradient(rgba(44, 31, 26, 0.6), rgba(110, 71, 59, 0.4)), url('../img/banner-inicio.jpg');
-    background-size: cover; background-position: center; background-attachment: fixed; min-height: 80vh; display: flex;
+    /* Un gradiente oscuro sobre la foto para que el texto siempre se lea bien */
+    background-image: linear-gradient(to bottom, rgba(44, 31, 26, 0.4), rgba(44, 31, 26, 0.8)), url('../img/banner-inicio.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; /* MAGIA: Esto crea el efecto Parallax */
+    min-height: 85vh; 
+    display: flex;
+    align-items: center;
+    position: relative;
 }
+
 .hero-contenido {
-    background-color: rgba(247, 244, 240, 0.85) !important;
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3); border-left: 6px solid var(--color-primario) !important;
-    border-radius: 20px !important; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Más transparente */
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 30px !important; /* Más redondeado */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) !important;
+    animation: aparecerSutil 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    color: var(--fondo-claro);
+}
+
+/* Animación de entrada elegante para el banner */
+@keyframes aparecerSutil {
+    from { 
+        opacity: 0; 
+        transform: translateY(40px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 .tarjeta-tendencia img { transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .tarjeta-tendencia:hover img { transform: scale(1.1); }
@@ -174,3 +214,146 @@
 #plato-del-dia-container .col-md-6:first-child { padding: 15px !important; }
 #plato-del-dia-container img { border-radius: 12px !important; }
 .caja-detalle img { max-width: 450px !important; width: 100% !important; height: auto !important; display: block; margin: 0 auto 20px auto !important; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-radius: 15px; }
+
+/* --- TARJETAS GIRATORIAS (FLIP CARDS) --- */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 350px; /* Altura ideal para tus platos */
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Giro con rebote suave */
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 10px 30px rgba(44, 31, 26, 0.1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background-color: var(--color-blanco);
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    color: var(--color-blanco);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.flip-card-back h3 {
+    color: var(--fondo-claro);
+    margin-bottom: 15px;
+}
+
+.flip-card-back p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+/* --- BOTÓN DE REGRESAR ANIMADO --- */
+.btn-regreso {
+    width: 140px;
+    height: 56px;
+    overflow: hidden;
+    border: none;
+    color: var(--color-primario);
+    background: none;
+    position: relative;
+    padding-bottom: 2em;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn-regreso > div, .btn-regreso > svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.btn-regreso:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: var(--color-acento);
+    transition: transform 0.25s ease-out;
+}
+
+.btn-regreso:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.btn-regreso .clone > *, .btn-regreso .text > * {
+    opacity: 1;
+    font-size: 1.1rem;
+    transition: 0.2s;
+    margin-left: 4px;
+}
+
+.btn-regreso .clone > * {
+    transform: translateY(60px);
+}
+
+.btn-regreso:hover .clone > * {
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.btn-regreso:hover .text > * {
+    transform: translateY(-60px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+/* Retrasos en cascada para cada sílaba */
+.btn-regreso:hover .clone > :nth-child(1) { transition-delay: 0.15s; }
+.btn-regreso:hover .clone > :nth-child(2) { transition-delay: 0.2s; }
+.btn-regreso:hover .clone > :nth-child(3) { transition-delay: 0.25s; }
+
+/* Ajuste de la flecha */
+.btn-regreso svg {
+    width: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg); /* Apunta a la izquierda por defecto */
+    transition: 0.2s ease-out;
+}
+
+.btn-regreso:hover svg {
+    transform: translateY(-50%) rotate(45deg); /* Animación al pasar el mouse */
+    stroke: var(--color-acento);
+}
