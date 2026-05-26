@@ -484,3 +484,54 @@
         transform: rotateY(180deg);
     }
 }
+/* ==========================================
+   ESTILOS PARA PÁGINAS DE DETALLES (PLATOS/RESTAURANTES)
+   ========================================== */
+
+/* Contenedor de la imagen con bordes redondeados y sombra suave */
+.detalle-imagen-contenedor {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: #ffffff;
+}
+
+/* Control estricto del tamaño de la imagen para evitar distorsiones */
+.detalle-img {
+    width: 100%;
+    height: 500px; /* Altura perfecta para pantallas de escritorio */
+    object-fit: cover; /* Mantiene la proporción de la imagen sin deformarla */
+    transition: transform 0.5s ease;
+}
+
+.detalle-img:hover {
+    transform: scale(1.02); /* Efecto sutil de zoom al pasar el mouse */
+}
+
+/* Tipografía elegante para los títulos de detalles */
+.detalle-titulo {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.detalle-seccion-subtitulo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-secundario);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+/* Adaptación para pantallas de teléfonos móviles */
+@media (max-width: 768px) {
+    .detalle-img {
+        height: 280px; /* Reducimos la altura en móviles para que el texto suba */
+    }
+    .detalle-titulo {
+        font-size: 2rem;
+    }
+}

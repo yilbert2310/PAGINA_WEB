@@ -59,27 +59,36 @@ nav a {
 }
 
 /* El círculo invisible que crecerá */
+/* --- BOTONES DEL MENÚ (EFECTO MINIMALISTA) --- */
+nav a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* La línea sutil invisible por defecto */
 nav a::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 20px;
-    width: 4px;
-    height: 4px;
-    background-color: var(--color-primario);
-    transform: translateY(100%);
-    border-radius: 5px;
-    transition: all 0.7s;
-    z-index: -1;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-acento); /* Terracota para resaltar elegante */
+    transition: all 0.3s ease;
+    transform: translateX(-50%); /* Centra la línea */
+}
+
+/* Al pasar el mouse: color sutil y la línea crece desde el centro */
+nav a:hover, nav a:active {
+    color: var(--color-primario);
 }
 
 nav a:hover::after, nav a:active::after {
-    transform: scale(50); /* Hace que el pequeño círculo cubra todo el botón */
-}
-
-nav a:hover, nav a:active {
-    color: var(--color-blanco);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    width: 80%; /* La línea se expande sin tocar los bordes */
 }
 
 .contenedor-interno {

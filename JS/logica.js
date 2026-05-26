@@ -104,29 +104,39 @@ function generarRutaGoogleMaps() {
         const urlEmbedMaps = `https://maps.google.com/maps?saddr=${origenCodificado}&daddr=${rutaParadas}&output=embed`;
 
         let htmlContenido = `
-            <div style="text-align: center; margin-bottom: 30px;">
+            <div style="text-align: center; margin-bottom: 30px; width: 100%;">
                 <h3 style="color: #2c3e50; font-size: 1.8em;">🗺️ Ruta Gastronómica Recomendada</h3>
                 <p style="color: #555;">Resultados basados en: <strong>"${origen}"</strong></p>
                 <button onclick="document.getElementById('gmaps-iframe').src='${urlEmbedMaps}'" style="display: inline-block; margin-top: 15px; padding: 12px 25px; background-color: #2c3e50; color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer;">
                     🔄 Recargar Itinerario
                 </button>
             </div>
-            <div class="galeria-cuadricula">
+            <div class="row g-4 justify-content-center w-100 m-0">
         `;
+        
         destinosCercanos.forEach(local => {
             let tagsHTML = "";
-            local.tags.forEach(tag => { tagsHTML += `<span style="background: #C27E5A; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px;">${tag}</span>`; });
+            local.tags.forEach(tag => { 
+                tagsHTML += `<span class="badge" style="background-color: var(--color-acento); margin-right: 5px;">${tag}</span>`; 
+            });
+            
             htmlContenido += `
-                <article class="tarjeta">
-                    <a href="${local.enlaceDetalle}"><img src="${local.imagen}" alt="Fachada de ${local.nombre}"></a>
-                    <div class="tarjeta-cuerpo">
-                        <h3>${local.nombre}</h3>
-                        <p style="color: #777; font-size: 0.9em; margin-bottom: 10px;">${local.referencia}</p>
-                        <p>${local.descripcion}</p>
-                        <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">${tagsHTML}</div>
-                        <a href="${local.enlaceDetalle}" class="boton-enlace">Ver Información</a>
-                    </div>
-                </article>`;
+                <div class="col-12 col-md-6 d-flex">
+                    <article class="tarjeta w-100 d-flex flex-column border-0 shadow-sm">
+                        <a href="${local.enlaceDetalle}" class="d-block w-100" style="height: 220px; overflow: hidden;">
+                            <img src="${local.imagen}" alt="Fachada de ${local.nombre}" class="w-100 h-100" style="object-fit: cover;">
+                        </a>
+                        <div class="tarjeta-cuerpo d-flex flex-column flex-grow-1 p-4 bg-white">
+                            <h3 style="color: var(--color-secundario); font-size: 1.3em; margin-bottom: 10px;">${local.nombre}</h3>
+                            <p style="color: var(--color-acento); font-size: 0.9em; font-weight: bold; margin-bottom: 10px;">
+                                <i class="bi bi-geo-alt-fill"></i> ${local.referencia}
+                            </p>
+                            <p class="flex-grow-1" style="color: #555; font-size: 0.95em;">${local.descripcion}</p>
+                            <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; margin-bottom: 15px;">${tagsHTML}</div>
+                            <a href="${local.enlaceDetalle}" class="boton-enlace mt-auto" style="text-align: center;">Ver Información</a>
+                        </div>
+                    </article>
+                </div>`;
         });
         htmlContenido += `</div>`;
         panelResultado.innerHTML = htmlContenido;
@@ -166,29 +176,37 @@ function renderizarRutaModalEnMapa(nombresLocales) {
         urlEmbedMaps += `&output=embed`;
 
         let htmlContenido = `
-            <div style="text-align: center; margin-bottom: 30px;">
+            <div style="text-align: center; margin-bottom: 30px; width: 100%;">
                 <h3 style="color: #6E473B; font-size: 1.8em; font-family: 'Playfair Display', serif;">🗺️ Tu Ruta Personalizada</h3>
                 <p style="color: #555;">Has diseñado un recorrido con <strong>${localesSeleccionados.length} paradas</strong>.</p>
-                <button onclick="sessionStorage.removeItem('rutaPersonalizada'); window.location.reload();" class="btn btn-sm btn-outline-danger rounded-pill px-3">
+                <button onclick="sessionStorage.removeItem('rutaPersonalizada'); window.location.reload();" class="btn btn-sm btn-outline-danger rounded-pill px-3 mt-2">
                     🗑️ Restablecer Ruta
                 </button>
             </div>
-            <div class="galeria-cuadricula">
+            <div class="row g-4 justify-content-center w-100 m-0">
         `;
+        
         localesSeleccionados.forEach((local, index) => {
-            let tagsHTML = local.tags.map(tag => `<span style="background: #C27E5A; color: white; padding: 3px 8px; border-radius: 5px; font-size: 0.8em; margin-right: 5px;">${tag}</span>`).join('');
+            let tagsHTML = local.tags.map(tag => `<span class="badge" style="background-color: var(--color-acento); margin-right: 5px;">${tag}</span>`).join('');
+            
             htmlContenido += `
-                <article class="tarjeta">
-                    <a href="${local.enlaceDetalle}"><img src="${local.imagen}" alt="Fachada de ${local.nombre}" loading="lazy"></a>
-                    <div class="tarjeta-cuerpo">
-                        <span class="badge bg-dark mb-2 align-self-start">Parada #${index + 1}</span>
-                        <h3>${local.nombre}</h3>
-                        <p style="color: #777; font-size: 0.9em; margin-bottom: 10px;">${local.referencia}</p>
-                        <p>${local.descripcion}</p>
-                        <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">${tagsHTML}</div>
-                        <a href="${local.enlaceDetalle}" class="boton-enlace">Ver Información</a>
-                    </div>
-                </article>
+                <div class="col-12 col-md-6 d-flex">
+                    <article class="tarjeta w-100 d-flex flex-column border-0 shadow-sm">
+                        <a href="${local.enlaceDetalle}" class="d-block w-100" style="height: 220px; overflow: hidden;">
+                            <img src="${local.imagen}" alt="Fachada de ${local.nombre}" class="w-100 h-100" style="object-fit: cover;" loading="lazy">
+                        </a>
+                        <div class="tarjeta-cuerpo d-flex flex-column flex-grow-1 p-4 bg-white">
+                            <span class="badge bg-dark mb-3 align-self-start" style="font-size: 0.9em;">Parada #${index + 1}</span>
+                            <h3 style="color: var(--color-secundario); font-size: 1.3em; margin-bottom: 10px;">${local.nombre}</h3>
+                            <p style="color: var(--color-acento); font-size: 0.9em; font-weight: bold; margin-bottom: 10px;">
+                                <i class="bi bi-geo-alt-fill"></i> ${local.referencia}
+                            </p>
+                            <p class="flex-grow-1" style="color: #555; font-size: 0.95em;">${local.descripcion}</p>
+                            <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; margin-bottom: 15px;">${tagsHTML}</div>
+                            <a href="${local.enlaceDetalle}" class="boton-enlace mt-auto" style="text-align: center;">Ver Información</a>
+                        </div>
+                    </article>
+                </div>
             `;
         });
         htmlContenido += `</div>`;

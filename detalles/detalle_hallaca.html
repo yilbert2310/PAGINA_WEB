@@ -2,74 +2,186 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle - Hallaca Tachirense</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/componentes.css">
+
+    <style>
+        .breadcrumb, .breadcrumb-item {
+            list-style: none !important;
+            list-style-type: none !important;
+            background: none !important;
+            box-shadow: none !important;
+        }
+        .breadcrumb-item::before {
+            display: inline-block !important;
+            padding-right: 0.5rem;
+            color: #6c757d;
+            content: "/" !important;
+        }
+        .breadcrumb-item:first-child::before {
+            content: "" !important;
+            padding-right: 0;
+        }
+        .info-ficha {
+            background-color: #f8f9fa;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+        .info-ficha:hover {
+            background-color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+        .paso-numero {
+            width: 28px;
+            height: 28px;
+            background-color: var(--color-primario, #2A432D);
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 <body>
-    <main class="contenedor-interno">
-        
-        <button class="btn-regreso" onclick="history.back()">
-            <div class="text">
-                <span>Re</span><span>gre</span><span>sar</span>
-            </div>
-            <div class="clone">
-                <span>Re</span><span>gre</span><span>sar</span>
-            </div>
-            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="20px">
-                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-        </button>
-
-        <article class="seccion-info">
-            <div class="encabezado-plato">
-                <h2 class="titulo-detalle-plato">Hallaca Tachirense</h2>
-                <img src="../img/hallaca.jpg" alt="Plato humeante de Hallaca Tachirense" class="imagen-detalle">
+    <main class="container my-5 pt-4">
+        <div class="row g-5">
+            
+            <div class="col-12 col-md-5">
+                <div class="detalle-imagen-contenedor sticky-md-top" style="top: 100px;">
+                    <img src="../img/hallaca.jpg" alt="Hallaca Tachirense" class="detalle-img w-100 object-fit-cover rounded-4 shadow-sm" style="height: 450px;">
+                </div>
             </div>
             
-            <p class="descripcion-plato">
-                "El alma de las festividades tachirenses. Su característica distintiva es el guiso completamente crudo enriquecido con garbanzos, el cual se cocina lentamente al vapor dentro de las hojas de plátano".
-            </p>
-
-            <div class="info-rapida">
-                <span><i class="bi bi-clock-history"></i> Tiempo: 240 min</span>
-                <span><i class="bi bi-fire"></i> Calorías: 550 kcal</span>
-                <span><i class="bi bi-bar-chart-line-fill"></i> Dificultad: Difícil</span>
-            </div>
-            
-            <hr class="separador-decorativo">
-            
-            <div class="receta-contenedor">
-                <section class="caja-ingredientes">
-                    <h3 class="subtitulo-receta-ingredientes"><i class="bi bi-cart-check-fill"></i> Ingredientes</h3>
-                    <p class="texto-aclaratorio">Marca lo que ya tengas en casa (Para 4 personas):</p>
-                    
-                    <ul class="lista-interactiva">
-                        <li><label><input type="checkbox"> 1 kg de masa de maíz pilado</label></li>
-                        <li><label><input type="checkbox"> 500g de carne de res picada en cubos</label></li>
-                        <li><label><input type="checkbox"> 500g de carne de cerdo picada</label></li>
-                        <li><label><input type="checkbox"> 250g de garbanzos cocidos</label></li>
-                        <li><label><input type="checkbox"> Alcaparras, aceitunas y pasas al gusto</label></li>
-                        <li><label><input type="checkbox"> Hojas de plátano (lavadas y ahumadas)</label></li>
-                        <li><label><input type="checkbox"> Pabilo para amarrar</label></li>
-                    </ul>
-                </section>
-                
-                <section class="caja-pasos">
-                    <h3 class="subtitulo-receta-pasos"><i class="bi bi-journal-text"></i> Preparación Paso a Paso</h3>
-                    <ol class="lista-pasos">
-                        <li><strong>El Guiso Crudo:</strong> Mezclar las carnes picadas crudas con un buen sofrito frío de aliños locales, vinagre y manteca colorada. Dejar macerar desde la noche anterior.</li>
-                        <li><strong>Preparar el Lienzo:</strong> Limpiar muy bien las hojas de plátano. Engrasar ligeramente el centro con manteca con onoto.</li>
-                        <li><strong>Tendido y Armado:</strong> Extender una bola de masa de forma muy delgada sobre la hoja. Colocar una porción generosa de guiso crudo y añadir los garbanzos, aceitunas y alcaparras.</li>
-                        <li><strong>Amarre y Cocción:</strong> Envolver cuidadosamente doblando las hojas y amarrar firmemente con el pabilo. Hervir en una olla grande con agua salada por 3 a 4 horas.</li>
+            <div class="col-12 col-md-7">
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb d-flex p-0 m-0">
+                        <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none text-muted">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="../platos.html" class="text-decoration-none text-muted">Platos</a></li>
+                        <li class="breadcrumb-item active text-dark" aria-current="page">Hallaca Tachirense</li>
                     </ol>
-                </section>
+                </nav>
+
+                <h1 class="detalle-titulo mb-2">Hallaca Tachirense</h1>
+                <p class="text-muted mb-4">
+                    <i class="bi bi-geo-alt-fill text-danger"></i> Icono culinario de los Andes Tachirenses
+                </p>
+                
+                <div class="row g-3 mb-4 text-center">
+                    <div class="col-4">
+                        <div class="p-3 rounded-3 info-ficha">
+                            <i class="bi bi-clock text-secondary fs-4 d-block mb-1"></i>
+                            <span class="d-block text-muted small fw-bold text-uppercase" style="font-size: 0.75rem;">Tiempo</span>
+                            <strong class="text-dark">240 min</strong>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="p-3 rounded-3 info-ficha">
+                            <i class="bi bi-fire text-danger fs-4 d-block mb-1"></i>
+                            <span class="d-block text-muted small fw-bold text-uppercase" style="font-size: 0.75rem;">Calorías</span>
+                            <strong class="text-dark">550 kcal</strong>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="p-3 rounded-3 info-ficha">
+                            <i class="bi bi-bar-chart-steps text-success fs-4 d-block mb-1"></i>
+                            <span class="d-block text-muted small fw-bold text-uppercase" style="font-size: 0.75rem;">Dificultad</span>
+                            <strong class="text-dark">Difícil</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h2 class="detalle-seccion-subtitulo mb-3" style="font-size: 1.4rem; font-weight: 600;">Descripción</h2>
+                    <p class="text-secondary lh-lg">
+                        El alma de las festividades tachirenses. Su característica distintiva es el guiso completamente crudo enriquecido con garbanzos, el cual se cocina lentamente al vapor dentro de las hojas de plátano, logrando una amalgama de sabores inigualable.
+                    </p>
+                </div>
+                
+                <div class="mb-4">
+                    <h2 class="detalle-seccion-subtitulo mb-3" style="font-size: 1.4rem; font-weight: 600;">Ingredientes</h2>
+                    <div class="row g-2">
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 1 kg de masa de maíz pilado
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 500g de carne de res en cubos
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 500g de carne de cerdo
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 250g de garbanzos cocidos
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> Alcaparras, aceitunas y pasas
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> Hojas de plátano y pabilo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h2 class="detalle-seccion-subtitulo mb-3" style="font-size: 1.4rem; font-weight: 600;">Preparación Paso a Paso</h2>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="paso-numero">1</span>
+                            <p class="text-secondary m-0 lh-base">
+                                <strong>El Guiso Crudo:</strong> Mezclar las carnes picadas crudas con un sofrito frío de aliños locales, vinagre y manteca colorada. Dejar macerar desde la noche anterior.
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="paso-numero">2</span>
+                            <p class="text-secondary m-0 lh-base">
+                                <strong>Preparar el Lienzo:</strong> Limpiar muy bien las hojas de plátano. Engrasar ligeramente el centro con manteca con onoto.
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="paso-numero">3</span>
+                            <p class="text-secondary m-0 lh-base">
+                                <strong>Tendido y Armado:</strong> Extender una bola de masa de forma delgada sobre la hoja. Colocar una porción generosa de guiso crudo y añadir los garbanzos, aceitunas y alcaparras.
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="paso-numero">4</span>
+                            <p class="text-secondary m-0 lh-base">
+                                <strong>Amarre y Cocción:</strong> Envolver cuidadosamente doblando las hojas y amarrar firmemente con el pabilo. Hervir en una olla grande con agua salada por 3 a 4 horas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 pt-3 border-top">
+                    <a href="../platos.html" class="btn btn-outline-secondary rounded-pill px-4">
+                        <i class="bi bi-arrow-left me-2"></i> Volver a la lista
+                    </a>
+                </div>
             </div>
-        </article>
+
+        </div>
     </main>
 </body>
 </html>
-

@@ -2,73 +2,186 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle - Quesadillas Andinas</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/componentes.css">
+
+    <style>
+        .breadcrumb, .breadcrumb-item {
+            list-style: none !important;
+            list-style-type: none !important;
+            background: none !important;
+            box-shadow: none !important;
+        }
+        .breadcrumb-item::before {
+            display: inline-block !important;
+            padding-right: 0.5rem;
+            color: #6c757d;
+            content: "/" !important;
+        }
+        .breadcrumb-item:first-child::before {
+            content: "" !important;
+            padding-right: 0;
+        }
+        .info-ficha {
+            background-color: #f8f9fa;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+        .info-ficha:hover {
+            background-color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+        .paso-numero {
+            width: 28px;
+            height: 28px;
+            background-color: var(--color-primario, #2A432D);
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 <body>
-    <main class="contenedor-interno">
-        
-        <button class="btn-regreso" onclick="history.back()">
-            <div class="text">
-                <span>Re</span><span>gre</span><span>sar</span>
-            </div>
-            <div class="clone">
-                <span>Re</span><span>gre</span><span>sar</span>
-            </div>
-            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="20px">
-                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-        </button>
-
-        <article class="seccion-info">
-            <div class="encabezado-plato">
-                <h2 class="titulo-detalle-plato">Quesadillas Andinas</h2>
-                <img src="../img/quesadillas.jpg" alt="Plato humeante de Quesadillas Andinas" class="imagen-detalle">
+    <main class="container my-5 pt-4">
+        <div class="row g-5">
+            
+            <div class="col-12 col-md-5">
+                <div class="detalle-imagen-contenedor sticky-md-top" style="top: 100px;">
+                    <img src="../img/quesadillas.jpg" alt="Quesadillas Andinas" class="detalle-img w-100 object-fit-cover rounded-4 shadow-sm" style="height: 450px;">
+                </div>
             </div>
             
-            <p class="descripcion-plato">
-                "Una verdadera joya de la panadería artesanal tachirense. Delicado pan de masa dulce moldeado con pliegues en forma de canasta que resguarda un esponjoso y azucarado relleno de queso".
-            </p>
-            
-            <div class="info-rapida">
-            <span><i class="bi bi-clock-history"></i> Tiempo: 90 min</span>
-            <span><i class="bi bi-fire"></i> Calorías: 280 kcal</span>
-            <span><i class="bi bi-bar-chart-line-fill"></i> Dificultad: Media</span>
-        </div>
-            
-            <hr class="separador-decorativo">
-            
-            <div class="receta-contenedor">
-                <section class="caja-ingredientes">
-                    <h3 class="subtitulo-receta-ingredientes"><i class="bi bi-cart-check-fill"></i> Ingredientes</h3>
-                    <p class="texto-aclaratorio">Marca lo que ya tengas en casa (Para 4 personas):</p>
-                    
-                   <ul class="lista-interactiva">
-                        <li><label><input type="checkbox"> 500g de harina de trigo leudante</label></li>
-                        <li><label><input type="checkbox"> 3 huevos enteros</label></li>
-                        <li><label><input type="checkbox"> 100g de mantequilla pomada</label></li>
-                        <li><label><input type="checkbox"> 1/2 taza de leche tibia con levadura</label></li>
-                        <li><label><input type="checkbox"> 300g de queso blanco criollo rallado duro</label></li>
-                        <li><label><input type="checkbox"> 1 taza de azúcar (para masa y relleno)</label></li>
-                    </ul>
-                </section>
-                
-                <section class="caja-pasos">
-                    <h3 class="subtitulo-receta-pasos"><i class="bi bi-journal-text"></i> Preparación Paso a Paso</h3>
-                     <ol class="lista-pasos">
-                        <li><strong>La Masa Dulce:</strong> Hacer un volcán de harina, agregar azúcar, mantequilla, dos huevos y la leche con levadura. Amasar vigorosamente hasta lograr una masa lisa. Dejar levar 30 minutos.</li>
-                        <li><strong>El Relleno Creativo:</strong> En un recipiente aparte, mezclar el queso blanco bien rallado con un huevo, una porción de azúcar y un toque de vainilla hasta integrar una pasta uniforme.</li>
-                        <li><strong>El Moldeado:</strong> Estirar la masa con rodillo y cortar círculos de unos 10 cm de diámetro. Colocar una cucharada de relleno en el centro y pellizcar los bordes hacia arriba formando 4 o 5 esquinas (tipo estrella o cesta).</li>
-                        <li><strong>Horneado Tradicional:</strong> Disponer en bandejas engrasadas y hornear a 180°C durante 20 minutos hasta que la masa dore y el centro de queso quede inflado y firme.</li>
+            <div class="col-12 col-md-7">
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb d-flex p-0 m-0">
+                        <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none text-muted">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="../platos.html" class="text-decoration-none text-muted">Platos</a></li>
+                        <li class="breadcrumb-item active text-dark" aria-current="page">Quesadillas Andinas</li>
                     </ol>
-                </section>
+                </nav>
+
+                <h1 class="detalle-titulo mb-2">Quesadillas Andinas</h1>
+                <p class="text-muted mb-4">
+                    <i class="bi bi-geo-alt-fill text-danger"></i> Icono culinario de los Andes Tachirenses
+                </p>
+                
+                <div class="row g-3 mb-4 text-center">
+                    <div class="col-4">
+                        <div class="p-3 rounded-3 info-ficha">
+                            <i class="bi bi-clock text-secondary fs-4 d-block mb-1"></i>
+                            <span class="d-block text-muted small fw-bold text-uppercase" style="font-size: 0.75rem;">Tiempo</span>
+                            <strong class="text-dark">90 min</strong>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="p-3 rounded-3 info-ficha">
+                            <i class="bi bi-fire text-danger fs-4 d-block mb-1"></i>
+                            <span class="d-block text-muted small fw-bold text-uppercase" style="font-size: 0.75rem;">Calorías</span>
+                            <strong class="text-dark">280 kcal</strong>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="p-3 rounded-3 info-ficha">
+                            <i class="bi bi-bar-chart-steps text-success fs-4 d-block mb-1"></i>
+                            <span class="d-block text-muted small fw-bold text-uppercase" style="font-size: 0.75rem;">Dificultad</span>
+                            <strong class="text-dark">Media</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h2 class="detalle-seccion-subtitulo mb-3" style="font-size: 1.4rem; font-weight: 600;">Descripción</h2>
+                    <p class="text-secondary lh-lg">
+                        Una verdadera joya de la panadería artesanal tachirense. Delicado pan de masa dulce moldeado con pliegues en forma de canasta que resguarda un esponjoso y azucarado relleno de queso, un bocado imperdible.
+                    </p>
+                </div>
+                
+                <div class="mb-4">
+                    <h2 class="detalle-seccion-subtitulo mb-3" style="font-size: 1.4rem; font-weight: 600;">Ingredientes</h2>
+                    <div class="row g-2">
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 500g de harina de trigo leudante
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 3 huevos enteros
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 100g de mantequilla pomada
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 1/2 taza de leche con levadura
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 300g de queso blanco rallado
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center text-secondary py-1">
+                                <i class="bi bi-check2-circle text-success me-2"></i> 1 taza de azúcar
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h2 class="detalle-seccion-subtitulo mb-3" style="font-size: 1.4rem; font-weight: 600;">Preparación Paso a Paso</h2>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="paso-numero">1</span>
+                            <p class="text-secondary m-0 lh-base">
+                                <strong>La Masa Dulce:</strong> Hacer un volcán de harina, agregar azúcar, mantequilla, huevos y la leche con levadura. Amasar hasta lograr una masa lisa y dejar levar 30 minutos.
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="paso-numero">2</span>
+                            <p class="text-secondary m-0 lh-base">
+                                <strong>El Relleno:</strong> Mezclar el queso blanco rallado con un huevo, parte del azúcar y un toque de vainilla hasta integrar una pasta uniforme.
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="paso-numero">3</span>
+                            <p class="text-secondary m-0 lh-base">
+                                <strong>El Moldeado:</strong> Estirar la masa y cortar círculos de 10 cm. Colocar una cucharada de relleno en el centro y pellizcar los bordes hacia arriba formando una estrella o cesta.
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="paso-numero">4</span>
+                            <p class="text-secondary m-0 lh-base">
+                                <strong>Horneado:</strong> Disponer en bandejas engrasadas y hornear a 180°C durante 20 minutos hasta que doren y el centro de queso quede inflado y firme.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 pt-3 border-top">
+                    <a href="../platos.html" class="btn btn-outline-secondary rounded-pill px-4">
+                        <i class="bi bi-arrow-left me-2"></i> Volver a la lista
+                    </a>
+                </div>
             </div>
-        </article>
+
+        </div>
     </main>
 </body>
 </html>
-
