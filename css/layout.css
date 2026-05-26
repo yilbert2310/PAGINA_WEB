@@ -88,9 +88,3 @@ nav a:hover, nav a:active {
     margin: 40px auto;
 }
 
-.galeria-cuadricula {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 35px;
-    margin-top: 20px;
-}

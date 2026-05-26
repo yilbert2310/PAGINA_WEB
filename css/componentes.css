@@ -357,3 +357,130 @@
     transform: translateY(-50%) rotate(45deg); /* Animación al pasar el mouse */
     stroke: var(--color-acento);
 }
+/* Estilo para los íconos de la información rápida */
+.info-rapida span i {
+    color: var(--color-acento); /* Terracota arcilla */
+    margin-right: 6px;
+    font-size: 1.1em;
+}
+
+/* Estilo general para íconos en listas de menú */
+.lista-menu-local a i,
+.caja-ingredientes h3 i,
+.caja-pasos h3 i {
+    color: var(--color-acento);
+    margin-right: 8px;
+}
+/* =======================================================
+   NUEVAS CLASES PARA ELIMINAR ESTILOS EN LÍNEA
+   ======================================================= */
+
+/* Título principal de los platos o dulces */
+.titulo-detalle-plato {
+    font-size: 2.5em;
+    border-bottom: none;
+    color: var(--color-secundario);
+}
+
+/* Botón de degustación con íconos alineados */
+.btn-degustacion {
+    padding: 15px 30px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(110, 71, 59, 0.3);
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-degustacion:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+/* Línea divisoria discontinua */
+.separador-decorativo {
+    border: 0;
+    border-top: 2px dashed #ddd;
+    margin-bottom: 40px;
+}
+
+/* Encabezados de las secciones internas (Ingredientes y Pasos) */
+.subtitulo-receta-ingredientes {
+    margin-top: 0;
+    color: var(--color-primario);
+    border-bottom: 2px solid #fbdcb6;
+    padding-bottom: 10px;
+}
+
+.subtitulo-receta-pasos {
+    margin-top: 0;
+    color: var(--color-secundario);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Textos informativos secundarios o aclaratorias */
+.texto-aclaratorio {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Ajuste de margen para listas ordenadas */
+.lista-pasos-receta {
+    margin-left: 20px;
+}
+/* =======================================================
+   ESTILOS PARA EL FORMULARIO DE REGISTRO
+   ======================================================= */
+.btn-outline-andino {
+    color: var(--color-primario);
+    border-color: var(--color-primario);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-andino:hover,
+.btn-check:checked + .btn-outline-andino {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border-color: var(--color-primario);
+}
+/* =======================================================
+   ESTILOS PARA FLIP CARDS EN DISPOSITIVOS TÁCTILES
+   ======================================================= */
+.indicador-movil {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Detecta si la pantalla es táctil para modificar el comportamiento */
+@media (hover: none), (pointer: coarse) {
+    /* Anulamos el hover automático de CSS para controlarlo con JS */
+    .flip-card:hover .flip-card-inner {
+        transform: none; 
+    }
+    
+    /* Esta es la clase que aplicará el giro al tocar la pantalla */
+    .flip-card.girada .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}

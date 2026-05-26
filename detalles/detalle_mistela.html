@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Detalle - Mistela</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <link rel="stylesheet" href="../css/global.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/componentes.css">
 </head>
 <body>
     <main class="contenedor-interno">
-<button class="btn-regreso" onclick="history.back()">
-    <div class="text">
-        <span>Re</span>
-        <span>gre</span>
-        <span>sar</span>
-    </div>
-    <div class="clone">
-        <span>Re</span>
-        <span>gre</span>
-        <span>sar</span>
-    </div>
-    <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="20px">
-        <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
-    </svg>
-</button>        <article class="seccion-info">
+        
+        <button class="btn-regreso" onclick="history.back()">
+            <div class="text">
+                <span>Re</span><span>gre</span><span>sar</span>
+            </div>
+            <div class="clone">
+                <span>Re</span><span>gre</span><span>sar</span>
+            </div>
+            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="20px">
+                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+            </svg>
+        </button>
+
+        <article class="seccion-info">
             <div class="encabezado-plato">
-                <h2 style="font-size: 2.5em; color: #2c3e50;">Mistela Andina</h2>
-                <img src="../img/mistela.jpg" onerror="this.src='../img/miche.jpg'" alt="Mistela andina" class="imagen-detalle">
+                <h2 class="titulo-detalle-plato">Mistela</h2>
+                <img src="../img/mistela.jpg" alt="Plato humeante de Mistela" class="imagen-detalle">
             </div>
-            <p class="descripcion-plato">"Bebida espirituosa tradicional infaltable en las celebraciones andinas. Nace de la equilibrada combinación de miche con almíbar especiado cocido junto a frutas aromáticas de la zona."</p>
+            
+            <p class="descripcion-plato">
+                "Bebida espirituosa tradicional infaltable en las celebraciones andinas. Nace de la equilibrada combinación de miche con almíbar especiado cocido junto a frutas aromáticas de la zona".
+            </p>
+            
             <div class="info-rapida">
-                <span>⏱️ Tiempo: 30 min</span><span>🔥 Calorías: 210 kcal</span><span>📊 Dificultad: Fácil</span>
+                <span><i class="bi bi-clock-history"></i> Tiempo: 30 min</span>
+                <span><i class="bi bi-fire"></i> Calorías: 210 kcal</span>
+                <span><i class="bi bi-bar-chart-line-fill"></i> Dificultad: Fácil</span>
             </div>
-            <hr style="border: 0; border-top: 2px dashed #ddd; margin-bottom: 40px;">
+            
+            <hr class="separador-decorativo">
+            
             <div class="receta-contenedor">
                 <section class="caja-ingredientes">
-                    <h3 style="margin-top: 0; color: var(--color-primario);">🛒 Ingredientes</h3>
+                    <h3 class="subtitulo-receta-ingredientes"><i class="bi bi-cart-check-fill"></i> Ingredientes</h3>
+                    <p class="texto-aclaratorio">Marca lo que ya tengas en casa (Para 4 personas):</p>
+                    
                     <ul class="lista-interactiva">
                         <li><label><input type="checkbox"> 1 botella de Miche Andino claro</label></li>
                         <li><label><input type="checkbox"> 1 panela de papelón oscuro</label></li>
@@ -44,8 +55,9 @@
                         <li><label><input type="checkbox"> 1/2 litro de agua</label></li>
                     </ul>
                 </section>
+                
                 <section class="caja-pasos">
-                    <h3 style="margin-top: 0; color: #2c3e50;">👩‍🍳 Preparación Paso a Paso</h3>
+                    <h3 class="subtitulo-receta-pasos"><i class="bi bi-journal-text"></i> Preparación Paso a Paso</h3>
                     <ol class="lista-pasos">
                         <li><strong>El Melado Frutal:</strong> Colocar el agua en una olla profunda, disolver el papelón y agregar los clavos de olor, la canela y los trozos de fruta. Hervir hasta lograr un jarabe aromático y ligero.</li>
                         <li><strong>Integración:</strong> Retirar el melado del fuego y pasarlo por un colador para remover las astillas de especias (puedes conservar las frutas si lo deseas). Dejar entibiar un poco.</li>
@@ -58,3 +70,4 @@
     </main>
 </body>
 </html>
+

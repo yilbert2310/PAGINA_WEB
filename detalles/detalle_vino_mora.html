@@ -3,47 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Detalle - Vino de Mora</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <link rel="stylesheet" href="../css/global.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/componentes.css">
 </head>
 <body>
     <main class="contenedor-interno">
-<button class="btn-regreso" onclick="history.back()">
-    <div class="text">
-        <span>Re</span>
-        <span>gre</span>
-        <span>sar</span>
-    </div>
-    <div class="clone">
-        <span>Re</span>
-        <span>gre</span>
-        <span>sar</span>
-    </div>
-    <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="20px">
-        <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
-    </svg>
-</button>        <article class="seccion-info">
+        
+        <button class="btn-regreso" onclick="history.back()">
+            <div class="text">
+                <span>Re</span><span>gre</span><span>sar</span>
+            </div>
+            <div class="clone">
+                <span>Re</span><span>gre</span><span>sar</span>
+            </div>
+            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="20px">
+                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+            </svg>
+        </button>
+
+        <article class="seccion-info">
             <div class="encabezado-plato">
-                <h2 style="font-size: 2.5em; color: #2c3e50;">Vino de Mora Artesanal</h2>
-                <img src="../img/vino_mora.jpg" onerror="this.src='../img/calentadito.jpg'" alt="Vino artesanal de mora" class="imagen-detalle">
+                <h2 class="titulo-detalle-plato">Vino de Mora</h2>
+                <img src="../img/vino_mora.jpg" alt="Vino de Mora" class="imagen-detalle">
             </div>
-            <p class="descripcion-plato">"Licor tradicional de las tierras frías de los páramos andinos. Se obtiene mediante el prensado y la fermentación natural prolongada de moras silvestres frescas cultivadas en la región."</p>
+            
+            <p class="descripcion-plato">
+                "Licor tradicional de las tierras frías de los páramos andinos. Se obtiene mediante el prensado y la fermentación natural prolongada de moras silvestres frescas cultivadas en la región"
+            </p>
+            
             <div class="info-rapida">
-                <span>⏱️ Tiempo: Múltiples semanas</span><span>🔥 Calorías: 180 kcal</span><span>📊 Dificultad: Media</span>
-            </div>
-            <hr style="border: 0; border-top: 2px dashed #ddd; margin-bottom: 40px;">
+            <span><i class="bi bi-clock-history"></i> Tiempo: Múltiples semanas</span>
+            <span><i class="bi bi-fire"></i> Calorías: 180 kcal</span>
+            <span><i class="bi bi-bar-chart-line-fill"></i> Dificultad: Media</span>
+        </div>
+            
+            <hr class="separador-decorativo">
+            
             <div class="receta-contenedor">
                 <section class="caja-ingredientes">
-                    <h3 style="margin-top: 0; color: var(--color-primario);">🛒 Ingredientes base</h3>
-                    <ul class="lista-interactiva">
+                    <h3 class="subtitulo-receta-ingredientes"><i class="bi bi-cart-check-fill"></i> Ingredientes</h3>
+                    <p class="texto-aclaratorio">Marca lo que ya tengas en casa (Para 4 personas):</p>
+                    
+                   <ul class="lista-interactiva">
                         <li><label><input type="checkbox"> 2 kg de moras frescas de páramo</label></li>
                         <li><label><input type="checkbox"> 1 kg de azúcar o papelón blanco</label></li>
                         <li><label><input type="checkbox"> 2 litros de agua hervida purificada</label></li>
                         <li><label><input type="checkbox"> Recipiente de vidrio o arcilla de cuello ancho</label></li>
                     </ul>
                 </section>
+                
                 <section class="caja-pasos">
+                    <h3 class="subtitulo-receta-pasos"><i class="bi bi-journal-text"></i> Preparación Paso a Paso</h3>
+                    <section class="caja-pasos">
                     <h3 style="margin-top: 0; color: #2c3e50;">👩‍🍳 Proceso de Elaboración</h3>
                     <ol class="lista-pasos">
                         <li><strong>Selección:</strong> Lavar y retirar impurezas de las moras cuidadosamente, usando solo frutas maduras y firmes. Espachurrar ligeramente las frutas en un cuenco limpio.</li>
@@ -57,3 +71,4 @@
     </main>
 </body>
 </html>
+

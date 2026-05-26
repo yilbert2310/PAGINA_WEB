@@ -317,3 +317,45 @@ window.onload = function() {
         renderizarRutaModalEnMapa(nombresLocales);
     }
 };
+// =======================================================
+// LÓGICA PARA TARJETAS GIRATORIAS EN MÓVILES
+// =======================================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Detectamos si el dispositivo tiene pantalla táctil
+    const esTactil = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+    if (esTactil) {
+        const flipCards = document.querySelectorAll('.flip-card');
+        
+        flipCards.forEach(card => {
+            // 1. Inyectar el indicador visual en la parte frontal de cada tarjeta
+            const front = card.querySelector('.flip-card-front');
+            if (front && !front.querySelector('.indicador-movil')) {
+                const indicador = document.createElement('div');
+                indicador.className = 'indicador-movil';
+                indicador.innerHTML = '<i class="bi bi-arrow-repeat" style="font-size: 1.2em;"></i> Tocar';
+                front.appendChild(indicador);
+            }
+
+            // 2. Controlar la lógica de los toques (taps)
+            const enlace = card.closest('a');
+            if (enlace) {
+                enlace.addEventListener('click', function(e) {
+                    // Si la tarjeta NO está girada aún
+                    if (!card.classList.contains('girada')) {
+                        e.preventDefault(); // Evitamos que abra la página de detalles
+                        
+                        // Volteamos a su posición original cualquier otra tarjeta que estuviera abierta
+                        document.querySelectorAll('.flip-card.girada').forEach(c => {
+                            if (c !== card) c.classList.remove('girada');
+                        });
+                        
+                        // Giramos la tarjeta actual
+                        card.classList.add('girada');
+                    }
+                    // Si ya tiene la clase 'girada', el click pasa naturalmente y abre la página
+                });
+            }
+        });
+    }
+});

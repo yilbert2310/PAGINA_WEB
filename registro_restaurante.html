@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro de Restaurantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
 </head>
 <body>
     <header>
@@ -24,116 +29,134 @@
         <a href="registro_restaurante.html">Registrar Local</a>
         <a href="mapa.html">Mapa de Ruta</a>
     </nav>
+    
     <main class="contenedor-interno">
-        <h2 style="color: #2c3e50; text-align: center; margin-bottom: 10px;">Inscripción en la Ruta Gastronómica</h2>
-        <p style="text-align: center; margin-bottom: 30px;">Si tienes un local o emprendimiento que ofrece auténtica comida andina, regístralo aquí para aparecer en nuestro directorio.</p>
+        <div class="text-center mb-5">
+            <h2 style="color: #2c3e50;" class="mb-3">Inscripción en la Ruta Gastronómica</h2>
+            <p class="text-muted">Si tienes un local o emprendimiento que ofrece auténtica comida andina, regístralo aquí para aparecer en nuestro directorio.</p>
+        </div>
         
-        <form id="formulario-registro" action="#" method="post" style="max-width: 700px; margin: 0 auto; background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
-            <fieldset style="border: none;">
-                <legend style="font-weight: bold; color: var(--color-primario); font-size: 1.2em; margin-bottom: 20px; border-bottom: 2px solid #fbdcb6; padding-bottom: 5px; width: 100%;">Datos del Establecimiento</legend>
+        <form id="formulario-registro" class="bg-white p-4 p-md-5 rounded-4 shadow-sm mx-auto" style="max-width: 700px;" novalidate>
+            <fieldset class="border-0 p-0 m-0">
+                <legend class="fw-bold mb-4 pb-2 border-bottom" style="color: var(--color-primario); border-color: #fbdcb6 !important;">
+                    <i class="bi bi-shop"></i> Datos del Establecimiento
+                </legend>
                 
-                <div class="campo" style="margin-bottom: 20px;">
-                    <label for="nombre-local" style="display: block; font-weight: bold; margin-bottom: 8px;">Nombre Comercial del Local:</label>
-                    <input type="text" id="nombre-local" name="nombre_local" placeholder="Ej. El Fogón de la Abuela" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
-                    <span id="error-nombre" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 5px;">* Ingrese un nombre válido (mínimo 3 caracteres).</span>
+                <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="nombre-local" name="nombre_local" placeholder="Ej. El Fogón de la Abuela">
+                    <label for="nombre-local">Nombre Comercial del Local</label>
+                    <div class="invalid-feedback">* Ingrese un nombre válido (mínimo 3 caracteres).</div>
                 </div>
 
-                <div class="campo" style="margin-bottom: 20px;">
-                    <label for="direccion" style="display: block; font-weight: bold; margin-bottom: 8px;">Dirección Exacta (Municipio / Sector):</label>
-                    <input type="text" id="direccion" name="direccion" placeholder="Ej. Calle 14, Barrio Obrero, San Cristóbal" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
-                    <span id="error-direccion" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 5px;">* Ingrese una dirección detallada (mínimo 10 caracteres).</span>
+                <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ej. Calle 14, Barrio Obrero">
+                    <label for="direccion">Dirección Exacta (Municipio / Sector)</label>
+                    <div class="invalid-feedback">* Ingrese una dirección detallada (mínimo 10 caracteres).</div>
                 </div>
 
-                <div class="campo" style="margin-bottom: 20px;">
-                    <label for="correo" style="display: block; font-weight: bold; margin-bottom: 8px;">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" placeholder="ejemplo@restaurante.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
-                    <span id="error-correo" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 5px;">* Ingrese un correo electrónico válido.</span>
+                <div class="form-floating mb-4">
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@restaurante.com">
+                    <label for="correo">Correo Electrónico</label>
+                    <div class="invalid-feedback">* Ingrese un correo electrónico válido.</div>
                 </div>
 
-                <div class="campo" style="margin-bottom: 20px; display: flex; gap: 15px;">
-                    <div style="flex: 1;">
-                        <label for="telefono" style="display: block; font-weight: bold; margin-bottom: 8px;">Teléfono de Contacto:</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="Ej. 0414-1234567" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
-                        <span id="error-telefono" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 5px;">* Formato inválido (Ej: 0414-1234567).</span>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej. 0414-1234567">
+                            <label for="telefono">Teléfono (Ej. 0414-1234567)</label>
+                            <div class="invalid-feedback">* Formato inválido.</div>
+                        </div>
                     </div>
-                    <div style="flex: 1;">
-                        <label for="redes" style="display: block; font-weight: bold; margin-bottom: 8px;">Redes Sociales (Opcional):</label>
-                        <input type="text" id="redes" name="redes" placeholder="@RestauranteEjemplo" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="redes" name="redes" placeholder="@RestauranteEjemplo">
+                            <label for="redes">Redes Sociales (Opcional)</label>
+                        </div>
                     </div>
                 </div>
 
-                <div class="campo" style="margin-bottom: 30px; background: #fdf3e7; padding: 20px; border-radius: 8px; border-left: 4px solid var(--color-primario);">
-                    <label style="display: block; font-weight: bold; margin-bottom: 12px; color: var(--color-primario);">¿Qué productos tradicionales ofrece? (Marque al menos uno)</label>
+                <div class="mb-4 p-4 rounded-3 bg-light border-start border-4" style="border-color: var(--color-primario) !important;">
+                    <label class="form-label fw-bold mb-3 d-block" style="color: var(--color-primario);">¿Qué productos tradicionales ofrece? (Marque al menos uno)</label>
                     
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap;" id="grupo-checkboxes">
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="ofrece" value="platos" style="width: 18px; height: 18px; accent-color: var(--color-primario);">
-                            🍽️ Platos Principales (Pizca, Mute)
+                    <div class="d-flex flex-wrap gap-2" id="grupo-checkboxes">
+                        <input type="checkbox" class="btn-check" id="check-platos" name="ofrece" value="platos">
+                        <label class="btn btn-outline-andino rounded-pill px-4" for="check-platos">
+                            <i class="bi bi-cup-hot-fill me-2"></i>Platos Principales
                         </label>
-                        
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="ofrece" value="bebidas" style="width: 18px; height: 18px; accent-color: var(--color-primario);">
-                            🍹 Bebidas Típicas (Masato, Chicha)
+
+                        <input type="checkbox" class="btn-check" id="check-bebidas" name="ofrece" value="bebidas">
+                        <label class="btn btn-outline-andino rounded-pill px-4" for="check-bebidas">
+                            <i class="bi bi-cup-straw me-2"></i>Bebidas Típicas
                         </label>
-                        
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="ofrece" value="dulces" style="width: 18px; height: 18px; accent-color: var(--color-primario);">
-                            🍬 Dulcería Andina (Abrillantados)
+
+                        <input type="checkbox" class="btn-check" id="check-dulces" name="ofrece" value="dulces">
+                        <label class="btn btn-outline-andino rounded-pill px-4" for="check-dulces">
+                            <i class="bi bi-bag-heart-fill me-2"></i>Dulcería
                         </label>
                     </div>
-                    <span id="error-productos" style="color: #e74c3c; font-size: 0.85em; display: none; margin-top: 10px;">* Debe seleccionar al menos una categoría de productos.</span>
+                    <div id="error-productos" class="text-danger mt-2 small" style="display: none;">* Debe seleccionar al menos una categoría de productos.</div>
                 </div>
 
-                <input type="submit" value="Solicitar Inclusión al Directorio" class="boton-enlace" style="width: 100%; cursor: pointer; padding: 15px; font-size: 1.1em; border: none;">
+                <button type="submit" class="btn-degustacion w-100 justify-content-center d-flex mt-2">
+                    <i class="bi bi-whatsapp"></i> Enviar Solicitud por WhatsApp
+                </button>
             </fieldset>
         </form>
-    </main>
 
-    <div id="mensaje-exito" style="display: none; max-width: 700px; margin: 20px auto; background: #d4edda; color: #155724; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #c3e6cb;">
-        <h3 style="margin-top: 0;">¡Registro Exitoso!</h3>
-        <p>Su solicitud ha sido enviada y será evaluada para incluir su establecimiento en la Ruta Gastronómica.</p>
-    </div>
+        <div id="mensaje-exito" class="alert alert-success mt-4 mx-auto text-center shadow-sm" style="display: none; max-width: 700px;">
+            <h4 class="alert-heading"><i class="bi bi-check-circle-fill"></i> ¡Registro Exitoso!</h4>
+            <p class="mb-0">Su solicitud ha sido enviada y será evaluada para incluir su establecimiento en la Ruta Gastronómica.</p>
+        </div>
+
+    </main>
 
     <script>
         document.getElementById('formulario-registro').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevenir el envío automático
+            e.preventDefault(); 
 
             let formularioValido = true;
 
-            // Función de ayuda para mostrar/ocultar errores
-            const mostrarError = (idElemento, mostrar, inputId) => {
-                document.getElementById(idElemento).style.display = mostrar ? 'block' : 'none';
-                if (inputId) {
-                    document.getElementById(inputId).style.border = mostrar ? '1px solid #e74c3c' : '1px solid #ccc';
+            // Función para alternar clases de Bootstrap (is-invalid)
+            const validarCampo = (inputId, condicionError) => {
+                const input = document.getElementById(inputId);
+                if (condicionError) {
+                    input.classList.add('is-invalid');
+                    formularioValido = false;
+                } else {
+                    input.classList.remove('is-invalid');
                 }
-                if (mostrar) formularioValido = false;
             };
 
-            // 1. Validar Nombre (Mínimo 3 caracteres)
+            // 1. Validar Nombre
             const nombre = document.getElementById('nombre-local').value.trim();
-            mostrarError('error-nombre', nombre.length < 3, 'nombre-local');
+            validarCampo('nombre-local', nombre.length < 3);
 
-            // 2. Validar Dirección (Mínimo 10 caracteres)
+            // 2. Validar Dirección
             const direccion = document.getElementById('direccion').value.trim();
-            mostrarError('error-direccion', direccion.length < 10, 'direccion');
+            validarCampo('direccion', direccion.length < 10);
 
             // 3. Validar Correo
             const correo = document.getElementById('correo').value.trim();
             const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            mostrarError('error-correo', !regexCorreo.test(correo), 'correo');
+            validarCampo('correo', !regexCorreo.test(correo));
 
-            // 4. Validar Teléfono (Formato 0000-0000000)
+            // 4. Validar Teléfono
             const telefono = document.getElementById('telefono').value.trim();
             const regexTel = /^[0-9]{4}-[0-9]{7}$/;
-            mostrarError('error-telefono', !regexTel.test(telefono), 'telefono');
+            validarCampo('telefono', !regexTel.test(telefono));
 
-            // 5. Validar Checkboxes (Al menos 1)
+            // 5. Validar Checkboxes
             const checkboxes = document.querySelectorAll('input[name="ofrece"]:checked');
-            mostrarError('error-productos', checkboxes.length === 0, null);
+            const errorProd = document.getElementById('error-productos');
+            if (checkboxes.length === 0) {
+                errorProd.style.display = 'block';
+                formularioValido = false;
+            } else {
+                errorProd.style.display = 'none';
+            }
 
-            // Si todo es válido, enviamos los datos a WhatsApp
             if (formularioValido) {
-                // 1. Recopilamos las categorías seleccionadas
                 let productosOfrecidos = [];
                 checkboxes.forEach(cb => {
                     if (cb.value === 'platos') productosOfrecidos.push('Platos Principales');
@@ -141,10 +164,8 @@
                     if (cb.value === 'dulces') productosOfrecidos.push('Dulcería Andina');
                 });
 
-                // 2. Opcional: capturar redes sociales
                 const redes = document.getElementById('redes').value.trim() || "No indicó";
 
-                // 3. Armar el mensaje para WhatsApp
                 let mensaje = `*NUEVA SOLICITUD - RUTA GASTRONÓMICA TÁCHIRA* 🍲\n\n`;
                 mensaje += `*Nombre del Local:* ${nombre}\n`;
                 mensaje += `*Dirección:* ${direccion}\n`;
@@ -153,23 +174,18 @@
                 mensaje += `*Redes Sociales:* ${redes}\n`;
                 mensaje += `*Ofrece:* ${productosOfrecidos.join(", ")}\n`;
 
-                // 4. Tu número de teléfono con código de área (Sin el + o ceros iniciales)
-                // Ejemplo para Venezuela: 58 seguido de tu número (584141234567)
-                let numeroAdmin = "584247642600"; // <-- ¡Cambia esto por tu número real!
+                let numeroAdmin = "584247642600"; // Tu número actual
 
-                // 5. Crear el enlace seguro de WhatsApp
                 let enlaceWhatsApp = `https://wa.me/${numeroAdmin}?text=${encodeURIComponent(mensaje)}`;
 
-                // 6. Ocultar formulario y mostrar éxito
                 document.getElementById('formulario-registro').style.display = 'none';
                 document.getElementById('mensaje-exito').style.display = 'block';
 
-                // 7. Abrir WhatsApp en una nueva pestaña
                 window.open(enlaceWhatsApp, '_blank');
             }
         });
     </script>
     <script src="js/datos.js"></script>
-<script src="js/logica.js"></script>
+    <script src="js/logica.js"></script>
 </body>
 </html>

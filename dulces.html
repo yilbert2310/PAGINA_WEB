@@ -2,10 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dulces Tradicionales</title>
+    <title>Dulces Tradicionales - Táchira</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
 </head>
 <body>
     <header>
@@ -24,6 +28,7 @@
         <a href="registro_restaurante.html">Registrar Local</a>
         <a href="mapa.html">Mapa de Ruta</a>
     </nav>
+    
     <main class="contenedor-interno">
         
         <div style="text-align: center; margin-bottom: 30px;">
@@ -32,113 +37,131 @@
         </div>
 
         <div style="text-align: center; margin: 30px 0;">
-            <button onclick="armarMenuDegustacion()" style="padding: 15px 30px; background-color: var(--color-primario); color: white; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); transition: 0.3s;">
-                🛒 Armar mi Menú de Degustación
-            </button>
+            <button onclick="armarMenuDegustacion()" style="padding: 15px 30px; background-color: var(--color-primario); color: white; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); transition: 0.3s; display: inline-flex; align-items: center; gap: 8px;">
+            <i class="bi bi-bag-plus" style="font-size: 1.2em;"></i> Armar mi Menú de Degustación
+        </button>
         </div>
 
         <div id="resultado-menu" style="display: none; max-width: 800px; margin: 0 auto 40px auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-left: 5px solid #2c3e50;">
         </div>
 
-        <div class="galeria-cuadricula">
-            <!-- TARJETA 1: Abrillantados -->
-            <article class="tarjeta">
-                <a href="detalles/detalle_abrillantados.html">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/abrillantados.jpg" alt="Abrillantados" onerror="this.src='img/miche.jpg'">
-                            </div>
-                            <div class="flip-card-back">
-                                <h3>Abrillantados</h3>
-                                <p>Verdaderas joyas de la dulcería andina, famosas por sus colores vivos y sus delicadas formas frutales.</p>
-                                <a href="detalles/detalle_abrillantados.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta h-100">
+                    <a href="detalles/detalle_abrillantados.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/abrillantados.jpg" alt="Abrillantados" onerror="this.src='img/miche.jpg'">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Abrillantados</h3>
+                                    <p>Verdaderas joyas de la dulcería andina, famosas por sus colores vivos y sus delicadas formas frutales.</p>
+                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-            </article>
+                    </a>
+                </article>
+            </div>
 
-            <!-- TARJETA 2: Aliados -->
-            <article class="tarjeta">
-                <a href="detalles/detalle_aliados.html">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/aliados.jpg" alt="Dulce de Aliado o Templón">
-                            </div>
-                            <div class="flip-card-back">
-                                <h3>Aliados (Templones)</h3>
-                                <p>Golosina tradicional de textura chiclosa, sumamente popular en carreteras y kioscos de la región.</p>
-                                <a href="detalles/detalle_aliados.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta h-100">
+                    <a href="detalles/detalle_aliados.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/aliados.jpg" alt="Dulce de Aliado o Templón">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Aliados (Templones)</h3>
+                                    <p>Golosina tradicional de textura chiclosa, sumamente popular en carreteras y kioscos de la región.</p>
+                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-            </article>
+                    </a>
+                </article>
+            </div>
 
-            <!-- TARJETA 3: Higos Rellenos -->
-            <article class="tarjeta">
-                <a href="detalles/detalle_higos.html">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/higos.jpg" alt="Higos Rellenos con Arequipe">
-                            </div>
-                            <div class="flip-card-back">
-                                <h3>Higos Rellenos</h3>
-                                <p>Un postre elegante y tradicional donde la fruta se cocina lentamente en un suave almíbar especiado y se rellena con un cremoso arequipe.</p>
-                                <a href="detalles/detalle_higos.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                            </div>
-                        </div>
-                    </div>
-            </article>
-            <!-- TARJETA 4: Besitos de Coco -->
-            <article class="tarjeta">
-                <a href="detalles/detalle_besitos.html">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/besitos.jpg" alt="Besitos de Coco">
-                            </div>
-                            <div class="flip-card-back">
-                                <h3>Besitos de Coco</h3>
-                                <p>Dulce horneado a base de coco rallado y papelón, un bocado tradicional infaltable en las meriendas.</p>
-                                <a href="detalles/detalle_besitos.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta h-100">
+                    <a href="detalles/detalle_higos.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/higos.jpg" alt="Higos Rellenos con Arequipe">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Higos Rellenos</h3>
+                                    <p>Un postre elegante y tradicional donde la fruta se cocina en almíbar especiado y se rellena con arequipe.</p>
+                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-            </article>
+                    </a>
+                </article>
+            </div>
 
-            <article class="tarjeta">
-                <a href="detalles/detalle_quesadillas.html">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/quesadillas.jpg" alt="Quesadillas Andinas">
-                            </div>
-                            <div class="flip-card-back">
-                                <h3>Quesadillas Andinas</h3>
-                                <p>Pan dulce horneado en forma de canasta, relleno con mezcla de queso, azúcar y vainilla.</p>
-                                <a href="detalles/detalle_quesadillas.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta h-100">
+                    <a href="detalles/detalle_besitos.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/besitos.jpg" alt="Besitos de Coco">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Besitos de Coco</h3>
+                                    <p>Dulce horneado a base de coco rallado y papelón, un bocado tradicional infaltable en las meriendas.</p>
+                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-            </article>
+                    </a>
+                </article>
+            </div>
 
-            <article class="tarjeta">
-                <a href="detalles/detalle_melcocha.html">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/melcocha.jpg" alt="Melcocha Artesanal">
-                            </div>
-                            <div class="flip-card-back">
-                                <h3>Melcocha</h3>
-                                <p>Dulce artesanal estirado a mano elaborado con papelón hervido de textura chiclosa.</p>
-                                <a href="detalles/detalle_melcocha.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta h-100">
+                    <a href="detalles/detalle_quesadillas.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/quesadillas.jpg" alt="Quesadillas Andinas">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Quesadillas Andinas</h3>
+                                    <p>Pan dulce horneado en forma de canasta, relleno con mezcla de queso, azúcar y vainilla.</p>
+                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-        
+                    </a>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="tarjeta h-100">
+                    <a href="detalles/detalle_melcocha.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/melcocha.jpg" alt="Melcocha Artesanal">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Melcocha</h3>
+                                    <p>Dulce artesanal estirado a mano elaborado con papelón hervido de textura chiclosa.</p>
+                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+        </div> 
     </main>
     <script src="js/logica.js"></script>
 </body>
