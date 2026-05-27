@@ -27,14 +27,6 @@ const baseDatosMunicipios = {
     }
 };
 
-const directorioLocales = [
-    { nombre: "El Fogón Andino", zonas: ["barrio obrero", "avenida carabobo", "carabobo"], descripcion: "Perfecto para desayunar Pizca Andina." },
-    { nombre: "La Tradición Andina", zonas: ["barrio obrero", "avenida carabobo", "carabobo"], descripcion: "Disfruta de auténticas Arepas de Trigo hechas a leña." },
-    { nombre: "Dulcería La Andina", zonas: ["centro", "quinta avenida", "séptima avenida"], descripcion: "Ideal para un postre. Especialistas en abrillantados." },
-    { nombre: "El Páramo del Zumbador", zonas: ["paramo", "cordero", "via cordero", "zumbador"], descripcion: "La mejor parada para un Calentadito o Chicha Andina." },
-    { nombre: "Comedores del Mercado Los Pequeños Comerciantes", zonas: ["la concordia", "san cristobal", "mercado"], descripcion: "El epicentro popular para un buen Mute los domingos." },
-    { nombre: "Los Kioscos de Capacho", zonas: ["capacho", "independencia", "libertad", "mercado municipal"], descripcion: "Parada tradicional para comer los mejores pastelitos y masato." }
-];
 
 const inventarioRestaurantes = [
     { nombre: "El Fogón Andino", zonas: ["barrio obrero", "avenida carabobo", "carabobo"], direccionMaps: "El Fogón Andino, Barrio Obrero, San Cristóbal, Táchira", imagen: "img/restaurante1.jpg", referencia: "📍 Barrio Obrero, San Cristóbal", descripcion: "Un rincón clásico para desayunar. Especialistas en caldos y desayunos tradicionales.", tags: ["Pizca Andina", "Pastelitos"], enlaceDetalle: "detalles/detalle_restaurante1.html" },

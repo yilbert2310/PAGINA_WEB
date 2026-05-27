@@ -26,71 +26,92 @@ header {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-nav {
-    background: rgba(247, 244, 240, 0.75); /* Blanco hueso de tu paleta, semitransparente */
-    backdrop-filter: blur(12px); /* El efecto de vidrio desenfocado */
+/* =======================================================
+   RENOVACIÓN COMPLETA DE LA BARRA DE NAVEGACIÓN RESPONSIVA
+   ======================================================= */
+
+.barra-navegacion-andina {
+    background: rgba(247, 244, 240, 0.85) !important; /* Blanco hueso semitransparente */
+    backdrop-filter: blur(12px); /* Efecto vidrio difuminado premium */
     -webkit-backdrop-filter: blur(12px); /* Para Safari */
     border-bottom: 1px solid rgba(110, 71, 59, 0.15); /* Borde sutil color café */
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    padding: 12px 0;
+    z-index: 1050;
     transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra difuminada */
 }
 
-/* --- BOTONES DEL MENÚ (EFECTO LIQUIDO) --- */
-nav a {
-    color: var(--color-secundario);
-    text-decoration: none;
+/* Estilo base para los enlaces en PC */
+.barra-navegacion-andina .enlace-andino {
+    color: var(--color-secundario) !important;
     font-weight: 700;
-    padding: 10px 20px;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: all 0.7s;
-}
-
-/* El círculo invisible que crecerá */
-/* --- BOTONES DEL MENÚ (EFECTO MINIMALISTA) --- */
-nav a {
-    color: var(--color-secundario);
-    text-decoration: none;
-    font-weight: 700;
-    padding: 10px 15px;
+    padding: 10px 18px !important;
     position: relative;
     transition: color 0.3s ease;
+    font-size: 1.05rem;
 }
 
-/* La línea sutil invisible por defecto */
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-acento); /* Terracota para resaltar elegante */
-    transition: all 0.3s ease;
-    transform: translateX(-50%); /* Centra la línea */
+/* Línea animada minimalista inferior (solo activa en pantallas grandes de PC) */
+@media (min-width: 992px) {
+    .barra-navegacion-andina .enlace-andino::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-acento); /* Color arcilla/terracota */
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform: translateX(-50%);
+    }
+
+    /* Al pasar el mouse la línea crece */
+    .barra-navegacion-andina .enlace-andino:hover::after {
+        width: 75%; 
+    }
 }
 
-/* Al pasar el mouse: color sutil y la línea crece desde el centro */
-nav a:hover, nav a:active {
-    color: var(--color-primario);
+/* Cambio de color en Hover (cuando pasas el mouse) */
+.barra-navegacion-andina .enlace-andino:hover {
+    color: var(--color-primario) !important;
 }
 
-nav a:hover::after, nav a:active::after {
-    width: 80%; /* La línea se expande sin tocar los bordes */
+/* Personalización estética del botón hamburguesa para que combine con la paleta en teléfonos */
+.barra-navegacion-andina .navbar-toggler {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background-color: rgba(110, 71, 59, 0.05);
+    transition: background-color 0.3s ease;
 }
 
+.barra-navegacion-andina .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(194, 126, 90, 0.2) !important; /* Brillo terracota de enfoque */
+}
+
+/* Ajustes específicos para la visualización en teléfonos móviles */
+@media (max-width: 991.98px) {
+    .barra-navegacion-andina .navbar-nav {
+        margin-top: 10px;
+        background-color: rgba(255, 255, 255, 0.95); /* Fondo sólido limpio al desplegarse en móvil */
+        border-radius: 16px;
+        padding: 15px !important;
+        box-shadow: 0 10px 25px rgba(44, 31, 26, 0.08);
+        border: 1px solid rgba(110, 71, 59, 0.08);
+    }
+    
+    .barra-navegacion-andina .enlace-andino {
+        padding: 12px 20px !important;
+        border-radius: 10px;
+    }
+    
+    .barra-navegacion-andina .enlace-andino:hover {
+        background-color: #fffaf6; /* Resaltado suave al tocar opciones en móvil */
+    }
+}
+
+/* =======================================================
+   ESTRUCTURA DEL CONTENIDO (Se mantiene igual)
+   ======================================================= */
 .contenedor-interno {
     width: 90%;
     max-width: 1200px;
