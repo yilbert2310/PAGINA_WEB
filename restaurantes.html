@@ -12,204 +12,79 @@
     <link rel="stylesheet" href="css/componentes.css">
 </head>
 <body>
-    <header>
-        <div class="contenedor-encabezado">
-            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
-            <h1>Gastronomía del Estado Táchira</h1>
+    <aside class="sidebar" aria-label="Navegación lateral">
+        <nav class="sidebar-nav">
+            <a class="sidebar-logo" href="index.html" aria-label="Inicio">
+                <img src="img/logo.png" alt="Logo de la Ruta Gastronómica">
+                <span>Gastronomía Táchira</span>
+            </a>
+
+            <ul class="sidebar-lista">
+                <li><a href="index.html" onclick="sessionStorage.clear();"><span class="sidebar-icon"><i class="bi bi-house-door"></i></span><span class="menu-text">Inicio</span></a></li>
+                <li><a href="platos.html"><span class="sidebar-icon"><i class="bi bi-egg-fried"></i></span><span class="menu-text">Platos</span></a></li>
+                <li><a href="bebidas.html"><span class="sidebar-icon"><i class="bi bi-cup-straw"></i></span><span class="menu-text">Bebidas</span></a></li>
+                <li><a href="dulces.html"><span class="sidebar-icon"><i class="bi bi-cake2"></i></span><span class="menu-text">Dulces</span></a></li>
+                <li><a class="activo" href="restaurantes.html"><span class="sidebar-icon"><i class="bi bi-shop-window"></i></span><span class="menu-text">Restaurantes</span></a></li>
+                <li><a href="registro_restaurante.html"><span class="sidebar-icon"><i class="bi bi-pencil-square"></i></span><span class="menu-text">Registrar</span></a></li>
+                <li><a href="mapa.html"><span class="sidebar-icon"><i class="bi bi-map"></i></span><span class="menu-text">Mapa</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="contenido-principal">
+        <div class="contenedor-interno">
+            <section class="slider-section">
+                <div class="slider-container">
+                    <div class="slide">
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/restaurante1.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Restaurante</span>
+                                <h4>El Fogón Andino</h4>
+                                <p>Un espacio clásico para disfrutar desayunos tradicionales y caldos reconfortantes.</p>
+                                <a href="detalles/detalle_restaurante1.html" class="boton-enlace">Ver local</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/restaurante2.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Dulcería</span>
+                                <h4>Dulcería La Andina</h4>
+                                <p>Patrimonio de la región, donde los dulces artesanales se convierten en tradición viva.</p>
+                                <a href="detalles/detalle_restaurante2.html" class="boton-enlace">Ver local</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/restaurante3.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Parada</span>
+                                <h4>El Páramo del Zumbador</h4>
+                                <p>Un lugar emblemático para quienes buscan la mejor combinación entre clima, sabor y ruta.</p>
+                                <a href="detalles/detalle_restaurante3.html" class="boton-enlace">Ver local</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/restaurante4.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Cocina rural</span>
+                                <h4>La Casona de los Andes</h4>
+                                <p>Comida tradicional servida con ambiente acogedor y vista panorámica.</p>
+                                <a href="detalles/detalle_restaurante4.html" class="boton-enlace">Ver local</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/restaurante5.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Casual</span>
+                                <h4>La Plaza del Sabor</h4>
+                                <p>Una parada vibrante con propuesta gastronómica andina y regional.</p>
+                                <a href="detalles/detalle_restaurante5.html" class="boton-enlace">Ver local</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="arrows">
+                        <button class="slider-btn prev" type="button" aria-label="Anterior">‹</button>
+                        <button class="slider-btn next" type="button" aria-label="Siguiente">›</button>
+                    </div>
+                </div>
+            </section>
         </div>
-    </header>
-    
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top barra-navegacion-andina">
-    <div class="container-fluid justify-content-between justify-content-lg-center position-relative px-4">
-        
-        <button class="navbar-toggler border-0 order-first" type="button" data-bs-toggle="collapse" data-bs-target="#menuGastronomico" aria-controls="menuGastronomico" aria-expanded="false" aria-label="Cambiar navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-center" id="menuGastronomico">
-            <div class="navbar-nav gap-2 py-2 py-lg-0 text-center">
-                <a class="nav-link enlace-andino" href="index.html" onclick="sessionStorage.clear();">Inicio</a>
-                <a class="nav-link enlace-andino" href="platos.html">Platos</a>
-                <a class="nav-link enlace-andino" href="bebidas.html">Bebidas</a>
-                <a class="nav-link enlace-andino" href="dulces.html">Dulces</a>
-                <a class="nav-link enlace-andino" href="restaurantes.html">Restaurantes</a>
-                <a class="nav-link enlace-andino" href="registro_restaurante.html">Registrar Local</a>
-                <a class="nav-link enlace-andino" href="mapa.html">Mapa de Ruta</a>
-            </div>
-        </div>
-        
-    </div>
-</nav>
-    
-    <main class="contenedor-interno">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="color: #2c3e50; font-size: 2.5em; text-transform: uppercase; font-weight: bold;">Ruta Gastronómica Tachirense</h2>
-            <p style="color: #555; font-size: 1.1em;">Descubre los mejores locales y emprendimientos donde puedes degustar nuestra tradición.</p>
-        </div>
-
-        <div class="contenedor-tarjetas">
-            <div class="row g-4 justify-content-center">
-                
-                <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta h-100">
-                        <a href="detalles/detalle_restaurante1.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="img/restaurante1.jpg" alt="El Fogón Andino">
-                                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(44, 31, 26, 0.9)); padding: 30px 15px 15px 15px; color: white; text-align: center;">
-                                            <h3 style="margin: 0; font-size: 1.3em; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">El Fogón Andino</h3>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h3 style="font-size: 1.2em;">El Fogón Andino</h3>
-                                        <p style="margin-bottom: 5px; font-weight: bold; color: #fbdcb6;">
-                                            <i class="bi bi-geo-alt-fill" style="color: var(--color-acento); margin-right: 5px;"></i> Barrio Obrero
-                                        </p>
-                                        <p style="font-size: 0.85em; padding: 0 10px; line-height: 1.4;">Un rincón clásico para desayunar. Especialistas en caldos y desayunos tradicionales.</p>
-                                        <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario); font-size: 0.9em; padding: 10px 20px;">Ver Local</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta h-100">
-                        <a href="detalles/detalle_restaurante2.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="img/restaurante2.jpg" alt="Dulcería La Andina">
-                                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(44, 31, 26, 0.9)); padding: 30px 15px 15px 15px; color: white; text-align: center;">
-                                            <h3 style="margin: 0; font-size: 1.3em; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Dulcería La Andina</h3>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h3 style="font-size: 1.2em;">Dulcería La Andina</h3>
-                                        <p style="margin-bottom: 5px; font-weight: bold; color: #fbdcb6;">
-                                            <i class="bi bi-geo-alt-fill" style="color: var(--color-acento); margin-right: 5px;"></i> Barrio Obrero
-                                        </p>
-                                        <p style="font-size: 0.85em; padding: 0 10px; line-height: 1.4;">Patrimonio de la ciudad. Más de 30 años elaborando los postres más representativos de la región de forma artesanal.</p>
-                                        <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario); font-size: 0.9em; padding: 10px 20px;">Ver Local</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>    
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta h-100">
-                        <a href="detalles/detalle_restaurante3.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="img/restaurante3.jpg" alt="El Páramo del Zumbador">
-                                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(44, 31, 26, 0.9)); padding: 30px 15px 15px 15px; color: white; text-align: center;">
-                                            <h3 style="margin: 0; font-size: 1.3em; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">El Páramo del Zumbador</h3>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h3 style="font-size: 1.2em;">El Páramo del Zumbador</h3>
-                                        <p style="margin-bottom: 5px; font-weight: bold; color: #fbdcb6;">
-                                            <i class="bi bi-geo-alt-fill" style="color: var(--color-acento); margin-right: 5px;"></i> Vía Cordero - Páramo
-                                        </p>
-                                        <p style="font-size: 0.85em; padding: 0 10px; line-height: 1.4;">La parada obligatoria de los viajeros. Ofrecen las mejores bebidas calientes y fermentadas para combatir el frío.</p>
-                                        <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario); font-size: 0.9em; padding: 10px 20px;">Ver Local</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta h-100">
-                        <a href="detalles/detalle_restaurante4.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="img/restaurante4.jpg" alt="La Tradición Andina">
-                                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(44, 31, 26, 0.9)); padding: 30px 15px 15px 15px; color: white; text-align: center;">
-                                            <h3 style="margin: 0; font-size: 1.3em; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">La Tradición Andina</h3>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h3 style="font-size: 1.2em;">La Tradición Andina</h3>
-                                        <p style="margin-bottom: 5px; font-weight: bold; color: #fbdcb6;">
-                                            <i class="bi bi-geo-alt-fill" style="color: var(--color-acento); margin-right: 5px;"></i> Barrio Obrero
-                                        </p>
-                                        <p style="font-size: 0.85em; padding: 0 10px; line-height: 1.4;">Un rincón clásico en San Cristóbal donde el sabor de las auténticas arepas de trigo hechas a leña se mantiene vivo. Rellenos generosos y un ambiente muy familiar.</p>
-                                        <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario); font-size: 0.9em; padding: 10px 20px;">Ver Local</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta h-100">
-                        <a href="detalles/detalle_restaurante5.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="img/restaurante5.jpg" alt="Comedores del Mercado">
-                                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(44, 31, 26, 0.9)); padding: 30px 15px 15px 15px; color: white; text-align: center;">
-                                            <h3 style="margin: 0; font-size: 1.3em; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Comedores del Mercado</h3>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h3 style="font-size: 1.2em;">Comedores del Mercado</h3>
-                                        <p style="margin-bottom: 5px; font-weight: bold; color: #fbdcb6;">
-                                            <i class="bi bi-geo-alt-fill" style="color: var(--color-acento); margin-right: 5px;"></i> La Concordia, San Cristóbal
-                                        </p>
-                                        <p style="font-size: 0.85em; padding: 0 10px; line-height: 1.4;">El epicentro popular donde los tachirenses van a comer el mejor Mute y Pizca andina los domingos.</p>
-                                        <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario); font-size: 0.9em; padding: 10px 20px;">Ver Local</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta h-100">
-                        <a href="detalles/detalle_restaurante6.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="img/restaurante6.jpg" alt="Los Kioscos de Capacho">
-                                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(44, 31, 26, 0.9)); padding: 30px 15px 15px 15px; color: white; text-align: center;">
-                                            <h3 style="margin: 0; font-size: 1.3em; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Los Kioscos de Capacho</h3>
-                                        </div>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h3 style="font-size: 1.2em;">Los Kioscos de Capacho</h3>
-                                        <p style="margin-bottom: 5px; font-weight: bold; color: #fbdcb6;">
-                                            <i class="bi bi-geo-alt-fill" style="color: var(--color-acento); margin-right: 5px;"></i> Mercado Municipal de Capacho
-                                        </p>
-                                        <p style="font-size: 0.85em; padding: 0 10px; line-height: 1.4;">Parada tradicional famosa por ofrecer las mejores empanadas, pastelitos y masato en la vía a la frontera.</p>
-                                        <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario); font-size: 0.9em; padding: 10px 20px;">Ver Local</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-
-            </div>
-        </div>
-        
-        <section class="ruta-timeline">
-            <h2 style="text-align: center; color: var(--color-primario); margin-bottom: 30px; margin-top: 50px;">Ruta Turística Sugerida por un Día</h2>
-            
-            <div class="parada-ruta">
-                <h3>8:00 AM - Desayuno en El Fogón Andino</h3>
-                <p>Comienza el día con energía degustando unos pastelitos andinos y una reparadora Pizca Andina en Barrio Obrero.</p>
-            </div>
+    </main>
             
             <div class="parada-ruta">
                 <h3>1:00 PM - Almuerzo en La Tradición Andina</h3>

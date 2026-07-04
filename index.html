@@ -15,36 +15,27 @@
     <link rel="icon" href="img/logo.png?v=2" type="image/png">
 </head>
 <body>
-    <header>
-        <div class="contenedor-encabezado">
-            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
-            <h1>Gastronomía del Estado Táchira</h1>
-        </div>
-    </header>
+    <aside class="sidebar" aria-label="Navegación lateral">
+        <nav class="sidebar-nav">
+            <a class="sidebar-logo" href="index.html" aria-label="Inicio">
+                <img src="img/logo.png" alt="Logo de la Ruta Gastronómica">
+                <span>Gastronomía Táchira</span>
+            </a>
 
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top barra-navegacion-andina">
-        <div class="container-fluid justify-content-between justify-content-lg-center position-relative px-4">
-            
-            <button class="navbar-toggler border-0 order-first" type="button" data-bs-toggle="collapse" data-bs-target="#menuGastronomico" aria-controls="menuGastronomico" aria-expanded="false" aria-label="Cambiar navegación">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <ul class="sidebar-lista">
+                <li><a class="activo" href="index.html" onclick="sessionStorage.clear();"><span class="sidebar-icon"><i class="bi bi-house-door"></i></span><span class="menu-text">Inicio</span></a></li>
+                <li><a href="platos.html"><span class="sidebar-icon"><i class="bi bi-egg-fried"></i></span><span class="menu-text">Platos</span></a></li>
+                <li><a href="bebidas.html"><span class="sidebar-icon"><i class="bi bi-cup-straw"></i></span><span class="menu-text">Bebidas</span></a></li>
+                <li><a href="dulces.html"><span class="sidebar-icon"><i class="bi bi-cake2"></i></span><span class="menu-text">Dulces</span></a></li>
+                <li><a href="restaurantes.html"><span class="sidebar-icon"><i class="bi bi-shop-window"></i></span><span class="menu-text">Restaurantes</span></a></li>
+                <li><a href="registro_restaurante.html"><span class="sidebar-icon"><i class="bi bi-pencil-square"></i></span><span class="menu-text">Registrar</span></a></li>
+                <li><a href="mapa.html"><span class="sidebar-icon"><i class="bi bi-map"></i></span><span class="menu-text">Mapa</span></a></li>
+            </ul>
+        </nav>
+    </aside>
 
-            <div class="collapse navbar-collapse justify-content-center" id="menuGastronomico">
-                <div class="navbar-nav gap-2 py-2 py-lg-0 text-center">
-                    <a class="nav-link enlace-andino" href="index.html" onclick="sessionStorage.clear();">Inicio</a>
-                    <a class="nav-link enlace-andino" href="platos.html">Platos</a>
-                    <a class="nav-link enlace-andino" href="bebidas.html">Bebidas</a>
-                    <a class="nav-link enlace-andino" href="dulces.html">Dulces</a>
-                    <a class="nav-link enlace-andino" href="restaurantes.html">Restaurantes</a>
-                    <a class="nav-link enlace-andino" href="registro_restaurante.html">Registrar Local</a>
-                    <a class="nav-link enlace-andino" href="mapa.html">Mapa de Ruta</a>
-                </div>
-            </div>
-            
-        </div>
-    </nav>
-
-    <main class="container my-5">
+    <main class="contenido-principal">
+        <div class="contenedor-interno">
         
         <div class="hero-contenido bg-white bg-opacity-75 p-4 p-md-5 rounded border-start border-5 border-warning shadow">
             <span class="badge text-bg-warning px-3 py-2 mb-3 text-uppercase tracking-wide">Hoy en Portada</span>

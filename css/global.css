@@ -7,6 +7,8 @@
     --fondo-claro: #F7F4F0;       /* Blanco hueso/crema */
     --texto-oscuro: #2C1F1A;      /* Negro con matiz cálido */
     --color-blanco: #FFFFFF;
+    --font-principal: 'Lato', sans-serif;
+    --font-titulos: 'Playfair Display', serif;
 }
 
 * {
@@ -15,10 +17,25 @@
     padding: 0;
 }
 
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--fondo-claro);
     color: var(--texto-oscuro);
+}
+
+body:has(.slider-section) {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
 }
 
 /* REFINAMIENTO TIPOGRÁFICO */

@@ -2,6 +2,147 @@
 
 const rutaPersonalizada = [];
 
+function inicializarCarruseles() {
+    document.querySelectorAll('.carousel-container').forEach((container) => {
+        const track = container.querySelector('.carousel-track');
+        const cards = Array.from(container.querySelectorAll('.carousel-card'));
+        const prevBtn = container.querySelector('[data-direction="prev"]');
+        const nextBtn = container.querySelector('[data-direction="next"]');
+
+        if (!track || cards.length === 0 || !prevBtn || !nextBtn) return;
+
+        let indiceActual = 0;
+
+        const actualizarCarrusel = () => {
+            const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0);
+            const anchoTarjeta = cards[0].getBoundingClientRect().width + gap;
+            track.style.transform = `translateX(${-indiceActual * anchoTarjeta}px)`;
+
+            cards.forEach((card, index) => {
+                card.classList.toggle('is-active', index === indiceActual);
+            });
+
+            prevBtn.disabled = indiceActual === 0;
+            nextBtn.disabled = indiceActual >= cards.length - 1;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            indiceActual = Math.max(0, indiceActual - 1);
+            actualizarCarrusel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            indiceActual = Math.min(cards.length - 1, indiceActual + 1);
+            actualizarCarrusel();
+        });
+
+        window.addEventListener('resize', actualizarCarrusel);
+        actualizarCarrusel();
+    });
+}
+
+function inicializarSliders() {
+    document.querySelectorAll('.slider-container').forEach((container) => {
+        const slide = container.querySelector('.slide');
+        const items = Array.from(slide ? slide.children : []);
+        const prevBtn = container.querySelector('.arrows .slider-btn.prev') || container.querySelector('.slider-btn.prev');
+        const nextBtn = container.querySelector('.arrows .slider-btn.next') || container.querySelector('.slider-btn.next');
+
+        if (!slide || items.length < 3 || !prevBtn || !nextBtn) return;
+
+        const irSiguiente = () => {
+            const primerElemento = items[0];
+            if (primerElemento) {
+                slide.appendChild(primerElemento);
+                items.push(items.shift());
+            }
+        };
+
+        const irAnterior = () => {
+            const ultimoElemento = items[items.length - 1];
+            if (ultimoElemento) {
+                slide.prepend(ultimoElemento);
+                items.unshift(items.pop());
+            }
+        };
+
+        prevBtn.addEventListener('click', irAnterior);
+        nextBtn.addEventListener('click', irSiguiente);
+    });
+}
+
+function cerrarMenuMovil() {
+    const menuPrincipal = document.querySelector('.menu-principal');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    if (!menuPrincipal || !menuToggle) return;
+
+    menuPrincipal.classList.remove('menu-abierto');
+    menuToggle.classList.remove('is-active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-abierto');
+}
+
+function abrirMenuMovil() {
+    const menuPrincipal = document.querySelector('.menu-principal');
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    if (!menuPrincipal || !menuToggle) return;
+
+    const estaAbierto = menuPrincipal.classList.toggle('menu-abierto');
+    menuToggle.classList.toggle('is-active', estaAbierto);
+    menuToggle.setAttribute('aria-expanded', String(estaAbierto));
+    document.body.classList.toggle('menu-abierto', estaAbierto);
+}
+
+function marcarEnlaceActivo() {
+    const paginaActual = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.menu-enlace').forEach(enlace => {
+        const href = enlace.getAttribute('href') || '';
+        const esPaginaActual = href === paginaActual || (paginaActual === 'index.html' && href === 'index.html');
+        enlace.classList.toggle('activo', esPaginaActual);
+    });
+}
+
+function aplicarEstadoScroll() {
+    const encabezado = document.querySelector('.encabezado-principal');
+    if (!encabezado) return;
+    encabezado.classList.toggle('is-scrolled', window.scrollY > 20);
+}
+
+if (document.querySelector('.menu-toggle')) {
+    document.querySelector('.menu-toggle').addEventListener('click', abrirMenuMovil);
+}
+
+document.querySelectorAll('.menu-enlace').forEach(enlace => {
+    enlace.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            cerrarMenuMovil();
+        }
+    });
+});
+
+document.addEventListener('click', (event) => {
+    const menuPrincipal = document.querySelector('.menu-principal');
+    if (!menuPrincipal || window.innerWidth > 768) return;
+
+    if (!menuPrincipal.contains(event.target)) {
+        cerrarMenuMovil();
+    }
+});
+
+window.addEventListener('scroll', aplicarEstadoScroll, { passive: true });
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        cerrarMenuMovil();
+    }
+});
+
+marcarEnlaceActivo();
+aplicarEstadoScroll();
+inicializarCarruseles();
+inicializarSliders();
+
 function agregarDestino() {
     const selectLugar = document.getElementById('lugarRuta');
     const lugarSeleccionado = selectLugar.value;

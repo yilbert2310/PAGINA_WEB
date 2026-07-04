@@ -11,167 +11,78 @@
     <link rel="stylesheet" href="css/componentes.css">
 </head>
 <body>
-    <header>
-        <div class="contenedor-encabezado">
-            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
-            <h1>Gastronomía del Estado Táchira</h1>
+    <aside class="sidebar" aria-label="Navegación lateral">
+        <nav class="sidebar-nav">
+            <a class="sidebar-logo" href="index.html" aria-label="Inicio">
+                <img src="img/logo.png" alt="Logo de la Ruta Gastronómica">
+                <span>Gastronomía Táchira</span>
+            </a>
+
+            <ul class="sidebar-lista">
+                <li><a href="index.html" onclick="sessionStorage.clear();"><span class="sidebar-icon"><i class="bi bi-house-door"></i></span><span class="menu-text">Inicio</span></a></li>
+                <li><a class="activo" href="platos.html"><span class="sidebar-icon"><i class="bi bi-egg-fried"></i></span><span class="menu-text">Platos</span></a></li>
+                <li><a href="bebidas.html"><span class="sidebar-icon"><i class="bi bi-cup-straw"></i></span><span class="menu-text">Bebidas</span></a></li>
+                <li><a href="dulces.html"><span class="sidebar-icon"><i class="bi bi-cake2"></i></span><span class="menu-text">Dulces</span></a></li>
+                <li><a href="restaurantes.html"><span class="sidebar-icon"><i class="bi bi-shop-window"></i></span><span class="menu-text">Restaurantes</span></a></li>
+                <li><a href="registro_restaurante.html"><span class="sidebar-icon"><i class="bi bi-pencil-square"></i></span><span class="menu-text">Registrar</span></a></li>
+                <li><a href="mapa.html"><span class="sidebar-icon"><i class="bi bi-map"></i></span><span class="menu-text">Mapa</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="contenido-principal">
+        <div class="contenedor-interno">
+            <section class="slider-section">
+                <div class="slider-container">
+                    <div class="slide">
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/mute.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Plato insignia</span>
+                                <h4>Mute Tachirense</h4>
+                                <p>Una sopa espesa y tradicional que reúne la esencia de los desayunos familiares y las celebraciones.</p>
+                                <a href="detalles/detalle_mute.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/arepa_trigo.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Tradición</span>
+                                <h4>Arepa de Trigo</h4>
+                                <p>Un clásico de la mesa andina, perfecto para acompañar con queso y natilla.</p>
+                                <a href="detalles/detalle_arepa.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/hallaca.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Especial</span>
+                                <h4>Hallaca Tachirense</h4>
+                                <p>Una preparación festiva con un sabor profundo ideal para compartir.</p>
+                                <a href="detalles/detalle_hallaca.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/pizca.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Recomendado</span>
+                                <h4>Pizca Andina</h4>
+                                <p>Sopa reconfortante con papas, queso ahumado y cilantro.</p>
+                                <a href="detalles/detalle_pizca.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/pastelitos.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Crisp</span>
+                                <h4>Pastelitos de Trigo</h4>
+                                <p>Masa crujiente rellena de carne molida y garbanzos.</p>
+                                <a href="detalles/detalle_pastelitos.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="arrows">
+                        <button class="slider-btn prev" type="button" aria-label="Anterior">‹</button>
+                        <button class="slider-btn next" type="button" aria-label="Siguiente">›</button>
+                    </div>
+                </div>
+            </section>
         </div>
-    </header>
-    
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top barra-navegacion-andina">
-    <div class="container-fluid justify-content-between justify-content-lg-center position-relative px-4">
-        
-        <button class="navbar-toggler border-0 order-first" type="button" data-bs-toggle="collapse" data-bs-target="#menuGastronomico" aria-controls="menuGastronomico" aria-expanded="false" aria-label="Cambiar navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-center" id="menuGastronomico">
-            <div class="navbar-nav gap-2 py-2 py-lg-0 text-center">
-                <a class="nav-link enlace-andino" href="index.html" onclick="sessionStorage.clear();">Inicio</a>
-                <a class="nav-link enlace-andino" href="platos.html">Platos</a>
-                <a class="nav-link enlace-andino" href="bebidas.html">Bebidas</a>
-                <a class="nav-link enlace-andino" href="dulces.html">Dulces</a>
-                <a class="nav-link enlace-andino" href="restaurantes.html">Restaurantes</a>
-                <a class="nav-link enlace-andino" href="registro_restaurante.html">Registrar Local</a>
-                <a class="nav-link enlace-andino" href="mapa.html">Mapa de Ruta</a>
-            </div>
-        </div>
-        
-    </div>
-</nav>
-    <main class="contenedor-interno">
-        
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #2c3e50; font-size: 2em;">PLATOS CON CAPACIDAD GASTRONÓMICA</h2>
-            <p>Seleccione un platillo para ver su información detallada y receta.</p>
-        </div>
-
-        <div style="text-align: center; margin: 30px 0;">
-            <button onclick="armarMenuDegustacion()" style="padding: 15px 30px; background-color: var(--color-primario); color: white; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); transition: 0.3s; display: inline-flex; align-items: center; gap: 8px;">
-            <i class="bi bi-bag-plus" style="font-size: 1.2em;"></i> Armar mi Menú de Degustación
-        </button>
-        </div>
-
-        <div id="resultado-menu" style="display: none; max-width: 800px; margin: 0 auto 40px auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-left: 5px solid #2c3e50;">
-        </div>
-
-            <div class="row g-4 justify-content-center">
-            <!-- TARJETA 1: Pizca Andina -->
-             <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta">
-                    <a href="detalles/detalle_pizca.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/pizca.jpg" alt="Pizca Andina">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Pizca Andina</h3>
-                                    <p>Sopa tradicional reconfortante con papas, queso ahumado y cilantro.</p>
-                                    <a href="detalles/detalle_pizca.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                </div>
-                            </div>
-                        </div>
-                </article>
-            </div>
-            
-
-            <!-- TARJETA 2: Pastelitos -->
-             <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta">
-                    <a href="detalles/detalle_pastelitos.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/pastelitos.jpg" alt="Pastelitos Andinos">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Pastelitos de Trigo</h3>
-                                    <p>Masa crujiente rellena de carne molida con arroz y garbanzos, fritos a la perfección.</p>
-                                    <a href="detalles/detalle_pastelitos.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                </div>
-                            </div>
-                        </div>
-                </article>
-            </div>
-            
-
-            <!-- TARJETA 3: Mute Tachirense -->
-             <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta">
-                    <a href="detalles/detalle_mute.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/mute.jpg" alt="Sopa de Mute Tachirense">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Mute Tachirense</h3>
-                                    <p>Una sopa espesa y festiva, tradicional de los domingos familiares, preparada con carne, callos, maíz y verduras finamente picadas.</p>
-                                    <a href="detalles/detalle_mute.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                </div>
-                            </div>
-                        </div>
-                </article>
-            </div>
-            
-            <!-- TARJETA 4: Arepa de Trigo -->
-             <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta">
-                    <a href="detalles/detalle_arepa.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/arepa_trigo.jpg" alt="Arepa de Trigo">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Arepa de Trigo</h3>
-                                    <p>Deliciosa arepa hecha con harina de trigo, típica de la región andina, ideal para acompañar con queso y natilla.</p>
-                                    <a href="detalles/detalle_arepa.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                </div>
-                            </div>
-                        </div>
-                </article>
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta">
-                    <a href="detalles/detalle_hallaca.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/hallaca.jpg" alt="Hallaca Tachirense">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Hallaca Tachirense</h3>
-                                    <p>Nuestra hallaca única con guiso crudo y garbanzos, una joya de la identidad regional.</p>
-                                    <a href="detalles/detalle_hallaca.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                </div>
-                            </div>
-                        </div>
-                </article>  
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta">
-                    <a href="detalles/detalle_turmada.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/turmada.jpg" alt="Turmada Tachirense">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Turmada Tachirense</h3>
-                                    <p>Un pastel tradicional de capas de papa, queso, huevo y pan, bañado en leche. Auténtico sabor a hogar andino.</p>
-                                    <a href="detalles/detalle_turmada.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                </div>
-                            </div>
-                        </div>
-                </article>
-            </div>
-        
-        </div> 
-
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     

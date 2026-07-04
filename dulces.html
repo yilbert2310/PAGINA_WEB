@@ -12,90 +12,79 @@
     <link rel="stylesheet" href="css/componentes.css">
 </head>
 <body>
-    <header>
-        <div class="contenedor-encabezado">
-            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
-            <h1>Gastronomía del Estado Táchira</h1>
-        </div>
-    </header>
-    
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top barra-navegacion-andina">
-    <div class="container-fluid justify-content-between justify-content-lg-center position-relative px-4">
-        
-        <button class="navbar-toggler border-0 order-first" type="button" data-bs-toggle="collapse" data-bs-target="#menuGastronomico" aria-controls="menuGastronomico" aria-expanded="false" aria-label="Cambiar navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <aside class="sidebar" aria-label="Navegación lateral">
+        <nav class="sidebar-nav">
+            <a class="sidebar-logo" href="index.html" aria-label="Inicio">
+                <img src="img/logo.png" alt="Logo de la Ruta Gastronómica">
+                <span>Gastronomía Táchira</span>
+            </a>
 
-        <div class="collapse navbar-collapse justify-content-center" id="menuGastronomico">
-            <div class="navbar-nav gap-2 py-2 py-lg-0 text-center">
-                <a class="nav-link enlace-andino" href="index.html" onclick="sessionStorage.clear();">Inicio</a>
-                <a class="nav-link enlace-andino" href="platos.html">Platos</a>
-                <a class="nav-link enlace-andino" href="bebidas.html">Bebidas</a>
-                <a class="nav-link enlace-andino" href="dulces.html">Dulces</a>
-                <a class="nav-link enlace-andino" href="restaurantes.html">Restaurantes</a>
-                <a class="nav-link enlace-andino" href="registro_restaurante.html">Registrar Local</a>
-                <a class="nav-link enlace-andino" href="mapa.html">Mapa de Ruta</a>
-            </div>
-        </div>
-        
-    </div>
-</nav>
-    
-    <main class="contenedor-interno">
-        
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #2c3e50; font-size: 2em;">DULCERÍA TRADICIONAL ANDINA</h2>
-            <p>Seleccione un dulce para descubrir su origen y elaboración artesanal.</p>
-        </div>
+            <ul class="sidebar-lista">
+                <li><a href="index.html" onclick="sessionStorage.clear();"><span class="sidebar-icon"><i class="bi bi-house-door"></i></span><span class="menu-text">Inicio</span></a></li>
+                <li><a href="platos.html"><span class="sidebar-icon"><i class="bi bi-egg-fried"></i></span><span class="menu-text">Platos</span></a></li>
+                <li><a href="bebidas.html"><span class="sidebar-icon"><i class="bi bi-cup-straw"></i></span><span class="menu-text">Bebidas</span></a></li>
+                <li><a class="activo" href="dulces.html"><span class="sidebar-icon"><i class="bi bi-cake2"></i></span><span class="menu-text">Dulces</span></a></li>
+                <li><a href="restaurantes.html"><span class="sidebar-icon"><i class="bi bi-shop-window"></i></span><span class="menu-text">Restaurantes</span></a></li>
+                <li><a href="registro_restaurante.html"><span class="sidebar-icon"><i class="bi bi-pencil-square"></i></span><span class="menu-text">Registrar</span></a></li>
+                <li><a href="mapa.html"><span class="sidebar-icon"><i class="bi bi-map"></i></span><span class="menu-text">Mapa</span></a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <div style="text-align: center; margin: 30px 0;">
-            <button onclick="armarMenuDegustacion()" style="padding: 15px 30px; background-color: var(--color-primario); color: white; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); transition: 0.3s; display: inline-flex; align-items: center; gap: 8px;">
-            <i class="bi bi-bag-plus" style="font-size: 1.2em;"></i> Armar mi Menú de Degustación
-        </button>
-        </div>
-
-        <div id="resultado-menu" style="display: none; max-width: 800px; margin: 0 auto 40px auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-left: 5px solid #2c3e50;">
-        </div>
-
-        <div class="row g-4 justify-content-center">
-            
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta h-100">
-                    <a href="detalles/detalle_abrillantados.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/abrillantados.jpg" alt="Abrillantados" onerror="this.src='img/miche.jpg'">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Abrillantados</h3>
-                                    <p>Verdaderas joyas de la dulcería andina, famosas por sus colores vivos y sus delicadas formas frutales.</p>
-                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
-                                </div>
+    <main class="contenido-principal">
+        <div class="contenedor-interno">
+            <section class="slider-section">
+                <div class="slider-container">
+                    <div class="slide">
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/abrillantados.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Dulce fino</span>
+                                <h4>Abrillantados</h4>
+                                <p>Joyas de azúcar con color, tradición y una textura delicada en cada bocado.</p>
+                                <a href="detalles/detalle_abrillantados.html" class="boton-enlace">Ver más</a>
                             </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta h-100">
-                    <a href="detalles/detalle_aliados.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/aliados.jpg" alt="Dulce de Aliado o Templón">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Aliados (Templones)</h3>
-                                    <p>Golosina tradicional de textura chiclosa, sumamente popular en carreteras y kioscos de la región.</p>
-                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
-                                </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/higos.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Clásico</span>
+                                <h4>Higos Rellenos</h4>
+                                <p>Un postre tradicional que combina fruta, almíbar especiado y arequipe.</p>
+                                <a href="detalles/detalle_higos.html" class="boton-enlace">Ver más</a>
                             </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/melcocha.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Artesanal</span>
+                                <h4>Melcocha</h4>
+                                <p>Un dulce estirado a mano con textura chiclosa y sabor de hogar.</p>
+                                <a href="detalles/detalle_melcocha.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/aliados.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Tradición</span>
+                                <h4>Aliados</h4>
+                                <p>Golosina tradicional de textura chiclosa, muy popular en la región.</p>
+                                <a href="detalles/detalle_aliados.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/arequipe.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Familiar</span>
+                                <h4>Arequipe</h4>
+                                <p>Un dulce de base cremosa que se disfruta en postres y meriendas.</p>
+                                <a href="detalles/detalle_aliados.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="arrows">
+                        <button class="slider-btn prev" type="button" aria-label="Anterior">‹</button>
+                        <button class="slider-btn next" type="button" aria-label="Siguiente">›</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
             <div class="col-12 col-md-6 col-lg-4">
                 <article class="tarjeta h-100">

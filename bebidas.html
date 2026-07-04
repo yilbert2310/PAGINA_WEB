@@ -12,179 +12,78 @@
 </head>
 
 <body>
-    <header>
-        <div class="contenedor-encabezado">
-            <img src="img/logo.png" alt="Logo de la Ruta Gastronómica" class="logo-principal">
-            <h1>Gastronomía del Estado Táchira</h1>
-        </div>
-    </header>
-    
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top barra-navegacion-andina">
-    <div class="container-fluid justify-content-between justify-content-lg-center position-relative px-4">
-        
-        <button class="navbar-toggler border-0 order-first" type="button" data-bs-toggle="collapse" data-bs-target="#menuGastronomico" aria-controls="menuGastronomico" aria-expanded="false" aria-label="Cambiar navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <aside class="sidebar" aria-label="Navegación lateral">
+        <nav class="sidebar-nav">
+            <a class="sidebar-logo" href="index.html" aria-label="Inicio">
+                <img src="img/logo.png" alt="Logo de la Ruta Gastronómica">
+                <span>Gastronomía Táchira</span>
+            </a>
 
-        <div class="collapse navbar-collapse justify-content-center" id="menuGastronomico">
-            <div class="navbar-nav gap-2 py-2 py-lg-0 text-center">
-                <a class="nav-link enlace-andino" href="index.html" onclick="sessionStorage.clear();">Inicio</a>
-                <a class="nav-link enlace-andino" href="platos.html">Platos</a>
-                <a class="nav-link enlace-andino" href="bebidas.html">Bebidas</a>
-                <a class="nav-link enlace-andino" href="dulces.html">Dulces</a>
-                <a class="nav-link enlace-andino" href="restaurantes.html">Restaurantes</a>
-                <a class="nav-link enlace-andino" href="registro_restaurante.html">Registrar Local</a>
-                <a class="nav-link enlace-andino" href="mapa.html">Mapa de Ruta</a>
-            </div>
-        </div>
-        
-    </div>
-</nav>
-    <main class="contenedor-interno">
-        
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #2c3e50; font-size: 2em;">BEBIDAS TRADICIONALES ANDINAS</h2>
-            <p>Seleccione una bebida para conocer sus ingredientes y preparación.</p>
-        </div>
+            <ul class="sidebar-lista">
+                <li><a href="index.html" onclick="sessionStorage.clear();"><span class="sidebar-icon"><i class="bi bi-house-door"></i></span><span class="menu-text">Inicio</span></a></li>
+                <li><a href="platos.html"><span class="sidebar-icon"><i class="bi bi-egg-fried"></i></span><span class="menu-text">Platos</span></a></li>
+                <li><a class="activo" href="bebidas.html"><span class="sidebar-icon"><i class="bi bi-cup-straw"></i></span><span class="menu-text">Bebidas</span></a></li>
+                <li><a href="dulces.html"><span class="sidebar-icon"><i class="bi bi-cake2"></i></span><span class="menu-text">Dulces</span></a></li>
+                <li><a href="restaurantes.html"><span class="sidebar-icon"><i class="bi bi-shop-window"></i></span><span class="menu-text">Restaurantes</span></a></li>
+                <li><a href="registro_restaurante.html"><span class="sidebar-icon"><i class="bi bi-pencil-square"></i></span><span class="menu-text">Registrar</span></a></li>
+                <li><a href="mapa.html"><span class="sidebar-icon"><i class="bi bi-map"></i></span><span class="menu-text">Mapa</span></a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <div style="text-align: center; margin: 30px 0;">
-            <button onclick="armarMenuDegustacion()" style="padding: 15px 30px; background-color: var(--color-primario); color: white; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); transition: 0.3s; display: inline-flex; align-items: center; gap: 8px;">
-            <i class="bi bi-bag-plus" style="font-size: 1.2em;"></i> Armar mi Menú de Degustación
-        </button>
+    <main class="contenido-principal">
+        <div class="contenedor-interno">
+            <section class="slider-section">
+                <div class="slider-container">
+                    <div class="slide">
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/masato.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Fermentada</span>
+                                <h4>Masato de Arroz</h4>
+                                <p>Bebida refrescante y tradicional que acompaña ferias y reuniones familiares.</p>
+                                <a href="detalles/detalle_masato.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/chicha_andina.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Ancestral</span>
+                                <h4>Chicha Andina</h4>
+                                <p>El sabor de la tradición fermentada con maíz, especias y nostalgia.</p>
+                                <a href="detalles/detalle_chicha.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/calentadito.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Cálido</span>
+                                <h4>Calentadito</h4>
+                                <p>Una bebida reconfortante para las mañanas frías y los encuentros en la montaña.</p>
+                                <a href="detalles/detalle_calentadito.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/mistela.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Dulce</span>
+                                <h4>Mistela</h4>
+                                <p>Una bebida aromática que despierta recuerdos de hogar y festividad.</p>
+                                <a href="detalles/detalle_mistela.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/vino_mora.jpg');">
+                            <div class="content">
+                                <span class="item-tag">Especial</span>
+                                <h4>Vino de Mora</h4>
+                                <p>Una bebida artesanal de aroma intenso y sabor profundamente andino.</p>
+                                <a href="detalles/detalle_vino_mora.html" class="boton-enlace">Ver más</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="arrows">
+                        <button class="slider-btn prev" type="button" aria-label="Anterior">‹</button>
+                        <button class="slider-btn next" type="button" aria-label="Siguiente">›</button>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <div id="resultado-menu" style="display: none; max-width: 800px; margin: 0 auto 40px auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-left: 5px solid #2c3e50;">
-        </div>
-
-        <div class="row g-4 justify-content-center">
-            <!-- TARJETA 1: Masato -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta">
-                    <a href="detalles/detalle_masato.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/masato.jpg" alt="Masato de Arroz" style="width:100%; height: 100%; object-fit: cover; border-radius: 15px;">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Masato de Arroz</h3>
-                                    <p><strong>Región:</strong> Táchira / Andes</p>
-                                    <p>Bebida espesa y refrescante, considerada el acompañante infaltable en las ferias y fiestas patronales.</p>
-                                    <a href="detalles/detalle_masato.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>  
-                                </div>
-                            </div>
-                        </div>
-                </article>
-            </div>
-            
-
-            <!-- TARJETA 2: Calentadito -->
-            <div class="col-12 col-md-6 col-lg-4">
-                    <article class="tarjeta">
-                            <a href="detalles/detalle_calentadito.html">
-                                <div class="flip-card">
-                                    <div class="flip-card-inner">
-                                        <div class="flip-card-front">
-                                            <img src="img/calentadito.jpg" alt="Calentadito Andino">
-                                        </div>
-                                        <div class="flip-card-back">
-                                            <h3>Calentadito</h3>
-                                            <p><strong>Región:</strong> Táchira / Andes</p>
-                                            <p>Bebida reconfortante e histórica, ideal para combatir el clima frío de las altas montañas andinas.</p>
-                                            <a href="detalles/detalle_calentadito.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                    </article>
-            </div>
-            
-            <!-- TARJETA 3: Chicha Andina -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta h-100">
-                    <a href="detalles/detalle_chicha.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                
-                                <div class="flip-card-front">
-                                    <img src="img/chicha_andina.jpg" alt="Chicha Andina">
-                                </div>
-                                
-                                <div class="flip-card-back">
-                                    <h3>Chicha Andina</h3>
-                                    <p>Bebida ancestral a base de masa de maíz fermentada con guarapo de piña y especias. El auténtico sabor de nuestras celebraciones.</p>
-                                    
-                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </a> </article>
-            </div>
-            
-            <!-- TARJETA 4: Miche Andino -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta h-100">
-                    <a href="detalles/detalle_miche.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                
-                                <div class="flip-card-front">
-                                    <img src="img/miche.jpg" alt="Miche Andino">
-                                </div>
-                                
-                                <div class="flip-card-back">
-                                    <h3>Miche Andino</h3>
-                                    <p>Aguardiente tradicional destilado de hinojo y otras hierbas, ideal para las bajas temperaturas.</p>
-                                    
-                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta">
-                    <a href="detalles/detalle_vino_mora.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/vino_mora.jpg" alt="Vino de Mora Andino" onerror="this.src='img/miche.jpg'">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Vino de Mora Andino</h3>
-                                    <p>Vino artesanal dulce elaborado a partir de la fermentación de las moras cultivadas en las zonas altas.</p>
-                                    <a href="detalles/detalle_vino_mora.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                </div>
-                            </div>
-                        </div>
-                </article>
-            </div>
-            
-                
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="tarjeta">
-                    <a href="detalles/detalle_mistela.html">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="img/mistela.jpg" alt="Mistela" onerror="this.src='img/miche.jpg'">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h3>Mistela</h3>
-                                    <p>Bebida alcohólica tradicional elaborada a partir de la fermentación de la miel y el agua.</p>
-                                    <a href="detalles/detalle_mistela.html" class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</a>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
-                
-            </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
