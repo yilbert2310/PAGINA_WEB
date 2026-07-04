@@ -1,6 +1,4 @@
-/* =======================================================
-   BASE DE DATOS DE LA APLICACIÓN (datos.js)
-   ======================================================= */
+/* BASE DE DATOS */
 
 const baseDatosMunicipios = {
     "san-cristobal": {
@@ -29,16 +27,83 @@ const baseDatosMunicipios = {
 
 
 const inventarioRestaurantes = [
-    { nombre: "El Fogón Andino", zonas: ["barrio obrero", "avenida carabobo", "carabobo"], direccionMaps: "El Fogón Andino, Barrio Obrero, San Cristóbal, Táchira", imagen: "img/restaurante1.jpg", referencia: "📍 Barrio Obrero, San Cristóbal", descripcion: "Un rincón clásico para desayunar. Especialistas en caldos y desayunos tradicionales.", tags: ["Pizca Andina", "Pastelitos"], enlaceDetalle: "detalles/detalle_restaurante1.html" },
-    { nombre: "La Tradición Andina", zonas: ["barrio obrero", "avenida carabobo", "carabobo"], direccionMaps: "La Tradición Andina, Barrio Obrero, San Cristóbal, Táchira", imagen: "img/restaurante4.jpg", referencia: "📍 Barrio Obrero, San Cristóbal", descripcion: "Un rincón clásico en San Cristóbal donde el sabor de las auténticas arepas de trigo hechas a leña se mantiene vivo.", tags: ["Arepas de Trigo", "Comida Típica"], enlaceDetalle: "detalles/detalle_restaurante4.html" },
-    { nombre: "Dulcería La Andina", zonas: ["centro", "quinta avenida", "séptima avenida"], direccionMaps: "Dulcería La Andina, Centro, San Cristóbal, Táchira", imagen: "img/restaurante2.jpg", referencia: "📍 Centro de San Cristóbal", descripcion: "Patrimonio de la ciudad. Más de 30 años elaborando los postres más representativos de la región de forma artesanal.", tags: ["Abrillantados", "Higos"], enlaceDetalle: "detalles/detalle_restaurante2.html" },
-    { nombre: "El Páramo del Zumbador", zonas: ["paramo", "cordero", "via cordero", "zumbador"], direccionMaps: "Páramo del Zumbador, Táchira", imagen: "img/restaurante3.jpg", referencia: "📍 Vía Cordero - Páramo", descripcion: "La parada obligatoria de los viajeros. Ofrecen las mejores bebidas calientes y fermentadas para combatir el frío.", tags: ["Calentadito", "Chicha Andina"], enlaceDetalle: "detalles/detalle_restaurante3.html" },
-    { nombre: "Comedores del Mercado Los Pequeños Comerciantes", zonas: ["la concordia", "san cristobal", "mercado"], direccionMaps: "Mercado de Los Pequeños Comerciantes, La Concordia, San Cristóbal, Táchira", imagen: "img/restaurante5.jpg", referencia: "📍 La Concordia, San Cristóbal", descripcion: "El epicentro popular donde los tachirenses van a comer el mejor Mute y Pizca andina los domingos.", tags: ["Mute Tachirense", "Pizca Andina", "Comida Típica"], enlaceDetalle: "detalles/detalle_restaurante5.html" },
-    { nombre: "Los Kioscos de Capacho", zonas: ["capacho", "independencia", "libertad", "mercado municipal"], direccionMaps: "Mercado Municipal de Capacho, Táchira", imagen: "img/restaurante6.jpg", referencia: "📍 Mercado Municipal de Capacho", descripcion: "Parada tradicional famosa por ofrecer las mejores empanadas, pastelitos y masato en la vía a la frontera.", tags: ["Pastelitos", "Masato", "Empanadas"], enlaceDetalle: "detalles/detalle_restaurante6.html" }
+    { nombre: "El Fogón Andino",
+        zonas: ["barrio obrero", "avenida carabobo", "carabobo"], 
+        direccionMaps: "El Fogón Andino, Barrio Obrero, San Cristóbal, Táchira", 
+        imagen: "img/restaurante1.jpg", 
+        referencia: "📍 Barrio Obrero, San Cristóbal", 
+        descripcion: "Un rincón clásico para desayunar. Especialistas en caldos y desayunos tradicionales.", 
+        tags: ["Pizca Andina", "Pastelitos"], 
+        enlaceDetalle: "detalles/detalle_restaurante1.html" 
+    },
+
+    { nombre: "La Tradición Andina", 
+        zonas: ["barrio obrero", "avenida carabobo", "carabobo"], 
+        direccionMaps: "La Tradición Andina, Barrio Obrero, San Cristóbal, Táchira", 
+        imagen: "img/restaurante4.jpg", 
+        referencia: "📍 Barrio Obrero, San Cristóbal", 
+        descripcion: "Un rincón clásico en San Cristóbal donde el sabor de las auténticas arepas de trigo hechas a leña se mantiene vivo.", 
+        tags: ["Arepas de Trigo", "Comida Típica"], 
+        enlaceDetalle: "detalles/detalle_restaurante4.html" 
+    },
+
+    { nombre: "Dulcería La Andina", 
+        zonas: ["centro", "quinta avenida", "séptima avenida"], 
+        direccionMaps: "Dulcería La Andina, Centro, San Cristóbal, Táchira", 
+        imagen: "img/restaurante2.jpg", 
+        referencia: "📍 Centro de San Cristóbal", 
+        descripcion: "Patrimonio de la ciudad. Más de 30 años elaborando los postres más representativos de la región de forma artesanal.", 
+        tags: ["Abrillantados", "Higos"],
+        enlaceDetalle: "detalles/detalle_restaurante2.html" 
+    },
+
+    { nombre: "El Páramo del Zumbador", 
+        zonas: ["paramo", "cordero", "via cordero", "zumbador"],
+         direccionMaps: "Páramo del Zumbador, Táchira", 
+         imagen: "img/restaurante3.jpg", 
+         referencia: "📍 Vía Cordero - Páramo", 
+         descripcion: "La parada obligatoria de los viajeros. Ofrecen las mejores bebidas calientes y fermentadas para combatir el frío.", 
+         tags: ["Calentadito", "Chicha Andina"], 
+         enlaceDetalle: "detalles/detalle_restaurante3.html" 
+    },
+
+    { nombre: "Comedores del Mercado Los Pequeños Comerciantes", 
+        zonas: ["la concordia", "san cristobal", "mercado"],
+        direccionMaps: "Mercado de Los Pequeños Comerciantes, La Concordia, San Cristóbal, Táchira", 
+        imagen: "img/restaurante5.jpg", 
+        referencia: "📍 La Concordia, San Cristóbal", 
+        descripcion: "El epicentro popular donde los tachirenses van a comer el mejor Mute y Pizca andina los domingos.", 
+        tags: ["Mute Tachirense", "Pizca Andina", "Comida Típica"], 
+        enlaceDetalle: "detalles/detalle_restaurante5.html" 
+    },
+
+    { nombre: "Los Kioscos de Capacho", 
+        zonas: ["capacho", "independencia", "libertad", "mercado municipal"], 
+        direccionMaps: "Mercado Municipal de Capacho, Táchira", 
+        imagen: "img/restaurante6.jpg", 
+        referencia: "📍 Mercado Municipal de Capacho", 
+        descripcion: "Parada tradicional famosa por ofrecer las mejores empanadas, pastelitos y masato en la vía a la frontera.", 
+        tags: ["Pastelitos", "Masato", "Empanadas"], 
+        enlaceDetalle: "detalles/detalle_restaurante6.html"
+    }
 ];
 
 const enlacesPlatos = {
-    "pizca andina": "detalles/detalle_pizca.html", "pastelitos": "detalles/detalle_pastelitos.html", "mute": "detalles/detalle_mute.html", "arepas de trigo": "detalles/detalle_arepa.html", "chicha andina": "detalles/detalle_chicha.html", "calentadito": "detalles/detalle_calentadito.html", "masato": "detalles/detalle_masato.html", "abrillantados": "detalles/detalle_abrillantados.html", "higos": "detalles/detalle_higos.html", "hallaca tachirense": "detalles/detalle_hallaca.html", "turmada tachirense": "detalles/detalle_turmada.html", "vino de mora": "detalles/detalle_vino_mora.html", "mistela": "detalles/detalle_mistela.html", "quesadillas andinas": "detalles/detalle_quesadillas.html", "melcocha": "detalles/detalle_melcocha.html"
+    "pizca andina": "detalles/detalle_pizca.html",
+    "pastelitos": "detalles/detalle_pastelitos.html", 
+    "mute": "detalles/detalle_mute.html", 
+    "arepas de trigo": "detalles/detalle_arepa.html", 
+    "chicha andina": "detalles/detalle_chicha.html", 
+    "calentadito": "detalles/detalle_calentadito.html", 
+    "masato": "detalles/detalle_masato.html", 
+    "abrillantados": "detalles/detalle_abrillantados.html", 
+    "higos": "detalles/detalle_higos.html", 
+    "hallaca tachirense": "detalles/detalle_hallaca.html", 
+    "turmada tachirense": "detalles/detalle_turmada.html", 
+    "vino de mora": "detalles/detalle_vino_mora.html", 
+    "mistela": "detalles/detalle_mistela.html", 
+    "quesadillas andinas": "detalles/detalle_quesadillas.html", 
+    "melcocha": "detalles/detalle_melcocha.html"
 };
 
 const destacadosEditorial = [
@@ -50,6 +115,7 @@ const destacadosEditorial = [
         enlace: "detalles/detalle_pizca.html",
         etiqueta: "Desayuno Tradicional"
     },
+
     {
         tipo: "Local Destacado",
         titulo: "Dulcería La Andina",
@@ -58,6 +124,7 @@ const destacadosEditorial = [
         enlace: "detalles/detalle_restaurante2.html",
         etiqueta: "Patrimonio Cultural"
     },
+    
     {
         tipo: "Parada Obligatoria",
         titulo: "El Páramo del Zumbador",

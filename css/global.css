@@ -1,6 +1,5 @@
-/* =========================================
-   1. VARIABLES Y ESTILOS GLOBALES
-   ========================================= */
+/* VARIABLES Y ESTILOS GLOBALES */
+
 :root {
     --color-primario: #6E473B;    /* Marrón Tierra/Café */
     --color-secundario: #4A3026;  /* Marrón oscuro para menú */
@@ -22,7 +21,7 @@ body {
     color: var(--texto-oscuro);
 }
 
-/* --- REFINAMIENTO TIPOGRÁFICO --- */
+/* REFINAMIENTO TIPOGRÁFICO */
 h1, h2, h3, h4, .titulo-seccion {
     font-family: 'Playfair Display', serif;
     letter-spacing: -0.5px;
@@ -36,7 +35,7 @@ p {
     font-weight: 400;
 }
 
-/* --- SCROLLBAR PERSONALIZADO --- */
+/* SCROLLBAR PERSONALIZADO */
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
@@ -54,7 +53,7 @@ p {
     background: var(--color-primario);
 }
 
-/* --- SOBRESCRITURA DE BOOTSTRAP --- */
+/* SOBRESCRITURA DE BOOTSTRAP */
 .text-bg-warning { 
     background-color: var(--color-acento) !important; 
     color: var(--fondo-claro) !important; 

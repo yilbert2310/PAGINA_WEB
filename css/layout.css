@@ -1,6 +1,5 @@
-/* =========================================
-   2. ESTRUCTURA (HEADER, NAV, CONTENEDORES)
-   ========================================= */
+/* ESTRUCTURA (HEADER, NAV, CONTENEDORES) */
+
 header {
     background-color: var(--color-primario);
     color: var(--color-blanco);
@@ -26,19 +25,17 @@ header {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* =======================================================
-   RENOVACIÓN COMPLETA DE LA BARRA DE NAVEGACIÓN RESPONSIVA
-   ======================================================= */
+/* RENOVACIÓN COMPLETA DE LA BARRA DE NAVEGACIÓN RESPONSIVA */
 
 .barra-navegacion-andina {
-    background: rgba(247, 244, 240, 0.85) !important; /* Blanco hueso semitransparente */
-    backdrop-filter: blur(12px); /* Efecto vidrio difuminado premium */
-    -webkit-backdrop-filter: blur(12px); /* Para Safari */
-    border-bottom: 1px solid rgba(110, 71, 59, 0.15); /* Borde sutil color café */
+    background: rgba(247, 244, 240, 0.85) !important; 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border-bottom: 1px solid rgba(110, 71, 59, 0.15);
     padding: 12px 0;
     z-index: 1050;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra difuminada */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
 }
 
 /* Estilo base para los enlaces en PC */
@@ -60,7 +57,7 @@ header {
         left: 50%;
         width: 0;
         height: 2px;
-        background-color: var(--color-acento); /* Color arcilla/terracota */
+        background-color: var(--color-acento); 
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         transform: translateX(-50%);
     }
@@ -71,7 +68,7 @@ header {
     }
 }
 
-/* Cambio de color en Hover (cuando pasas el mouse) */
+/* Cambio de color en Hover (al pasar el mouse) */
 .barra-navegacion-andina .enlace-andino:hover {
     color: var(--color-primario) !important;
 }
@@ -85,14 +82,14 @@ header {
 }
 
 .barra-navegacion-andina .navbar-toggler:focus {
-    box-shadow: 0 0 0 3px rgba(194, 126, 90, 0.2) !important; /* Brillo terracota de enfoque */
+    box-shadow: 0 0 0 3px rgba(194, 126, 90, 0.2) !important; 
 }
 
-/* Ajustes específicos para la visualización en teléfonos móviles */
+/* Ajustes específicos para la visualización en teléfonos */
 @media (max-width: 991.98px) {
     .barra-navegacion-andina .navbar-nav {
         margin-top: 10px;
-        background-color: rgba(255, 255, 255, 0.95); /* Fondo sólido limpio al desplegarse en móvil */
+        background-color: rgba(255, 255, 255, 0.95); 
         border-radius: 16px;
         padding: 15px !important;
         box-shadow: 0 10px 25px rgba(44, 31, 26, 0.08);
@@ -105,13 +102,12 @@ header {
     }
     
     .barra-navegacion-andina .enlace-andino:hover {
-        background-color: #fffaf6; /* Resaltado suave al tocar opciones en móvil */
+        background-color: #fffaf6; 
     }
 }
 
-/* =======================================================
-   ESTRUCTURA DEL CONTENIDO (Se mantiene igual)
-   ======================================================= */
+/* ESTRUCTURA DEL CONTENIDO */
+
 .contenedor-interno {
     width: 90%;
     max-width: 1200px;

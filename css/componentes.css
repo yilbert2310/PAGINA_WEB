@@ -1,8 +1,6 @@
-/* =========================================
-   3. COMPONENTES (TARJETAS, BOTONES, MAPAS)
-   ========================================= */
+/* COMPONENTES (TARJETAS, BOTONES, MAPAS) */
 
-/* --- BOTONES PREMIUM --- */
+/* BOTONES PREMIUM */
 .boton-enlace {
     display: inline-block;
     background: linear-gradient(135deg, var(--color-primario), var(--color-acento));
@@ -14,7 +12,7 @@
     text-decoration: none;
     font-weight: 700;
     margin-top: 15px;
-    box-shadow: 0 6px 20px rgba(194, 126, 90, 0.3); /* Sombra difuminada terracota */
+    box-shadow: 0 6px 20px rgba(194, 126, 90, 0.3); 
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
@@ -22,19 +20,19 @@
 
 .boton-enlace:hover {
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(194, 126, 90, 0.6); /* El brillo se intensifica */
+    box-shadow: 0 10px 25px rgba(194, 126, 90, 0.6); 
     background: linear-gradient(135deg, var(--color-acento), var(--color-primario));
     color: var(--color-blanco);
 }
 
 .boton-enlace:active {
-    transform: translateY(0) scale(0.98); /* Efecto de "clic" real */
+    transform: translateY(0) scale(0.98); 
 }
 
-/* --- TARJETAS ESTILO BENTO & MICRO-INTERACCIONES --- */
+/* TARJETAS ESTILO BENTO & MICRO-INTERACCIONES */
 .tarjeta {
     background-color: var(--color-blanco);
-    border-radius: 24px !important; /* Más redondeado, estilo Bento/Apple */
+    border-radius: 24px !important; 
     border: 1px solid rgba(110, 71, 59, 0.05) !important;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(44, 31, 26, 0.04) !important;
@@ -46,7 +44,7 @@
 
 .tarjeta:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 45px rgba(194, 126, 90, 0.15) !important; /* Sombra terracota sutil */
+    box-shadow: 0 25px 45px rgba(194, 126, 90, 0.15) !important; 
     border-color: rgba(194, 126, 90, 0.2) !important;
 }
 
@@ -54,13 +52,13 @@
     width: 100% !important;
     height: 220px;
     object-fit: cover;
-    margin: 0 !important; /* Quitamos el margen interno para que llene el ancho */
-    border-radius: 24px 24px 0 0 !important; /* Redondeado solo arriba */
+    margin: 0 !important; 
+    border-radius: 24px 24px 0 0 !important; 
     transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
 }
 
 .tarjeta:hover img {
-    transform: scale(1.08); /* Zoom mucho más suave y premium */
+    transform: scale(1.08); 
 }
 
 /* El contenedor de la imagen para que el zoom no se salga de la tarjeta */
@@ -87,7 +85,7 @@
     line-height: 1.2;
 }
 
-/* --- PÁGINAS DE DETALLES --- */
+/* PÁGINAS DE DETALLES */
 .seccion-info { 
     background: white; 
     padding: 40px; 
@@ -143,7 +141,7 @@
 }
 .lista-pasos li::marker { color: var(--color-primario); font-weight: bold; font-size: 1.3em; }
 
-/* --- MENÚ DE RESTAURANTES --- */
+/* MENÚ DE RESTAURANTES */
 .lista-menu-local { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; }
 .lista-menu-local a {
     display: block; background-color: white; color: var(--color-primario);
@@ -156,7 +154,7 @@
     transform: scale(1.02) translateX(10px); box-shadow: 0 8px 16px rgba(211, 84, 0, 0.2);
 }
 
-/* --- MAPAS Y RUTAS --- */
+/* MAPAS Y RUTAS */
 .ruta-timeline { max-width: 800px; margin: 50px auto; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
 .parada-ruta { border-left: 4px solid var(--color-primario); padding-left: 20px; margin-bottom: 30px; position: relative; }
 .parada-ruta::before { content: "📍"; position: absolute; left: -14px; top: 0; font-size: 1.2em; background: white; }
@@ -164,13 +162,12 @@
 .caja-resultados { margin-top: 30px; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); border-left: 5px solid var(--color-primario); }
 .caja-resultados h3 { color: var(--color-primario); margin-bottom: 10px; font-size: 1.5em; }
 
-/* --- HERO EDITORIAL PREMIUM (PORTADA) --- */
+/* -HERO EDITORIAL PREMIUM (PORTADA) */
 .hero-editorial {
-    /* Un gradiente oscuro sobre la foto para que el texto siempre se lea bien */
     background-image: linear-gradient(to bottom, rgba(44, 31, 26, 0.4), rgba(44, 31, 26, 0.8)), url('../img/banner-inicio.jpg');
     background-size: cover; 
     background-position: center; 
-    background-attachment: fixed; /* MAGIA: Esto crea el efecto Parallax */
+    background-attachment: fixed; 
     min-height: 85vh; 
     display: flex;
     align-items: center;
@@ -178,11 +175,11 @@
 }
 
 .hero-contenido {
-    background-color: rgba(255, 255, 255, 0.1) !important; /* Más transparente */
+    background-color: rgba(255, 255, 255, 0.1) !important; 
     backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.2); 
-    border-radius: 30px !important; /* Más redondeado */
+    border-radius: 30px !important; 
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) !important;
     animation: aparecerSutil 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     color: var(--fondo-claro);
@@ -204,7 +201,7 @@
 .tarjeta-tendencia .card-img-overlay { transition: padding-bottom 0.3s ease; }
 .tarjeta-tendencia:hover .card-img-overlay { padding-bottom: 30px !important; }
 
-/* --- EFECTOS HOVER Y EXTRAS --- */
+/* EFECTOS HOVER Y EXTRAS */
 #plato-del-dia-container { transition: transform 0.4s ease, box-shadow 0.4s ease; }
 #plato-del-dia-container:hover { transform: translateY(-8px); box-shadow: 0 25px 45px rgba(44, 31, 26, 0.12) !important; }
 .animacion-imagen-editorial { transition: transform 0.8s ease, filter 0.8s ease; filter: brightness(0.95); }
@@ -215,11 +212,11 @@
 #plato-del-dia-container img { border-radius: 12px !important; }
 .caja-detalle img { max-width: 450px !important; width: 100% !important; height: auto !important; display: block; margin: 0 auto 20px auto !important; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-radius: 15px; }
 
-/* --- TARJETAS GIRATORIAS (FLIP CARDS) --- */
+/* TARJETAS GIRATORIAS (FLIP CARDS) */
 .flip-card {
     background-color: transparent;
     width: 100%;
-    height: 350px; /* Altura ideal para tus platos */
+    height: 350px; 
     perspective: 1000px;
 }
 
@@ -228,7 +225,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Giro con rebote suave */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     transform-style: preserve-3d;
 }
 
@@ -278,7 +275,7 @@
     font-size: 0.9em;
     margin-bottom: 20px;
 }
-/* --- BOTÓN DE REGRESAR ANIMADO --- */
+/* BOTÓN DE REGRESAR ANIMADO */
 .btn-regreso {
     width: 140px;
     height: 56px;
@@ -349,17 +346,17 @@
     width: 20px;
     right: 0;
     top: 50%;
-    transform: translateY(-50%) rotate(90deg); /* Apunta a la izquierda por defecto */
+    transform: translateY(-50%) rotate(90deg); 
     transition: 0.2s ease-out;
 }
 
 .btn-regreso:hover svg {
-    transform: translateY(-50%) rotate(45deg); /* Animación al pasar el mouse */
+    transform: translateY(-50%) rotate(45deg); 
     stroke: var(--color-acento);
 }
 /* Estilo para los íconos de la información rápida */
 .info-rapida span i {
-    color: var(--color-acento); /* Terracota arcilla */
+    color: var(--color-acento); 
     margin-right: 6px;
     font-size: 1.1em;
 }
@@ -371,9 +368,7 @@
     color: var(--color-acento);
     margin-right: 8px;
 }
-/* =======================================================
-   NUEVAS CLASES PARA ELIMINAR ESTILOS EN LÍNEA
-   ======================================================= */
+/* NUEVAS CLASES PARA ELIMINAR ESTILOS EN LÍNEA */
 
 /* Título principal de los platos o dulces */
 .titulo-detalle-plato {
@@ -437,9 +432,7 @@
 .lista-pasos-receta {
     margin-left: 20px;
 }
-/* =======================================================
-   ESTILOS PARA EL FORMULARIO DE REGISTRO
-   ======================================================= */
+/* ESTILOS PARA EL FORMULARIO DE REGISTRO */
 .btn-outline-andino {
     color: var(--color-primario);
     border-color: var(--color-primario);
@@ -452,9 +445,8 @@
     color: var(--color-blanco);
     border-color: var(--color-primario);
 }
-/* =======================================================
-   ESTILOS PARA FLIP CARDS EN DISPOSITIVOS TÁCTILES
-   ======================================================= */
+/* ESTILOS PARA FLIP CARDS EN DISPOSITIVOS TÁCTILES */
+
 .indicador-movil {
     position: absolute;
     bottom: 15px;
@@ -473,6 +465,7 @@
 }
 
 /* Detecta si la pantalla es táctil para modificar el comportamiento */
+
 @media (hover: none), (pointer: coarse) {
     /* Anulamos el hover automático de CSS para controlarlo con JS */
     .flip-card:hover .flip-card-inner {
@@ -484,9 +477,7 @@
         transform: rotateY(180deg);
     }
 }
-/* ==========================================
-   ESTILOS PARA PÁGINAS DE DETALLES (PLATOS/RESTAURANTES)
-   ========================================== */
+/* ESTILOS PARA PÁGINAS DE DETALLES (PLATOS/RESTAURANTES) */
 
 /* Contenedor de la imagen con bordes redondeados y sombra suave */
 .detalle-imagen-contenedor {
@@ -500,13 +491,13 @@
 /* Control estricto del tamaño de la imagen para evitar distorsiones */
 .detalle-img {
     width: 100%;
-    height: 500px; /* Altura perfecta para pantallas de escritorio */
-    object-fit: cover; /* Mantiene la proporción de la imagen sin deformarla */
+    height: 500px; 
+    object-fit: cover; 
     transition: transform 0.5s ease;
 }
 
 .detalle-img:hover {
-    transform: scale(1.02); /* Efecto sutil de zoom al pasar el mouse */
+    transform: scale(1.02); 
 }
 
 /* Tipografía elegante para los títulos de detalles */

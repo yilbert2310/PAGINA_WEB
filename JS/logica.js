@@ -1,6 +1,4 @@
-/* =======================================================
-   LÓGICA Y FUNCIONES DE LA APLICACIÓN (logica.js)
-   ======================================================= */
+/* LÓGICA Y FUNCIONES */
 
 const rutaPersonalizada = [];
 
@@ -255,7 +253,7 @@ function mostrarMenuEnPantalla(menuArray) {
             });
         }
 
-        // Renderizar restaurantes usando las tarjetas premium de la aplicación
+        // Renderizar restaurantes usando las tarjetas premium 
         if (restaurantesSugeridos.length > 0) {
             contenidoHTML += `
                 <h4 style="color: var(--color-primario); margin-bottom: 20px; border-top: 1px solid #eee; padding-top: 20px; text-align: center;">📍 Lugares recomendados para probar tu menú:</h4>
@@ -298,7 +296,7 @@ function armarMenuDegustacion() {
     const cajaResultado = document.getElementById('resultado-menu');
     if (!cajaResultado) return;
 
-    // Inyectamos una interfaz táctil y visual premium dentro del contenedor existente
+    
     cajaResultado.innerHTML = `
         <div class="p-2 animate__animated animate__fadeIn">
             <h3 style="color: var(--color-secundario); font-size: 1.6em; font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 25px;">
@@ -421,14 +419,13 @@ function cargarDestacadoDelDia() {
     `;
 }
 
-/* =======================================================
-   ARRANQUE GLOBAL DE LA PÁGINA (Unificado)
-   ======================================================= */
+/* ARRANQUE GLOBAL */
+
 window.onload = function() {
-    // 1. Cargar el artículo dinámico de la portada
+    // Cargar el artículo dinámico de la portada
     cargarDestacadoDelDia();
 
-    // 2. Recuperar menú de degustación SOLO para la página actual
+    // Recuperar menú de degustación SOLO para la página actual
     const pageId = window.location.pathname.split('/').pop() || 'index.html';
     let menuEnMemoria = sessionStorage.getItem('menuGuardado_' + pageId);
     
@@ -437,7 +434,7 @@ window.onload = function() {
         mostrarMenuEnPantalla(menuArray);
     }
 
-    // 3. Recuperar la ubicación en el mapa si el usuario buscó una
+    // Recuperar la ubicación en el mapa si el usuario buscó una
     let rutaEnMemoria = sessionStorage.getItem('rutaGuardada');
     let inputMapa = document.getElementById('ubicacion-mapa');
     if (rutaEnMemoria && inputMapa) {
@@ -445,20 +442,20 @@ window.onload = function() {
         generarRutaGoogleMaps();         
     }
 
-    // 4. Recuperar la ruta armada en el Modal 
+    // Recuperar la ruta armada en el Modal 
     let rutaPersonalizadaMemoria = sessionStorage.getItem('rutaPersonalizada');
     if (rutaPersonalizadaMemoria) {
         const nombresLocales = JSON.parse(rutaPersonalizadaMemoria);
         renderizarRutaModalEnMapa(nombresLocales);
     }
 };
-// =======================================================
-// LÓGICA PARA TARJETAS GIRATORIAS EN MÓVILES
-// =======================================================
+
+// LÓGICA PARA TARJETAS GIRATORIAS EN TELEFONO
+
 document.addEventListener('DOMContentLoaded', () => {
-    // =======================================================
-    // 1. CONTROL DE EVENTOS PARA EL MENÚ Y LAS TARJETAS (NUEVO)
-    // =======================================================
+    
+    // CONTROL DE EVENTOS PARA EL MENÚ Y LAS TARJETAS (NUEVO)
+    
     
     // Escuchador para limpiar sessionStorage en el botón de Inicio
     const btnInicio = document.getElementById('btn-inicio');
@@ -479,9 +476,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // =======================================================
-    // 2. LÓGICA EXISTENTE PARA TARJETAS GIRATORIAS EN MÓVILES
-    // =======================================================
+    
+    // LÓGICA PARA TARJETAS GIRATORIAS EN TELEFONO
+    
     
     // Detectamos si el dispositivo tiene pantalla táctil
     const esTactil = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
