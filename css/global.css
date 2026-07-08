@@ -4,7 +4,7 @@
     --color-primario: #6E473B;    /* Marrón Tierra/Café */
     --color-secundario: #4A3026;  /* Marrón oscuro para menú */
     --color-acento: #C27E5A;      /* Terracota arcilla */
-    --fondo-claro: #F7F4F0;       /* Blanco hueso/crema */
+    --fondo-claro: #fcfaf7;       /* Blanco hueso/crema elegante */
     --texto-oscuro: #2C1F1A;      /* Negro con matiz cálido */
     --color-blanco: #FFFFFF;
     --font-principal: 'Lato', sans-serif;
@@ -30,6 +30,7 @@ body {
     background-color: var(--fondo-claro);
     color: var(--texto-oscuro);
 }
+
 
 body:has(.slider-section) {
     margin: 0;

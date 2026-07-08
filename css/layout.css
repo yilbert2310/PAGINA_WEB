@@ -114,8 +114,10 @@ body {
 }
 
 .contenido-principal {
+    width: 100%;
     margin-left: 70px;
     padding: 24px 24px 40px 14px;
+    min-height: 100vh;
     transition: margin-left 0.3s ease-in-out;
 }
 
@@ -143,8 +145,8 @@ body {
 
 .contenedor-interno {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
 }
 
 @media (max-width: 768px) {

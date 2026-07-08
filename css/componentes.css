@@ -780,6 +780,58 @@
     margin-bottom: 12px;
 }
 
+/* =========================================
+   MEJORA ESTÉTICA DE TARJETAS (VOLUMEN Y PROFUNDIDAD)
+   ========================================= */
+.tarjeta {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+/* Efecto hover profesional */
+.tarjeta:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Asegurar que las esquinas de las imágenes internas respeten el redondeado */
+.flip-card,
+.flip-card-front,
+.flip-card-back,
+.tarjeta img {
+    border-radius: 20px !important;
+}
+
+/* Ajuste de colores para el reverso de la tarjeta */
+.flip-card-back {
+    background-color: #4a2e1b !important; /* Marrón cálido y oscuro */
+    color: #ffffff !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px !important;
+}
+
+.flip-card-back h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff !important; /* Blanco puro para el título */
+    margin-bottom: 12px;
+}
+
+.flip-card-back p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #eaddd3 !important; /* Tono crema claro para que la lectura no canse */
+    padding: 0 10px;
+}
+
 /* Adaptación para pantallas de teléfonos móviles */
 @media (max-width: 768px) {
     .detalle-img {

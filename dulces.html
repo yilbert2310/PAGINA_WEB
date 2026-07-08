@@ -61,56 +61,7 @@
 
     <main class="contenido-principal">
         <div class="contenedor-interno">
-            <section class="slider-section">
-                <div class="slider-container">
-                    <div class="slide">
-                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/abrillantados.jpg');">
-                            <div class="content">
-                                <span class="item-tag">Dulce fino</span>
-                                <h4>Abrillantados</h4>
-                                <p>Joyas de azúcar con color, tradición y una textura delicada en cada bocado.</p>
-                                <a href="detalles/detalle_abrillantados.html" class="boton-enlace">Ver más</a>
-                            </div>
-                        </article>
-                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/higos.jpg');">
-                            <div class="content">
-                                <span class="item-tag">Clásico</span>
-                                <h4>Higos Rellenos</h4>
-                                <p>Un postre tradicional que combina fruta, almíbar especiado y arequipe.</p>
-                                <a href="detalles/detalle_higos.html" class="boton-enlace">Ver más</a>
-                            </div>
-                        </article>
-                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/melcocha.jpg');">
-                            <div class="content">
-                                <span class="item-tag">Artesanal</span>
-                                <h4>Melcocha</h4>
-                                <p>Un dulce estirado a mano con textura chiclosa y sabor de hogar.</p>
-                                <a href="detalles/detalle_melcocha.html" class="boton-enlace">Ver más</a>
-                            </div>
-                        </article>
-                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/aliados.jpg');">
-                            <div class="content">
-                                <span class="item-tag">Tradición</span>
-                                <h4>Aliados</h4>
-                                <p>Golosina tradicional de textura chiclosa, muy popular en la región.</p>
-                                <a href="detalles/detalle_aliados.html" class="boton-enlace">Ver más</a>
-                            </div>
-                        </article>
-                        <article class="item" style="background-image: linear-gradient(135deg, rgba(10, 8, 7, 0.55), rgba(0, 0, 0, 0.08)), url('img/arequipe.jpg');">
-                            <div class="content">
-                                <span class="item-tag">Familiar</span>
-                                <h4>Arequipe</h4>
-                                <p>Un dulce de base cremosa que se disfruta en postres y meriendas.</p>
-                                <a href="detalles/detalle_aliados.html" class="boton-enlace">Ver más</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="arrows">
-                        <button class="slider-btn prev" type="button" aria-label="Anterior">‹</button>
-                        <button class="slider-btn next" type="button" aria-label="Siguiente">›</button>
-                    </div>
-                </div>
-            </section>
+
             <!-- Aquí estaban los tags de cierre incorrectos -->
             <div class="row scroll-horizontal-movil mt-5">
             <div class="col-12 col-md-6 col-lg-4">
@@ -188,8 +139,64 @@
                     </a>
                 </article>
             </div>
-
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <article class="tarjeta h-100">
+                    <a href="detalles/detalle_abrillantados.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/abrillantados.jpg" alt="Abrillantados">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Abrillantados</h3>
+                                    <p>Joyas de azúcar con color, tradición y una textura delicada en cada bocado.</p>
+                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <article class="tarjeta h-100">
+                    <a href="detalles/detalle_aliados.html" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/aliados.jpg" alt="Aliados">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Aliados</h3>
+                                    <p>Golosina tradicional de textura chiclosa elaborada con pata de res y papelón.</p>
+                                    <span class="boton-enlace" style="background: rgb(164, 141, 125); color: var(--color-primario);">Ver Receta</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
         </div> 
+
+        <!-- FOOTER GLOBAL -->
+        <footer class="footer mt-4 py-2" style="background-color: #2c1f1a; color: #eaddd3; border-top: 3px solid #c27e5a;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Columna Izquierda: Información -->
+                    <div class="col-6 text-start">
+                        <h6 class="mb-0">Gastronomía Táchira</h6>
+                        <p class="small mb-0">Yilbert Torres | 2026</p>
+                    </div>
+                    <!-- Columna Derecha: Enlaces -->
+                    <div class="col-6 text-end">
+                        <h6 class="text-uppercase small mb-1" style="color: #c27e5a;">Enlaces</h6>
+                        <ul class="list-unstyled small mb-0">
+                            <li><a href="index.html" class="text-decoration-none text-light">Inicio</a></li>
+                            <li><a href="mapa.html" class="text-decoration-none text-light">Mapa de Rutas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
