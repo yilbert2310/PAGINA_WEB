@@ -163,3 +163,27 @@ body {
     }
 }
 
+/* Adaptación para Móviles y Tablets */
+@media (max-width: 991px) {
+    .sidebar {
+        display: none !important;
+    }
+    .contenido-principal, 
+    .contenido-principal:has(.slider-section) {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding-top: 70px !important; 
+    }
+    .slider-container {
+        top: 70px !important;
+        height: calc(100% - 70px) !important;
+    }
+}
+
+/* Adaptación para Escritorio */
+@media (min-width: 992px) {
+    .navbar.d-lg-none {
+        display: none !important;
+    }
+}
+

@@ -12,6 +12,34 @@
 </head>
 
 <body>
+<!-- Menú Móvil Superior (Solo visible en pantallas pequeñas) -->
+<nav class="navbar navbar-dark bg-dark d-lg-none fixed-top" style="background-color: #5c3a21 !important;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <div style="width: 40px; height: 40px; background-color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+         <img src="img/logo.png" alt="Logo" width="30" height="30">
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMovil" aria-controls="menuMovil">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="menuMovil" aria-labelledby="menuMovilLabel" style="background-color: #5c3a21; color: white;">
+      <div class="offcanvas-header border-bottom border-secondary">
+        <h5 class="offcanvas-title" id="menuMovilLabel">Menú Tradicional</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="index.html">Inicio</a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="platos.html">Platos Típicos</a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="bebidas.html">Bebidas</a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="dulces.html">Dulces</a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-white" href="restaurantes.html">Restaurantes</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
     <aside class="sidebar" aria-label="Navegación lateral">
         <nav class="sidebar-nav">
             <a class="sidebar-logo" href="index.html" aria-label="Inicio">
