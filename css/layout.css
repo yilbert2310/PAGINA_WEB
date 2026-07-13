@@ -130,7 +130,7 @@ body {
 /* --- Estado activo y hover --- */
 .sidebar-nav ul li a:hover,
 .sidebar-nav ul li a.activo {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgb(241, 233, 233);
     border-left: 4px solid #A0522D;
     color: #fcfaf7;
 }
@@ -181,7 +181,7 @@ body {
     gap: 6px;
     padding: 10px;
     border-radius: 0 8px 8px 0;
-    box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+    box-shadow: 3px 0 10px rgb(255, 255, 255);
 }
 
 .menu-hamburguesa span {
