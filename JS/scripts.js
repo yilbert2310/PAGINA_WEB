@@ -205,7 +205,6 @@ function generarRutaGoogleMaps() {
         alert("Por favor, ingresa tu ubicación actual para calcular los puntos más cercanos.");
         return;
     }
-    sessionStorage.setItem('rutaGuardada', origen);
     const origenMinuscula = origen.toLowerCase();
     const destinosCercanos = inventarioRestaurantes.filter(local => local.zonas.some(zona => origenMinuscula.includes(zona) || zona.includes(origenMinuscula)));
 
@@ -547,14 +546,7 @@ window.onload = function() {
         mostrarMenuEnPantalla(menuArray);
     }
 
-    // Recuperar la ubicación en el mapa si el usuario buscó una
-    let rutaEnMemoria = sessionStorage.getItem('rutaGuardada');
-    let inputMapa = document.getElementById('ubicacion-mapa');
-    if (rutaEnMemoria && inputMapa) {
-        inputMapa.value = rutaEnMemoria; 
-        generarRutaGoogleMaps();         
-    }
-
+    
     // Recuperar la ruta armada en el Modal 
     let rutaPersonalizadaMemoria = sessionStorage.getItem('rutaPersonalizada');
     if (rutaPersonalizadaMemoria) {

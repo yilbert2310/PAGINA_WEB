@@ -27,63 +27,68 @@ const baseDatosMunicipios = {
 
 
 const inventarioRestaurantes = [
-    { nombre: "El Fogón Andino",
-        zonas: ["barrio obrero", "avenida carabobo", "carabobo"], 
-        direccionMaps: "El Fogón Andino, Barrio Obrero, San Cristóbal, Táchira", 
-        imagen: "img/restaurante1.jpg", 
-        referencia: "📍 Barrio Obrero, San Cristóbal", 
-        descripcion: "Un rincón clásico para desayunar. Especialistas en caldos y desayunos tradicionales.", 
-        tags: ["Pizca Andina", "Pastelitos"], 
-        enlaceDetalle: "detalles/detalle_restaurante1.html" 
+    { 
+        nombre: "El Fogón Andino",
+        // Aquí agregamos las zonas altas que quedan cerca de Barrio Obrero
+        zonas: ["barrio obrero", "avenida carabobo", "carabobo", "pueblo nuevo", "avenida españa", "pirineos 1", "pirineos 2", "pirineos"],
+        direccionMaps: "El Fogón Andino, Barrio Obrero, San Cristóbal, Táchira",
+        imagen: "img/restaurante1.jpg",
+        referencia: "📍 Barrio Obrero, San Cristóbal",
+        descripcion: "Un rincón clásico para desayunar. Especialistas en caldos y desayunos tradicionales.",
+        tags: ["Pizca Andina", "Pastelitos"],
+        enlaceDetalle: "detalles/detalle_restaurante1.html"
     },
-
-    { nombre: "La Tradición Andina", 
-        zonas: ["barrio obrero", "avenida carabobo", "carabobo"], 
-        direccionMaps: "La Tradición Andina, Barrio Obrero, San Cristóbal, Táchira", 
-        imagen: "img/restaurante4.jpg", 
-        referencia: "📍 Barrio Obrero, San Cristóbal", 
-        descripcion: "Un rincón clásico en San Cristóbal donde el sabor de las auténticas arepas de trigo hechas a leña se mantiene vivo.", 
-        tags: ["Arepas de Trigo", "Comida Típica"], 
-        enlaceDetalle: "detalles/detalle_restaurante4.html" 
+    { 
+        nombre: "La Tradición Andina",
+        // Aquí agregamos la zona comercial cercana
+        zonas: ["barrio obrero", "avenida carabobo", "carabobo", "sambil", "el sambil", "barrio sucre"],
+        direccionMaps: "La Tradición Andina, Barrio Obrero, San Cristóbal, Táchira",
+        imagen: "img/restaurante4.jpg",
+        referencia: "📍 Barrio Obrero, San Cristóbal",
+        descripcion: "Un rincón clásico en San Cristóbal donde el sabor de las auténticas arepas de trigo hechas a leña se mantiene vivo.",
+        tags: ["Arepas de Trigo", "Comida Típica"],
+        enlaceDetalle: "detalles/detalle_restaurante4.html"
     },
-
-    { nombre: "Dulcería La Andina", 
-        zonas: ["centro", "quinta avenida", "séptima avenida"], 
-        direccionMaps: "Dulcería La Andina, Centro, San Cristóbal, Táchira", 
-        imagen: "img/restaurante2.jpg", 
-        referencia: "📍 Centro de San Cristóbal", 
-        descripcion: "Patrimonio de la ciudad. Más de 30 años elaborando los postres más representativos de la región de forma artesanal.", 
+    { 
+        nombre: "Dulcería La Andina",
+        // Esta ya abarca el centro y sus avenidas principales
+        zonas: ["centro", "el centro", "quinta avenida", "séptima avenida", "septima avenida"],
+        direccionMaps: "Dulcería La Andina, Centro, San Cristóbal, Táchira",
+        imagen: "img/restaurante2.jpg",
+        referencia: "📍 Centro de San Cristóbal",
+        descripcion: "Patrimonio de la ciudad. Más de 30 años elaborando los postres más representativos de la región de forma artesanal.",
         tags: ["Abrillantados", "Higos"],
-        enlaceDetalle: "detalles/detalle_restaurante2.html" 
+        enlaceDetalle: "detalles/detalle_restaurante2.html"
     },
-
-    { nombre: "El Páramo del Zumbador", 
+    { 
+        nombre: "El Páramo del Zumbador",
         zonas: ["paramo", "cordero", "via cordero", "zumbador"],
-         direccionMaps: "Páramo del Zumbador, Táchira", 
-         imagen: "img/restaurante3.jpg", 
-         referencia: "📍 Vía Cordero - Páramo", 
-         descripcion: "La parada obligatoria de los viajeros. Ofrecen las mejores bebidas calientes y fermentadas para combatir el frío.", 
-         tags: ["Calentadito", "Chicha Andina"], 
-         enlaceDetalle: "detalles/detalle_restaurante3.html" 
+        direccionMaps: "Páramo del Zumbador, Táchira",
+        imagen: "img/restaurante3.jpg",
+        referencia: "📍 Vía Cordero - Páramo",
+        descripcion: "La parada obligatoria de los viajeros. Ofrecen las mejores bebidas calientes y fermentadas para combatir el frío.",
+        tags: ["Calentadito", "Chicha Andina"],
+        enlaceDetalle: "detalles/detalle_restaurante3.html"
     },
-
-    { nombre: "Comedores del Mercado Los Pequeños Comerciantes", 
+    { 
+        nombre: "Comedores del Mercado Los Pequeños Comerciantes",
+        // Esta abarca La Concordia
         zonas: ["la concordia", "san cristobal", "mercado"],
-        direccionMaps: "Mercado de Los Pequeños Comerciantes, La Concordia, San Cristóbal, Táchira", 
-        imagen: "img/restaurante5.jpg", 
-        referencia: "📍 La Concordia, San Cristóbal", 
-        descripcion: "El epicentro popular donde los tachirenses van a comer el mejor Mute y Pizca andina los domingos.", 
-        tags: ["Mute Tachirense", "Pizca Andina", "Comida Típica"], 
-        enlaceDetalle: "detalles/detalle_restaurante5.html" 
+        direccionMaps: "Mercado de Los Pequeños Comerciantes, La Concordia, San Cristóbal, Táchira",
+        imagen: "img/restaurante5.jpg",
+        referencia: "📍 La Concordia, San Cristóbal",
+        descripcion: "El epicentro popular donde los tachirenses van a comer el mejor Mute y Pizca andina los domingos.",
+        tags: ["Mute Tachirense", "Pizca Andina", "Comida Típica"],
+        enlaceDetalle: "detalles/detalle_restaurante5.html"
     },
-
-    { nombre: "Los Kioscos de Capacho", 
-        zonas: ["capacho", "independencia", "libertad", "mercado municipal"], 
-        direccionMaps: "Mercado Municipal de Capacho, Táchira", 
-        imagen: "img/restaurante6.jpg", 
-        referencia: "📍 Mercado Municipal de Capacho", 
-        descripcion: "Parada tradicional famosa por ofrecer las mejores empanadas, pastelitos y masato en la vía a la frontera.", 
-        tags: ["Pastelitos", "Masato", "Empanadas"], 
+    { 
+        nombre: "Los Kioscos de Capacho",
+        zonas: ["capacho", "independencia", "libertad", "mercado municipal"],
+        direccionMaps: "Mercado Municipal de Capacho, Táchira",
+        imagen: "img/restaurante6.jpg",
+        referencia: "📍 Mercado Municipal de Capacho",
+        descripcion: "Parada tradicional famosa por ofrecer las mejores empanadas, pastelitos y masato en la vía a la frontera.",
+        tags: ["Pastelitos", "Masato", "Empanadas"],
         enlaceDetalle: "detalles/detalle_restaurante6.html"
     }
 ];
