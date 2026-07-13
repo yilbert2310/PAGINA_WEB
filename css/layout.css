@@ -249,11 +249,26 @@ body {
         padding-top: 20px;
     }
 }
-/* Esto asegura que el menú esté siempre encima de todo lo demás */
-.sidebar.abierto {
+/* Forzar que el menú lateral tenga altura y se muestre en Android */
+.sidebar.abierto .sidebar-nav {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* Asegurar que la lista sea visible */
+.sidebar.abierto .sidebar-lista {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     z-index: 9999 !important;
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    height: 100%;
+}
+
+/* Asegurar que los enlaces tengan tamaño para ser tocados */
+.sidebar-lista li a {
+    display: flex !important;
+    align-items: center;
+    padding: 15px !important;
+    color: white !important; /* Asegura el contraste */
+    text-decoration: none !important;
 }
