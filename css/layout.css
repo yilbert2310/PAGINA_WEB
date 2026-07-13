@@ -1,6 +1,5 @@
 /* ============================================
-   LAYOUT.CSS — Único archivo de layout y sidebar
-   Proyecto: Gastronomía Táchira (Raíces Andinas)
+   LAYOUT.CSS CORREGIDO PARA ANDROID/APK
    ============================================ */
 
 body {
@@ -13,10 +12,7 @@ body {
     display: flex;
 }
 
-/* ------------------------------------
-   SIDEBAR ESCRITORIO (DESPLAZABLE)
-   70px colapsado → 250px al hover
------------------------------------- */
+/* Sidebar Escritorio */
 .sidebar {
     display: block;
     position: fixed;
@@ -26,7 +22,7 @@ body {
     height: 100vh;
     background-color: #6E473B;
     z-index: 1000;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.3s ease;
     overflow-x: hidden;
     overflow-y: auto;
     box-shadow: 2px 0 10px rgba(0,0,0,0.15);
@@ -37,7 +33,7 @@ body {
     width: 280px;
 }
 
-/* --- Logo --- */
+/* Logo */
 .sidebar-logo {
     display: flex;
     align-items: center;
@@ -56,7 +52,6 @@ body {
 .sidebar-logo img {
     width: 40px;
     height: 40px;
-    min-width: 40px;
     border-radius: 50%;
     background-color: #fff;
     padding: 2px;
@@ -70,16 +65,14 @@ body {
     opacity: 0;
     visibility: hidden;
     white-space: nowrap;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .sidebar:hover .sidebar-logo span {
     opacity: 1;
     visibility: visible;
-    transition-delay: 0.1s;
 }
 
-/* --- Navegación --- */
+/* Navegación */
 .sidebar-nav ul {
     list-style: none;
     padding: 0;
@@ -87,132 +80,37 @@ body {
 }
 
 .sidebar-nav ul li a {
-    display: flex;
+    display: flex !important;
     align-items: center;
-    padding: 15px 20px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s, background-color 0.3s, border-left 0.3s;
+    padding: 15px 20px !important;
+    text-decoration: none !important;
+    color: #ffffff !important; /* Blanco garantizado */
+    font-size: 1.1rem !important;
     border-left: 4px solid transparent;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
-.sidebar:hover .sidebar-nav ul li a {
-    color: #ffffff;
-}
-
-/* --- Iconos (siempre visibles) --- */
-.sidebar-nav ul li a i,
-.sidebar-nav ul li a img {
-    display: inline-block;
-    width: 24px;
-    font-size: 1.25rem;
+.sidebar-nav ul li a .sidebar-icon i {
+    color: #ffffff !important; /* Iconos blancos */
     margin-right: 15px;
-    text-align: center;
-    color: #fcfaf7;
 }
 
-/* --- Texto (oculto colapsado / visible expandido) --- */
-.sidebar:not(:hover) .sidebar-nav ul li a .menu-text,
-.sidebar:not(:hover) .sidebar-nav ul li a span:not(.sidebar-icon) {
+.sidebar:not(:hover) .sidebar-nav ul li a .menu-text {
     opacity: 0;
     visibility: hidden;
 }
 
-.sidebar:hover .sidebar-nav ul li a .menu-text,
-.sidebar:hover .sidebar-nav ul li a span:not(.sidebar-icon) {
+.sidebar:hover .sidebar-nav ul li a .menu-text {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.2s ease 0.1s, visibility 0.2s ease 0.1s;
 }
 
-/* --- Estado activo y hover --- */
-.sidebar-nav ul li a:hover,
-.sidebar-nav ul li a.activo {
-    background-color: rgb(241, 233, 233);
-    border-left: 4px solid #A0522D;
-    color: #fcfaf7;
-}
-
-/* ------------------------------------
-   WRAPPER Y CONTENIDO PRINCIPAL
------------------------------------- */
-.wrapper {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-left: 70px;
-    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sidebar:hover ~ .wrapper {
-    margin-left: 250px;
-}
-
-.contenido-principal {
-    padding: 24px 20px;
-    flex: 1;
-}
-
-.contenido-principal img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.contenedor-interno {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ------------------------------------
-   BOTÓN HAMBURGUESA (solo visible en móvil)
------------------------------------- */
-.menu-hamburguesa {
-    display: none;
-    background: #6E473B;
-    border: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 6px;
-    padding: 10px;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 3px 0 10px rgb(255, 255, 255);
-}
-
-.menu-hamburguesa span {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background-color: #fcfaf7;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    border-radius: 2px;
-}
-
-/* Animación X cuando está abierto */
-.sidebar.abierto .menu-hamburguesa span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-.sidebar.abierto .menu-hamburguesa span:nth-child(2) {
-    opacity: 0;
-}
-.sidebar.abierto .menu-hamburguesa span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -7px);
-}
-
-/* ------------------------------------
-   RESPONSIVE — MÓVIL (≤768px)
-   !important solo donde Bootstrap compite
------------------------------------- */
+/* --- SOLUCIÓN PARA ANDROID (Móvil) --- */
 @media (max-width: 768px) {
     .sidebar {
-        width: 250px !important; /* Forzar ancho contra Bootstrap */
+        width: 280px !important; 
         transform: translateX(-100%);
-        overflow: visible;
+        background-color: rgba(110, 71, 59, 0.98) !important; /* Fondo sólido oscuro */
+        transition: transform 0.3s ease;
     }
 
     .sidebar.abierto {
@@ -220,31 +118,48 @@ body {
     }
 
     .menu-hamburguesa {
-        display: flex;
+        display: flex !important;
         position: absolute;
         top: 20px;
-        right: -48px;
+        right: -45px;
+        z-index: 9999;
     }
 
-    .sidebar-nav {
-        overflow-y: auto;
-        height: calc(100vh - 120px);
-    }
-
-    /* En móvil, texto siempre visible al abrir */
-    .sidebar-logo span,
-    .sidebar-nav ul li a .menu-text,
-    .sidebar-nav ul li a span:not(.sidebar-icon) {
-        opacity: 1 !important;    /* Necesario: gana al :not(:hover) de PC */
+    /* Fuerza visibilidad total del texto en móvil */
+    .sidebar.abierto .menu-text,
+    .sidebar.abierto .sidebar-logo span {
+        opacity: 1 !important;
         visibility: visible !important;
+        display: block !important;
     }
+}
 
-    .sidebar-nav ul li a {
-        color: #fcfaf7 !important; /* Necesario: gana al color:transparent de PC */
-    }
+.wrapper {
+    flex: 1;
+    margin-left: 70px;
+}
 
-    .wrapper {
-        margin-left: 0 !important; /* Necesario: gana al margin-left:70px de PC */
-        padding-top: 20px;
-    }
+@media (max-width: 768px) {
+    .wrapper { margin-left: 0 !important; }
+}
+/* --- CORRECCIÓN FINAL: FUERZA BRUTA PARA LETRA BLANCA --- */
+
+/* 1. Selector altamente específico para ignorar cualquier otro archivo */
+aside#sidebar.sidebar .sidebar-nav ul li a {
+    color: #ffffff !important;
+}
+
+/* 2. Asegurar también el color del texto cuando es span */
+aside#sidebar.sidebar .sidebar-nav ul li a .menu-text {
+    color: #ffffff !important;
+}
+
+/* 3. Asegurar que los iconos también sean blancos */
+aside#sidebar.sidebar .sidebar-nav ul li a .sidebar-icon i {
+    color: #ffffff !important;
+}
+
+/* 4. Asegurar el texto del logo si es necesario */
+aside#sidebar.sidebar .sidebar-logo span {
+    color: #ffffff !important;
 }
