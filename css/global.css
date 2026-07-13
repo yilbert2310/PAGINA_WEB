@@ -161,4 +161,19 @@ p {
         justify-content: center;
     }
 }
+/* Forzar la visibilidad del texto en el menú lateral */
+.sidebar .sidebar-lista li a .menu-text {
+    display: inline-block !important;
+    opacity: 1 !important;
+    color: #333 !important; /* Puedes cambiar este color si lo prefieres */
+    font-size: 16px !important;
+    padding: 10px;
+    visibility: visible !important;
+}
 
+/* Asegurar que el icono sea visible */
+.sidebar .sidebar-lista li a .sidebar-icon {
+    display: inline-block !important;
+    opacity: 1 !important;
+    color: #6e473b !important; /* Ajusta al color de tu marca */
+}
