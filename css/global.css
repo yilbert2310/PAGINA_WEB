@@ -152,13 +152,19 @@ p {
     color: rgba(252, 250, 247, 0.7) !important;
 }
 
-@media (max-width: 576px) {
-    .footer-top {
-        flex-direction: column;
-        text-align: center;
+@media (max-width: 768px) {
+    /* Fuerza al sidebar a tener un ancho suficiente para mostrar el texto */
+    .sidebar.abierto {
+        width: 250px !important; /* Asegura que tenga espacio */
+        min-width: 250px !important;
+        max-width: 250px !important;
+        display: block !important;
     }
-    .footer-links {
-        justify-content: center;
+
+    /* Asegura que el contenedor de la lista no esté oculto */
+    .sidebar-nav {
+        display: block !important;
+        width: 100% !important;
     }
 }
 /* Forzar la visibilidad del texto en el menú lateral */
