@@ -20,18 +20,16 @@ window.addEventListener('load', () => {
             });
         });
         
-       document.addEventListener('DOMContentLoaded', () => {
-    const btnHamburguesa = document.querySelector('.menu-hamburguesa');
-    const sidebar = document.getElementById('sidebar');
-
-    // Usamos 'pointerdown' en lugar de 'click' para Android, es más rápido
-    btnHamburguesa.addEventListener('pointerdown', (e) => {
-        e.preventDefault(); // Evita conflictos con el scroll de Android
-        sidebar.classList.toggle('abierto');
+        // Cierra el menú si se hace clic fuera del mismo
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && sidebar.classList.contains('abierto')) {
+                if (!sidebar.contains(e.target) && !btnHamburguesa.contains(e.target)) {
+                    sidebar.classList.remove('abierto');
+                }
+            }
         });
+    }
 });
-        
-    
 
 const rutaPersonalizada = [];
 
