@@ -249,3 +249,11 @@ body {
         padding-top: 20px;
     }
 }
+/* Esto asegura que el menú esté siempre encima de todo lo demás */
+.sidebar.abierto {
+    z-index: 9999 !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100%;
+}

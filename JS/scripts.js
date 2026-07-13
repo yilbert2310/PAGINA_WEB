@@ -1,7 +1,7 @@
 /* LÓGICA Y FUNCIONES */
 
 // Funcionalidad de Menú Hamburguesa (Custom)
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const btnHamburguesa = document.querySelector('.menu-hamburguesa');
     const sidebar = document.querySelector('.sidebar');
 
@@ -557,7 +557,7 @@ window.onload = function() {
 
 // LÓGICA PARA TARJETAS GIRATORIAS EN TELEFONO
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     
     // CONTROL DE EVENTOS PARA EL MENÚ Y LAS TARJETAS (NUEVO)
     
