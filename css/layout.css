@@ -1,146 +1,167 @@
-/* ESTRUCTURA (SIDEBAR Y CONTENEDORES) */
+/* ============================================
+   LAYOUT.CSS — Único archivo de layout y sidebar
+   Proyecto: Gastronomía Táchira (Raíces Andinas)
+   ============================================ */
 
 body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--fondo-claro, #fcfaf7);
+    overflow-x: hidden;
     min-height: 100vh;
-    background-color: var(--fondo-claro);
+    display: flex;
 }
 
+/* ------------------------------------
+   SIDEBAR ESCRITORIO (DESPLAZABLE)
+   70px colapsado → 250px al hover
+------------------------------------ */
 .sidebar {
+    display: block;
     position: fixed;
-    left: 0;
     top: 0;
-    height: 100vh;
+    left: 0;
     width: 70px;
-    padding: 22px 12px;
-    background: linear-gradient(180deg, rgba(110, 71, 59, 0.98), rgba(78, 46, 35, 0.98));
-    box-shadow: 16px 0 40px rgba(44, 31, 26, 0.16);
-    z-index: 100;
-    overflow: hidden;
-    transition: width 0.3s ease-in-out;
+    height: 100vh;
+    background-color: #6E473B;
+    z-index: 1000;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+    flex-shrink: 0;
 }
 
 .sidebar:hover {
     width: 250px;
 }
 
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 100%;
-}
-
+/* --- Logo --- */
 .sidebar-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    color: var(--color-blanco);
+    gap: 15px;
+    padding: 15px;
+}
+
+.sidebar-logo a {
     text-decoration: none;
-    margin-bottom: 24px;
-    padding: 8px 6px;
-    border-radius: 16px;
+    color: #fcfaf7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .sidebar-logo img {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     border-radius: 50%;
-    object-fit: cover;
-    background-color: var(--color-blanco);
-    padding: 4px;
+    background-color: #fff;
+    padding: 2px;
 }
 
 .sidebar-logo span {
-    display: inline-block;
-    font-family: var(--font-titulos);
-    font-size: 0.95rem;
-    font-weight: 700;
-    white-space: nowrap;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #fcfaf7;
     opacity: 0;
-    transform: translateX(-10px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    visibility: hidden;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .sidebar:hover .sidebar-logo span {
     opacity: 1;
-    transform: translateX(0);
+    visibility: visible;
+    transition-delay: 0.1s;
 }
 
-.sidebar-lista {
+/* --- Navegación --- */
+.sidebar-nav ul {
     list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar-nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: transparent; /* Texto oculto cuando está colapsado */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s, background-color 0.3s, border-left 0.3s;
+    border-left: 4px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar:hover .sidebar-nav ul li a {
+    color: #fcfaf7;
+}
+
+/* --- Iconos (siempre visibles) --- */
+.sidebar-nav ul li a i,
+.sidebar-nav ul li a img {
+    display: inline-block;
+    width: 24px;
+    font-size: 1.25rem;
+    margin-right: 15px;
+    text-align: center;
+    color: #fcfaf7;
+}
+
+/* --- Texto (oculto colapsado / visible expandido) --- */
+.sidebar:not(:hover) .sidebar-nav ul li a .menu-text,
+.sidebar:not(:hover) .sidebar-nav ul li a span:not(.sidebar-icon) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar:hover .sidebar-nav ul li a .menu-text,
+.sidebar:hover .sidebar-nav ul li a span:not(.sidebar-icon) {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease 0.1s, visibility 0.2s ease 0.1s;
+}
+
+/* --- Estado activo y hover --- */
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.activo {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #A0522D;
+    color: #fcfaf7;
+}
+
+/* ------------------------------------
+   WRAPPER Y CONTENIDO PRINCIPAL
+------------------------------------ */
+.wrapper {
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 0;
-    margin: 0;
+    min-height: 100vh;
+    margin-left: 70px;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sidebar-lista a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 14px;
-    border-radius: 14px;
-    color: rgba(255, 255, 255, 0.94);
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
-}
-
-.sidebar-lista a:hover,
-.sidebar-lista a.activo {
-    background-color: rgba(255, 255, 255, 0.16);
-    color: var(--color-blanco);
-    transform: translateX(4px);
-}
-
-.sidebar-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 24px;
-    font-size: 1.1rem;
-}
-
-.menu-text {
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.sidebar:hover .menu-text {
-    opacity: 1;
-    transform: translateX(0);
+.sidebar:hover ~ .wrapper {
+    margin-left: 250px;
 }
 
 .contenido-principal {
-    width: 100%;
-    margin-left: 70px;
-    padding: 24px 24px 40px 14px;
-    min-height: 100vh;
-    transition: margin-left 0.3s ease-in-out;
+    padding: 24px 20px;
+    flex: 1;
 }
 
-.contenido-principal:has(.slider-section) {
-    margin-left: 70px;
-    padding: 0;
-}
-
-.sidebar:hover ~ .contenido-principal:has(.slider-section),
-.sidebar:hover + .contenido-principal:has(.slider-section) {
-    margin-left: 250px;
-}
-
-.contenido-principal:has(.slider-section) .contenedor-interno {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-}
-
-.sidebar:hover ~ .contenido-principal,
-.sidebar:hover + .contenido-principal {
-    margin-left: 250px;
+.contenido-principal img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .contenedor-interno {
@@ -149,43 +170,82 @@ body {
     margin: 0 auto;
 }
 
+/* ------------------------------------
+   BOTÓN HAMBURGUESA (solo visible en móvil)
+------------------------------------ */
+.menu-hamburguesa {
+    display: none;
+    background: #6E473B;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+}
+
+.menu-hamburguesa span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #fcfaf7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Animación X cuando está abierto */
+.sidebar.abierto .menu-hamburguesa span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+.sidebar.abierto .menu-hamburguesa span:nth-child(2) {
+    opacity: 0;
+}
+.sidebar.abierto .menu-hamburguesa span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* ------------------------------------
+   RESPONSIVE — MÓVIL (≤768px)
+   !important solo donde Bootstrap compite
+------------------------------------ */
 @media (max-width: 768px) {
     .sidebar {
-        width: 70px;
+        width: 250px !important; /* Forzar ancho contra Bootstrap */
+        transform: translateX(-100%);
+        overflow: visible;
     }
 
-    .contenido-principal {
-        margin-left: 70px;
-        padding: 18px 12px 28px;
+    .sidebar.abierto {
+        transform: translateX(0);
     }
 
-    .sidebar:hover ~ .contenido-principal,
-    .sidebar:hover + .contenido-principal {
-        margin-left: 70px;
+    .menu-hamburguesa {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: -48px;
+    }
+
+    .sidebar-nav {
+        overflow-y: auto;
+        height: calc(100vh - 120px);
+    }
+
+    /* En móvil, texto siempre visible al abrir */
+    .sidebar-logo span,
+    .sidebar-nav ul li a .menu-text,
+    .sidebar-nav ul li a span:not(.sidebar-icon) {
+        opacity: 1 !important;    /* Necesario: gana al :not(:hover) de PC */
+        visibility: visible !important;
+    }
+
+    .sidebar-nav ul li a {
+        color: #fcfaf7 !important; /* Necesario: gana al color:transparent de PC */
+    }
+
+    .wrapper {
+        margin-left: 0 !important; /* Necesario: gana al margin-left:70px de PC */
+        padding-top: 20px;
     }
 }
-
-/* Adaptación para Móviles y Tablets */
-@media (max-width: 991px) {
-    .sidebar {
-        display: none !important;
-    }
-    .contenido-principal, 
-    .contenido-principal:has(.slider-section) {
-        margin-left: 0 !important;
-        width: 100% !important;
-        padding-top: 70px !important; 
-    }
-    .slider-container {
-        top: 70px !important;
-        height: calc(100% - 70px) !important;
-    }
-}
-
-/* Adaptación para Escritorio */
-@media (min-width: 992px) {
-    .navbar.d-lg-none {
-        display: none !important;
-    }
-}
-

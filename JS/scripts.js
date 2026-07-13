@@ -1,5 +1,36 @@
 /* LÓGICA Y FUNCIONES */
 
+// Funcionalidad de Menú Hamburguesa (Custom)
+document.addEventListener('DOMContentLoaded', () => {
+    const btnHamburguesa = document.querySelector('.menu-hamburguesa');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (btnHamburguesa && sidebar) {
+        btnHamburguesa.addEventListener('click', () => {
+            sidebar.classList.toggle('abierto');
+        });
+        
+        // Cierra el menú al hacer clic en un enlace (Móvil)
+        const links = sidebar.querySelectorAll('.sidebar-nav ul li a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('abierto');
+                }
+            });
+        });
+        
+        // Cierra el menú si se hace clic fuera del mismo
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && sidebar.classList.contains('abierto')) {
+                if (!sidebar.contains(e.target) && !btnHamburguesa.contains(e.target)) {
+                    sidebar.classList.remove('abierto');
+                }
+            }
+        });
+    }
+});
+
 const rutaPersonalizada = [];
 
 function inicializarCarruseles() {
@@ -71,75 +102,16 @@ function inicializarSliders() {
     });
 }
 
-function cerrarMenuMovil() {
-    const menuPrincipal = document.querySelector('.menu-principal');
-    const menuToggle = document.querySelector('.menu-toggle');
 
-    if (!menuPrincipal || !menuToggle) return;
-
-    menuPrincipal.classList.remove('menu-abierto');
-    menuToggle.classList.remove('is-active');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-abierto');
-}
-
-function abrirMenuMovil() {
-    const menuPrincipal = document.querySelector('.menu-principal');
-    const menuToggle = document.querySelector('.menu-toggle');
-
-    if (!menuPrincipal || !menuToggle) return;
-
-    const estaAbierto = menuPrincipal.classList.toggle('menu-abierto');
-    menuToggle.classList.toggle('is-active', estaAbierto);
-    menuToggle.setAttribute('aria-expanded', String(estaAbierto));
-    document.body.classList.toggle('menu-abierto', estaAbierto);
-}
-
-function marcarEnlaceActivo() {
-    const paginaActual = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.menu-enlace').forEach(enlace => {
-        const href = enlace.getAttribute('href') || '';
-        const esPaginaActual = href === paginaActual || (paginaActual === 'index.html' && href === 'index.html');
-        enlace.classList.toggle('activo', esPaginaActual);
-    });
-}
-
-function aplicarEstadoScroll() {
-    const encabezado = document.querySelector('.encabezado-principal');
-    if (!encabezado) return;
-    encabezado.classList.toggle('is-scrolled', window.scrollY > 20);
-}
-
-if (document.querySelector('.menu-toggle')) {
-    document.querySelector('.menu-toggle').addEventListener('click', abrirMenuMovil);
-}
-
-document.querySelectorAll('.menu-enlace').forEach(enlace => {
-    enlace.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            cerrarMenuMovil();
-        }
-    });
-});
-
-document.addEventListener('click', (event) => {
-    const menuPrincipal = document.querySelector('.menu-principal');
-    if (!menuPrincipal || window.innerWidth > 768) return;
-
-    if (!menuPrincipal.contains(event.target)) {
-        cerrarMenuMovil();
-    }
-});
-
-window.addEventListener('scroll', aplicarEstadoScroll, { passive: true });
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
-        cerrarMenuMovil();
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar && sidebar.classList.contains('abierto')) {
+            sidebar.classList.remove('abierto');
+        }
     }
 });
 
-marcarEnlaceActivo();
-aplicarEstadoScroll();
 inicializarCarruseles();
 inicializarSliders();
 
@@ -658,4 +630,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Botón Volver Arriba (Global)
+    const btnVolver = document.createElement('button');
+    btnVolver.className = 'btn-volver-arriba';
+    btnVolver.innerHTML = '<i class="bi bi-arrow-up" style="font-size: 1.5rem;"></i>';
+    btnVolver.setAttribute('aria-label', 'Volver arriba');
+    document.body.appendChild(btnVolver);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btnVolver.classList.add('visible');
+        } else {
+            btnVolver.classList.remove('visible');
+        }
+    });
+
+    btnVolver.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });

@@ -1,12 +1,12 @@
 /* VARIABLES Y ESTILOS GLOBALES */
 
 :root {
-    --color-primario: #6E473B;    /* Marrón Tierra/Café */
-    --color-secundario: #4A3026;  /* Marrón oscuro para menú */
-    --color-acento: #C27E5A;      /* Terracota arcilla */
-    --fondo-claro: #fcfaf7;       /* Blanco hueso/crema elegante */
-    --texto-oscuro: #2C1F1A;      /* Negro con matiz cálido */
-    --color-blanco: #FFFFFF;
+    --color-primario: #8B4513;    /* Marrón cuero */
+    --color-secundario: #4A3026;  /* Marrón oscuro */
+    --color-acento: #A0522D;      /* Siena tostada */
+    --fondo-claro: #F4EFEA;       /* Arcilla suave */
+    --texto-oscuro: #2D2926;      /* Grafito cálido */
+    --color-blanco: #FFFFFF;      /* Blanco puro */
     --font-principal: 'Lato', sans-serif;
     --font-titulos: 'Playfair Display', serif;
 }
@@ -29,6 +29,13 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: var(--fondo-claro);
     color: var(--texto-oscuro);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+main, .contenido-principal {
+    flex: 1;
 }
 
 
@@ -78,3 +85,80 @@ p {
 }
 .text-warning { color: var(--color-acento) !important; }
 .border-warning { border-color: var(--color-acento) !important; }
+
+
+/* ====================================
+   REDISEÑO DE FOOTER SEMÁNTICO
+==================================== */
+.footer-profesional {
+    background-color: #6E473B;
+    color: #fcfaf7;
+    padding: 40px 20px 20px 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: #fcfaf7; 
+}
+
+.footer-info p {
+    color: rgba(252, 250, 247, 0.8) !important;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #fcfaf7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #C27E5A;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(252, 250, 247, 0.2);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(252, 250, 247, 0.7) !important;
+}
+
+@media (max-width: 576px) {
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-links {
+        justify-content: center;
+    }
+}
+

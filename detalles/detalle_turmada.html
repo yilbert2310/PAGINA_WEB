@@ -54,7 +54,36 @@
     </style>
 </head>
 <body>
-    <main class="container my-5 pt-4">
+
+
+<!-- Menú Lateral (Sidebar) -->
+            <aside class="sidebar" id="sidebar" aria-label="Navegación lateral">
+        <button class="menu-hamburguesa" aria-label="Abrir Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="sidebar-logo">
+            <a href="../index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                <img src="../img/logo.png" alt="Logo de la Ruta Gastronómica">
+                <span>Gastronomía Táchira</span>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="sidebar-lista">
+                <li><a href="../index.html" ><span class="sidebar-icon"><i class="bi bi-house-door"></i></span><span class="menu-text">Inicio</span></a></li>
+                <li><a href="../platos.html" class="activo"><span class="sidebar-icon"><i class="bi bi-egg-fried"></i></span><span class="menu-text">Platos Típicos</span></a></li>
+                <li><a href="../bebidas.html" ><span class="sidebar-icon"><i class="bi bi-cup-straw"></i></span><span class="menu-text">Bebidas</span></a></li>
+                <li><a href="../dulces.html" ><span class="sidebar-icon"><i class="bi bi-cake2"></i></span><span class="menu-text">Dulces</span></a></li>
+                <li><a href="../restaurantes.html" ><span class="sidebar-icon"><i class="bi bi-shop-window"></i></span><span class="menu-text">Restaurantes</span></a></li>
+                <li><a href="../registro_restaurante.html" ><span class="sidebar-icon"><i class="bi bi-pencil-square"></i></span><span class="menu-text">Registrar</span></a></li>
+                <li><a href="../mapa.html" ><span class="sidebar-icon"><i class="bi bi-map"></i></span><span class="menu-text">Mapa</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+  <div class="wrapper">
+    <main class="contenido-principal">
+        <div class="contenedor-interno">
         <div class="row g-5">
             
             <div class="col-12 col-md-5">
@@ -87,9 +116,9 @@
                     </div>
                     <div class="col-4">
                         <div class="p-3 rounded-3 info-ficha">
-                            <i class="bi bi-fire text-danger fs-4 d-block mb-1"></i>
-                            <span class="d-block text-muted small fw-bold text-uppercase" style="font-size: 0.75rem;">Calorías</span>
-                            <strong class="text-dark">420 kcal</strong>
+                            <i class="bi bi-people fs-4 d-block mb-1"></i>
+                            <span class="d-block text-muted small fw-bold text-uppercase" style="font-size: 0.75rem;">Porciones</span>
+                            <strong class="text-dark">4 personas</strong>
                         </div>
                     </div>
                     <div class="col-4">
@@ -182,6 +211,28 @@
             </div>
 
         </div>
+        </div>
     </main>
+    <!-- REDISEÑO FOOTER GLOBAL -->
+    <footer class="footer-profesional">
+        <div class="footer-top">
+            <div class="footer-info">
+                <h3>Gastronomía Táchira</h3>
+                <p>Preservando nuestra herencia culinaria</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Inicio</a>
+                <a href="../platos.html">Platos</a>
+                <a href="../bebidas.html">Bebidas</a>
+                <a href="../restaurantes.html">Restaurantes</a>
+                <a href="../mapa.html">Mapa</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Gastronomía Táchira - Desarrollado por Yilbert Torres</p>
+        </div>
+    </footer>
+  </div>
+    <script src="../js/scripts.js"></script>
 </body>
 </html>

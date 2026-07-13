@@ -1,39 +1,5 @@
-/* COMPONENTES (TARJETAS, BOTONES, MAPAS, SIDEBAR) */
-
-.sidebar {
-    background: linear-gradient(180deg, rgba(110, 71, 59, 0.98), rgba(78, 46, 35, 0.98));
-    box-shadow: 16px 0 40px rgba(44, 31, 26, 0.16);
-}
-
-.sidebar-logo {
-    border-radius: 16px;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.sidebar-logo:hover {
-    background-color: rgba(255, 255, 255, 0.12);
-    transform: translateX(2px);
-}
-
-.sidebar-lista a {
-    border-radius: 14px;
-}
-
-.sidebar-lista a:hover,
-.sidebar-lista a.activo {
-    background-color: rgba(255, 255, 255, 0.16);
-    color: var(--color-blanco);
-    transform: translateX(4px);
-}
-
-.sidebar-icon {
-    color: #f9d9bf;
-}
-
-.menu-text {
-    font-size: 0.95rem;
-    letter-spacing: 0.01em;
-}
+/* COMPONENTES (TARJETAS, BOTONES, MAPAS) */
+/* Nota: Los estilos del sidebar están consolidados en layout.css */
 
 /* CARRUSEL DE CATÁLOGOS */
 .slider-section {
@@ -292,23 +258,36 @@
     transform: translateY(0) scale(0.98); 
 }
 
+/* Animación de carga para tarjetas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* TARJETAS ESTILO BENTO & MICRO-INTERACCIONES */
 .tarjeta {
     background-color: var(--color-blanco);
-    border-radius: 24px !important; 
-    border: 1px solid rgba(110, 71, 59, 0.05) !important;
+    border-radius: 16px !important; 
+    border: 1px solid #DCD5CD !important;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(44, 31, 26, 0.04) !important;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 0 10px 20px rgba(44, 31, 26, 0.05) !important;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease !important;
     display: flex;
     flex-direction: column;
     position: relative;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .tarjeta:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 45px rgba(194, 126, 90, 0.15) !important; 
-    border-color: rgba(194, 126, 90, 0.2) !important;
+    box-shadow: 0 20px 35px rgba(160, 82, 45, 0.15) !important; 
+    border-color: var(--color-acento) !important;
 }
 
 .tarjeta img {
@@ -783,27 +762,14 @@
 /* =========================================
    MEJORA ESTÉTICA DE TARJETAS (VOLUMEN Y PROFUNDIDAD)
    ========================================= */
-.tarjeta {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 15px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Sombra suave */
-}
-
-/* Efecto hover profesional */
-.tarjeta:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
+/* Las propiedades de la tarjeta han sido consolidadas en la definición de la línea 305 para evitar duplicidades e inconsistencias */
 
 /* Asegurar que las esquinas de las imágenes internas respeten el redondeado */
 .flip-card,
 .flip-card-front,
 .flip-card-back,
 .tarjeta img {
-    border-radius: 20px !important;
+    border-radius: 16px !important;
 }
 
 /* Ajuste de colores para el reverso de la tarjeta */
@@ -815,7 +781,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    border-radius: 20px !important;
+    border-radius: 16px !important;
 }
 
 .flip-card-back h3 {
@@ -1069,5 +1035,133 @@
     color: #ffffff !important;
     background-color: transparent !important;
     font-weight: 500;
+}
+
+/* =========================================
+   ESTILOS DE ICONOS PARA PÁGINAS DE DETALLES
+   ========================================= */
+.info-ficha i,
+.detalle-titulo + p i,
+.d-flex i.bi-check2-circle {
+    color: var(--color-acento) !important;
+}
+
+/* =========================================
+   FICHA TÉCNICA Y CONTENIDO DE DETALLES
+   ========================================= */
+.info-ficha {
+    background-color: var(--color-blanco) !important;
+    border: 1px solid #DCD5CD !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    padding: 15px !important;
+}
+
+.info-ficha:hover {
+    background-color: #FDFBF7 !important;
+    box-shadow: 0 8px 24px rgba(110, 71, 59, 0.08) !important;
+    transform: translateY(-3px) !important;
+    border-color: var(--color-acento) !important;
+}
+
+/* Subtítulos de recetas y detalles */
+.detalle-seccion-subtitulo {
+    color: var(--color-primario) !important;
+    font-family: 'Playfair Display', serif;
+    border-bottom: 2px solid rgba(160, 82, 45, 0.4) !important;
+}
+
+/* =========================================
+   BOTÓN VOLVER ARRIBA
+   ========================================= */
+.btn-volver-arriba {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #A0522D;
+    color: #F4EFEA !important;
+    border: 1px solid #A0522D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s, color 0.3s, transform 0.3s;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(110, 71, 59, 0.3);
+}
+
+.btn-volver-arriba:hover {
+    background-color: #8B4513;
+    color: #F4EFEA !important;
+    border-color: #8B4513;
+    transform: translateY(-3px);
+}
+
+.btn-volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mensajes de error custom para formularios */
+.error-mensaje-custom {
+    color: #C27E5A !important;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-top: 5px;
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+/* =========================================
+   MENÚ TRADICIONAL INTERACTIVO (DETALLES)
+   ========================================= */
+.list-group-item-action {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px !important;
+    border-radius: 12px !important;
+    margin-bottom: 10px;
+    background-color: var(--color-blanco) !important;
+    color: var(--texto-oscuro) !important;
+    border: 1px solid #DCD5CD !important;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.list-group-item-action:hover {
+    background-color: #EAE0D5 !important;
+    color: var(--color-acento) !important;
+    font-weight: 700;
+    padding-left: 26px !important; /* Desplazamiento sutil */
+    box-shadow: 0 4px 10px rgba(160, 82, 45, 0.08);
+}
+
+.list-group-item-action::after {
+    content: "→";
+    font-size: 1.25rem;
+    color: var(--color-acento);
+    transition: transform 0.3s ease;
+}
+
+.list-group-item-action:hover::after {
+    transform: translateX(6px);
+}
+
+.list-group-item-action i {
+    color: var(--color-acento) !important;
+    transition: transform 0.3s ease;
+}
+
+.list-group-item-action:hover i {
+    transform: scale(1.15);
 }
 
