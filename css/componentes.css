@@ -1165,3 +1165,11 @@
     transform: scale(1.15);
 }
 
+/* Fuerza que el sidebar esté siempre encima de todo */
+.sidebar {
+    position: fixed;
+    z-index: 9999 !important; /* Fuerza la capa superior */
+    top: 0;
+    left: 0;
+    height: 100%;
+}
